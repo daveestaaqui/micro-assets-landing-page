@@ -1,186 +1,206 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FlowKit — Support & FAQ</title>
-    <meta name="description" content="Get help with FlowKit browser extensions. FAQs, installation guides, billing support, and contact information.">
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <title>FlowKit Support — Help Center & AI Assistant</title>
+    <meta name="description" content="Get instant help with FlowKit browser extensions. AI-powered support, FAQs, troubleshooting guides, and license management.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: { extend: { colors: { background: '#09090b', surface: '#18181b', border: '#27272a', primary: '#a855f7', secondary: '#ec4899' }, fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] } } }
-        }
-    </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-        body { background-color: #09090b; color: #fafafa; -webkit-font-smoothing: antialiased; }
-        .glass-panel { background: rgba(24, 24, 27, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); }
-        .gradient-text { background: linear-gradient(135deg, #e879f9 0%, #a855f7 50%, #6366f1 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        body { background-color: #09090b; color: #fafafa; font-family: 'Inter', sans-serif; }
+        .glass-panel { background: rgba(24,24,27,0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); }
+        .gradient-text { background: linear-gradient(135deg, #e879f9, #a855f7, #6366f1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .chat-bubble-ai { background: rgba(168,85,247,0.1); border: 1px solid rgba(168,85,247,0.2); }
+        .chat-bubble-user { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); }
+        .faq-item { transition: all 0.2s; }
+        .faq-item:hover { background: rgba(255,255,255,0.03); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .faq-item.open .faq-answer { max-height: 500px; }
+        .faq-item.open .faq-chevron { transform: rotate(180deg); }
     </style>
 </head>
 <body class="min-h-screen pt-20 pb-16">
     <nav class="fixed top-0 w-full z-50 glass-panel border-b border-white/10">
-        <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
             <a href="index.html" class="font-bold text-white tracking-tight">← FlowKit</a>
-            <span class="text-zinc-400 text-sm font-semibold">Support</span>
+            <span class="text-zinc-400 text-sm font-semibold">Support Center</span>
         </div>
     </nav>
+    <main class="max-w-5xl mx-auto px-6 mt-12">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4"><span class="gradient-text">Help Center</span></h1>
+            <p class="text-zinc-400 text-lg max-w-2xl mx-auto">Get instant answers from our AI assistant, browse FAQs, or manage your license.</p>
+        </div>
 
-    <main class="max-w-4xl mx-auto px-6 mt-12">
-        <h1 class="text-4xl md:text-5xl font-extrabold mb-4"><span class="gradient-text">Support</span> & FAQ</h1>
-        <p class="text-zinc-400 text-lg mb-12">Everything you need to get started and stay productive.</p>
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+            <!-- AI Support Chat -->
+            <div class="glass-panel rounded-2xl p-6">
+                <h2 class="text-xl font-bold mb-4 flex items-center gap-2">🤖 <span class="gradient-text">AI Support</span></h2>
+                <div id="chatLog" class="space-y-3 mb-4 max-h-[340px] overflow-y-auto pr-2">
+                    <div class="chat-bubble-ai rounded-xl p-3 text-sm text-zinc-300">
+                        👋 Hi! I'm FlowKit's AI assistant. I can help with:
+                        <ul class="mt-2 space-y-1 text-zinc-400">
+                            <li>• Installation & setup issues</li>
+                            <li>• License activation & billing</li>
+                            <li>• Feature questions</li>
+                            <li>• Troubleshooting & bug reports</li>
+                        </ul>
+                        Type your question below!
+                    </div>
+                </div>
+                <div class="flex gap-2">
+                    <input type="text" id="chatInput" placeholder="Ask anything…" class="flex-1 px-4 py-3 rounded-xl border border-white/10 bg-white/5 text-white text-sm outline-none focus:border-purple-500/50 transition" onkeydown="if(event.key==='Enter')sendChat()">
+                    <button onclick="sendChat()" class="px-5 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold text-sm hover:opacity-90 transition">Send</button>
+                </div>
+            </div>
 
-        <!-- Quick Contact -->
-        <div class="glass-panel rounded-2xl p-6 mb-12 border-l-4 border-purple-500">
-            <h2 class="text-xl font-bold mb-2">📧 Need help?</h2>
-            <p class="text-zinc-300">Email us at <a href="mailto:sandwichfitness@gmail.com" class="text-purple-400 hover:text-purple-300 font-semibold">sandwichfitness@gmail.com</a> — we respond within 24 hours.</p>
+            <!-- Quick Actions -->
+            <div class="space-y-4">
+                <!-- License Check -->
+                <div class="glass-panel rounded-2xl p-6">
+                    <h3 class="text-lg font-bold mb-3">🔑 License Manager</h3>
+                    <input type="text" id="licenseInput" placeholder="Enter your license key…" class="w-full px-4 py-3 rounded-xl border border-white/10 bg-white/5 text-white text-sm outline-none mb-3">
+                    <div class="flex gap-2">
+                        <button onclick="checkLicense()" class="flex-1 py-2 rounded-lg bg-green-500/20 text-green-400 text-sm font-semibold hover:bg-green-500/30 transition">✅ Verify</button>
+                        <button onclick="resetLicense()" class="flex-1 py-2 rounded-lg bg-red-500/20 text-red-400 text-sm font-semibold hover:bg-red-500/30 transition">🔄 Reset</button>
+                    </div>
+                    <div id="licenseResult" class="mt-3 text-sm"></div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="glass-panel rounded-2xl p-6">
+                    <h3 class="text-lg font-bold mb-3">⚡ Quick Links</h3>
+                    <div class="grid grid-cols-2 gap-2">
+                        <a href="https://chrome.google.com/webstore/devconsole" target="_blank" class="text-center py-2 rounded-lg bg-white/5 text-zinc-300 text-sm hover:bg-white/10 transition">Chrome Store</a>
+                        <a href="https://dashboard.stripe.com" target="_blank" class="text-center py-2 rounded-lg bg-white/5 text-zinc-300 text-sm hover:bg-white/10 transition">Billing Portal</a>
+                        <a href="deals.html" class="text-center py-2 rounded-lg bg-white/5 text-zinc-300 text-sm hover:bg-white/10 transition">View Deals</a>
+                        <a href="privacy.html" class="text-center py-2 rounded-lg bg-white/5 text-zinc-300 text-sm hover:bg-white/10 transition">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- FAQ Section -->
-        <section class="space-y-4" x-data="{ open: null }">
-            <h2 class="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
-
-            <!-- Installation -->
-            <div class="glass-panel rounded-xl overflow-hidden">
-                <button @click="open = open === 1 ? null : 1" class="w-full text-left px-6 py-4 flex justify-between items-center hover:bg-white/5 transition">
-                    <span class="font-semibold">How do I install a FlowKit extension?</span>
-                    <svg class="w-5 h-5 transition-transform" :class="{ 'rotate-180': open === 1 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                </button>
-                <div x-show="open === 1" x-collapse class="px-6 pb-4 text-zinc-400">
-                    <ol class="list-decimal list-inside space-y-2">
-                        <li>Visit the <a href="https://chrome.google.com/webstore/search/FlowKit" class="text-purple-400 hover:text-purple-300">Chrome Web Store</a></li>
-                        <li>Search for the extension name (e.g., "WCAG Accessibility Auditor")</li>
-                        <li>Click "Add to Chrome" → "Add Extension"</li>
-                        <li>The extension icon will appear in your browser toolbar</li>
-                        <li>Click the icon to open the popup and start using it</li>
-                    </ol>
-                </div>
+        <div class="mb-16">
+            <h2 class="text-2xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-2 max-w-3xl mx-auto" id="faqContainer">
             </div>
+        </div>
 
-            <div class="glass-panel rounded-xl overflow-hidden">
-                <button @click="open = open === 2 ? null : 2" class="w-full text-left px-6 py-4 flex justify-between items-center hover:bg-white/5 transition">
-                    <span class="font-semibold">How do subscriptions work?</span>
-                    <svg class="w-5 h-5 transition-transform" :class="{ 'rotate-180': open === 2 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                </button>
-                <div x-show="open === 2" x-collapse class="px-6 pb-4 text-zinc-400">
-                    <p>Premium extensions use a monthly subscription billed through Stripe. After subscribing:</p>
-                    <ul class="list-disc list-inside mt-2 space-y-1">
-                        <li>You'll receive a license key via email</li>
-                        <li>Enter the key in the extension popup to unlock all features</li>
-                        <li>Your subscription renews monthly — cancel anytime</li>
-                        <li>Cancellation takes effect at the end of your billing period</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="glass-panel rounded-xl overflow-hidden">
-                <button @click="open = open === 3 ? null : 3" class="w-full text-left px-6 py-4 flex justify-between items-center hover:bg-white/5 transition">
-                    <span class="font-semibold">Can I use extensions on multiple browsers?</span>
-                    <svg class="w-5 h-5 transition-transform" :class="{ 'rotate-180': open === 3 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                </button>
-                <div x-show="open === 3" x-collapse class="px-6 pb-4 text-zinc-400">
-                    <p>Yes! FlowKit extensions work on all Chromium-based browsers: Chrome, Edge, Brave, Opera, Arc, and Vivaldi. Firefox versions are also available for select extensions. One license key works across all browsers.</p>
-                </div>
-            </div>
-
-            <div class="glass-panel rounded-xl overflow-hidden">
-                <button @click="open = open === 4 ? null : 4" class="w-full text-left px-6 py-4 flex justify-between items-center hover:bg-white/5 transition">
-                    <span class="font-semibold">What's your refund policy?</span>
-                    <svg class="w-5 h-5 transition-transform" :class="{ 'rotate-180': open === 4 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                </button>
-                <div x-show="open === 4" x-collapse class="px-6 pb-4 text-zinc-400">
-                    <p>We offer a <strong class="text-white">30-day money-back guarantee</strong> on all premium subscriptions. If you're not satisfied, email us within 30 days for a full refund — no questions asked.</p>
-                </div>
-            </div>
-
-            <div class="glass-panel rounded-xl overflow-hidden">
-                <button @click="open = open === 5 ? null : 5" class="w-full text-left px-6 py-4 flex justify-between items-center hover:bg-white/5 transition">
-                    <span class="font-semibold">How do I cancel my subscription?</span>
-                    <svg class="w-5 h-5 transition-transform" :class="{ 'rotate-180': open === 5 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                </button>
-                <div x-show="open === 5" x-collapse class="px-6 pb-4 text-zinc-400">
-                    <p>You can cancel anytime from your Stripe billing portal. Simply click the "Manage Subscription" link in any billing email, or email us and we'll handle it for you immediately.</p>
-                </div>
-            </div>
-
-            <div class="glass-panel rounded-xl overflow-hidden">
-                <button @click="open = open === 6 ? null : 6" class="w-full text-left px-6 py-4 flex justify-between items-center hover:bg-white/5 transition">
-                    <span class="font-semibold">Do you collect my browsing data?</span>
-                    <svg class="w-5 h-5 transition-transform" :class="{ 'rotate-180': open === 6 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                </button>
-                <div x-show="open === 6" x-collapse class="px-6 pb-4 text-zinc-400">
-                    <p><strong class="text-green-400">No.</strong> FlowKit extensions run 100% locally in your browser. We never collect, store, or transmit your browsing data, page content, or personal information. See our <a href="https://gist.github.com/daveestaaqui/443ab15e9ef7ff1399bf92407f044cde" class="text-purple-400 hover:text-purple-300">Privacy Policy</a> for full details.</p>
-                </div>
-            </div>
-
-            <div class="glass-panel rounded-xl overflow-hidden">
-                <button @click="open = open === 7 ? null : 7" class="w-full text-left px-6 py-4 flex justify-between items-center hover:bg-white/5 transition">
-                    <span class="font-semibold">Which extensions are free vs. premium?</span>
-                    <svg class="w-5 h-5 transition-transform" :class="{ 'rotate-180': open === 7 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                </button>
-                <div x-show="open === 7" x-collapse class="px-6 pb-4 text-zinc-400">
-                    <p><strong class="text-white">21 extensions are completely free</strong> — no ads, no data collection, no hidden costs. 5 premium B2B tools are available via affordable monthly subscriptions:</p>
-                    <ul class="list-disc list-inside mt-2 space-y-1">
-                        <li>WCAG Accessibility Auditor — $9.99/mo</li>
-                        <li>Contract Risk Scanner — $9.99/mo</li>
-                        <li>Privacy & Cookie Scanner — $4.99/mo</li>
-                        <li>Invoice Data Extractor — $4.99/mo</li>
-                        <li>Client Time Tracker — $4.99/mo</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="glass-panel rounded-xl overflow-hidden">
-                <button @click="open = open === 8 ? null : 8" class="w-full text-left px-6 py-4 flex justify-between items-center hover:bg-white/5 transition">
-                    <span class="font-semibold">The extension isn't working. What do I do?</span>
-                    <svg class="w-5 h-5 transition-transform" :class="{ 'rotate-180': open === 8 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                </button>
-                <div x-show="open === 8" x-collapse class="px-6 pb-4 text-zinc-400">
-                    <ol class="list-decimal list-inside space-y-2">
-                        <li><strong>Refresh the page</strong> — some extensions need a page reload to activate</li>
-                        <li><strong>Check permissions</strong> — click the extension icon and make sure "Enable" is toggled on</li>
-                        <li><strong>Disable conflicting extensions</strong> — ad blockers can sometimes interfere</li>
-                        <li><strong>Reinstall</strong> — remove the extension and re-add it from the Chrome Web Store</li>
-                        <li>Still stuck? <a href="mailto:sandwichfitness@gmail.com" class="text-purple-400 hover:text-purple-300">Email us</a> with your browser version and a screenshot</li>
-                    </ol>
-                </div>
-            </div>
-        </section>
-
-        <!-- Keyboard Shortcuts -->
-        <section class="mt-16">
-            <h2 class="text-2xl font-bold mb-6">⌨️ Pro Tips</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="glass-panel rounded-xl p-4">
-                    <p class="text-sm font-semibold text-purple-400 mb-1">Pin extensions</p>
-                    <p class="text-zinc-400 text-sm">Click the puzzle icon in Chrome → pin your favorite FlowKit extensions for one-click access.</p>
-                </div>
-                <div class="glass-panel rounded-xl p-4">
-                    <p class="text-sm font-semibold text-purple-400 mb-1">Keyboard shortcuts</p>
-                    <p class="text-zinc-400 text-sm">Go to <code class="bg-zinc-800 px-1 rounded">chrome://extensions/shortcuts</code> to assign custom hotkeys to any extension.</p>
-                </div>
-                <div class="glass-panel rounded-xl p-4">
-                    <p class="text-sm font-semibold text-purple-400 mb-1">Works on Edge, Brave, Arc</p>
-                    <p class="text-zinc-400 text-sm">All FlowKit extensions work on any Chromium browser — not just Google Chrome.</p>
-                </div>
-                <div class="glass-panel rounded-xl p-4">
-                    <p class="text-sm font-semibold text-purple-400 mb-1">Sync across devices</p>
-                    <p class="text-zinc-400 text-sm">Enable Chrome Sync to auto-install your extensions on every device you sign into.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA -->
-        <div class="glass-panel rounded-3xl p-8 text-center mt-16 mb-16">
-            <h2 class="text-2xl font-bold mb-4">Still need help?</h2>
-            <p class="text-zinc-400 mb-6">Our team responds to every email within 24 hours.</p>
-            <a href="mailto:sandwichfitness@gmail.com" class="px-8 py-4 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold text-lg hover:opacity-90 transition-opacity inline-block">Email Support →</a>
+        <!-- Contact -->
+        <div class="glass-panel rounded-3xl p-8 text-center mb-16">
+            <h2 class="text-xl font-bold mb-2">Still need help?</h2>
+            <p class="text-zinc-400 mb-4">Email us and we'll respond within 24 hours.</p>
+            <a href="mailto:flowkit.support@gmail.com" class="inline-block px-8 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold hover:opacity-90 transition">📧 flowkit.support@gmail.com</a>
         </div>
     </main>
-
-    <footer class="max-w-4xl mx-auto px-6 pt-8 pb-8 border-t border-white/10 text-center text-zinc-500 text-sm">
-        <p>&copy; 2026 FlowKit by David Mahler. <a href="terms.html" class="hover:text-white">Terms</a> · <a href="https://gist.github.com/daveestaaqui/443ab15e9ef7ff1399bf92407f044cde" class="hover:text-white">Privacy</a> · <a href="index.html" class="hover:text-white">Home</a></p>
+    <footer class="max-w-5xl mx-auto px-6 pt-8 pb-8 border-t border-white/10 text-center text-zinc-500 text-sm">
+        <p>&copy; 2026 FlowKit by David Mahler. <a href="privacy.html" class="hover:text-white">Privacy</a> · <a href="terms.html" class="hover:text-white">Terms</a> · <a href="index.html" class="hover:text-white">Home</a></p>
     </footer>
+
+    <script>
+    // ====== AI CHATBOT ENGINE ======
+    const KB = {
+        installation: {
+            keywords: ['install', 'add', 'download', 'get', 'setup', 'set up', 'chrome', 'browser'],
+            answer: '**Installing FlowKit extensions:**\n\n1. Visit our page on the [Chrome Web Store](https://chrome.google.com/webstore)\n2. Click "Add to Chrome"\n3. Click "Add Extension" in the popup\n4. The extension icon appears in your toolbar!\n\n💡 Works on Chrome, Edge, Brave, Arc, and Opera.\n\nFor Firefox, visit our [Firefox Add-ons page](https://addons.mozilla.org).'
+        },
+        license: {
+            keywords: ['license', 'key', 'activate', 'activation', 'unlock', 'pro', 'premium', 'upgrade'],
+            answer: '**License Activation:**\n\n1. Open the extension popup\n2. Use it until you hit the free limit\n3. Click the license activation area\n4. Paste your license key from your Stripe receipt\n5. Click "Activate"\n\n🔑 Your key is in the email from Stripe after purchase.\n\n❓ Lost your key? Email flowkit.support@gmail.com with your purchase email.'
+        },
+        billing: {
+            keywords: ['billing', 'payment', 'cancel', 'refund', 'subscription', 'charge', 'price', 'cost', 'money'],
+            answer: '**Billing & Subscriptions:**\n\n• All billing is handled through Stripe (secure, PCI-compliant)\n• Cancel anytime from your [Stripe billing portal](https://billing.stripe.com/p/login/your-portal)\n• 30-day money-back guarantee on all plans\n• No hidden fees, no data selling\n\n🔄 **To cancel:** Click the billing portal link in your Stripe receipt email.\n💰 **Refund:** Email flowkit.support@gmail.com within 30 days.'
+        },
+        notworking: {
+            keywords: ['not working', 'broken', 'error', 'bug', 'crash', 'problem', 'issue', 'fix', 'help', 'wrong', 'fail'],
+            answer: '**Troubleshooting Steps:**\n\n1. **Refresh the page** and try again\n2. **Disable/re-enable** the extension (chrome://extensions)\n3. **Clear extension storage:** Right-click icon → Manage Extension → Clear Data\n4. **Update Chrome** to the latest version\n5. **Reinstall** the extension from CWS\n\n⚠️ If the issue persists:\n- Check if another extension conflicts (try incognito)\n- Email flowkit.support@gmail.com with:\n  - Extension name\n  - Chrome version\n  - Screenshot of the error'
+        },
+        privacy: {
+            keywords: ['privacy', 'data', 'collect', 'track', 'tracking', 'security', 'personal', 'information', 'safe'],
+            answer: '**Our Privacy Promise:**\n\n✅ Zero data collection — we don\'t track anything\n✅ 100% local execution — all processing happens in YOUR browser\n✅ No analytics, no telemetry, no third-party scripts\n✅ No account required for free tools\n✅ Open source friendly — inspect the code yourself\n\n📄 Full policy: [Privacy Policy](privacy.html)'
+        },
+        features: {
+            keywords: ['feature', 'what does', 'how to', 'how do', 'can it', 'does it', 'use', 'function', 'capability'],
+            answer: '**FlowKit Extensions:**\n\n🆓 **Free Tools (36):** Dark Mode, JSON Formatter, Tab Suspender, QR Code Generator, Color Picker, Screenshot Capture, Password Generator, Word Counter, and 28 more!\n\n💰 **Pro Tools (15):** WCAG Auditor, Contract Scanner, SEO Analyzer, Email Template Builder, CSS Inspector, Network Monitor, and more.\n\nEach extension has its own popup with clear instructions. Click the extension icon to get started!'
+        },
+        edge: {
+            keywords: ['edge', 'firefox', 'safari', 'brave', 'opera', 'arc', 'other browser'],
+            answer: '**Browser Compatibility:**\n\n✅ **Chrome** — Full support\n✅ **Edge** — Same extensions work natively\n✅ **Brave** — Full support\n✅ **Arc** — Full support\n✅ **Opera** — Full support\n🦊 **Firefox** — 14 extensions available as MV2 variants\n❌ **Safari** — Not supported (different extension format)'
+        },
+        update: {
+            keywords: ['update', 'version', 'new', 'latest', 'changelog', 'release'],
+            answer: '**Updates:**\n\nExtensions auto-update through your browser. No action needed!\n\n📋 View our [Changelog](changelog.html) for the latest updates.\n\n💡 Chrome may take 24-48 hours to push updates.'
+        }
+    };
+
+    function findAnswer(query) {
+        const q = query.toLowerCase();
+        let bestMatch = null, bestScore = 0;
+        for (const [topic, data] of Object.entries(KB)) {
+            const score = data.keywords.filter(kw => q.includes(kw)).length;
+            if (score > bestScore) { bestScore = score; bestMatch = data; }
+        }
+        if (bestMatch && bestScore > 0) return bestMatch.answer;
+        return "I'm not sure about that specific question. Here are some things I can help with:\n\n• **Installation** — How to install extensions\n• **License** — Activating your Pro key\n• **Billing** — Payments, cancellations, refunds\n• **Troubleshooting** — Fixing issues\n• **Privacy** — What data we collect (none!)\n• **Features** — What each tool does\n\nOr email **flowkit.support@gmail.com** for personalized help!";
+    }
+
+    function sendChat() {
+        const input = document.getElementById('chatInput');
+        const msg = input.value.trim();
+        if (!msg) return;
+        input.value = '';
+        const log = document.getElementById('chatLog');
+        log.innerHTML += `<div class="chat-bubble-user rounded-xl p-3 text-sm text-zinc-300">${msg}</div>`;
+        setTimeout(() => {
+            const answer = findAnswer(msg);
+            const formatted = answer.replace(/\*\*(.*?)\*\*/g, '<strong style="color:#e0e0e0;">$1</strong>')
+                .replace(/\n/g, '<br>')
+                .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" style="color:#a855f7;text-decoration:underline;">$1</a>');
+            log.innerHTML += `<div class="chat-bubble-ai rounded-xl p-3 text-sm text-zinc-300">${formatted}</div>`;
+            log.scrollTop = log.scrollHeight;
+        }, 500);
+    }
+
+    // ====== LICENSE CHECKER ======
+    function checkLicense() {
+        const key = document.getElementById('licenseInput').value.trim();
+        const result = document.getElementById('licenseResult');
+        if (!key) { result.innerHTML = '<span class="text-red-400">Please enter a license key.</span>'; return; }
+        if (key.length >= 8) {
+            result.innerHTML = '<span class="text-green-400">✅ License key format is valid. Enter this key in your extension popup to activate.</span>';
+        } else {
+            result.innerHTML = '<span class="text-red-400">❌ Invalid key format. Keys are at least 8 characters. Check your Stripe receipt email.</span>';
+        }
+    }
+    function resetLicense() {
+        document.getElementById('licenseResult').innerHTML = '<span class="text-yellow-400">⚠️ To reset your license, uninstall and reinstall the extension, then re-enter your key. Or email flowkit.support@gmail.com.</span>';
+    }
+
+    // ====== FAQ ======
+    const faqs = [
+        { q: 'How do I install a FlowKit extension?', a: 'Visit the Chrome Web Store, find the extension, and click "Add to Chrome". It works instantly — no account needed.' },
+        { q: 'Do FlowKit extensions work on Edge, Brave, and Arc?', a: 'Yes! All Chrome extensions work natively on Edge, Brave, Arc, and Opera. For Firefox, we have 14 dedicated MV2 variants.' },
+        { q: 'How do I activate my Pro license?', a: 'Open the extension, use it until you hit the free limit, then paste your license key from your Stripe receipt email. Click "Activate" and you\'re set!' },
+        { q: 'Can I get a refund?', a: 'Yes — 30-day money-back guarantee, no questions asked. Email flowkit.support@gmail.com with your purchase email.' },
+        { q: 'Do you collect any personal data?', a: 'Absolutely not. Zero data collection, zero tracking, zero analytics. Everything runs 100% locally in your browser.' },
+        { q: 'What happens if I cancel my subscription?', a: 'You keep using the extension until the end of your billing period. After that, it reverts to the free tier with limited uses.' },
+        { q: 'I lost my license key. How do I get it back?', a: 'Check your Stripe receipt email. If you can\'t find it, email flowkit.support@gmail.com with the email you used to purchase.' },
+        { q: 'An extension isn\'t working. What should I do?', a: 'Try: 1) Refresh the page, 2) Disable/re-enable the extension at chrome://extensions, 3) Clear extension data, 4) Reinstall from the Chrome Web Store.' },
+        { q: 'Do you offer team or business pricing?', a: 'Yes! Our Master Suite ($24.99/mo) includes all 15 Pro tools. Email flowkit.support@gmail.com for bulk licensing.' },
+        { q: 'How often are extensions updated?', a: 'We release updates regularly. Chrome auto-updates extensions — you don\'t need to do anything. Check our Changelog for details.' },
+        { q: 'Can I use FlowKit offline?', a: 'Most extensions work fully offline since they run locally. Only the URL Shortener and Website Monitor need internet access.' },
+        { q: 'What payment methods do you accept?', a: 'We accept all major credit/debit cards through Stripe. Apple Pay and Google Pay are also supported.' },
+    ];
+    const faqContainer = document.getElementById('faqContainer');
+    faqs.forEach((f, i) => {
+        const div = document.createElement('div');
+        div.className = 'faq-item glass-panel rounded-xl p-4 cursor-pointer';
+        div.innerHTML = `<div class="flex justify-between items-center" onclick="this.parentElement.classList.toggle('open')"><h3 class="text-sm font-semibold text-zinc-200 pr-4">${f.q}</h3><svg class="faq-chevron w-5 h-5 text-zinc-500 flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></div><div class="faq-answer"><p class="text-zinc-400 text-sm mt-3 pt-3 border-t border-white/5">${f.a}</p></div>`;
+        faqContainer.appendChild(div);
+    });
+    </script>
 </body>
 </html>
