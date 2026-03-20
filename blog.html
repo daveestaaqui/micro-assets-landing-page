@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MicroAssets Blog — Browser Extension Guides & Productivity Tips</title>
+    <meta name="description" content="Expert guides on WCAG accessibility, contract risk scanning, invoice automation, and browser extension productivity. By MicroAssets.">
+    <meta name="keywords" content="WCAG chrome extension, contract scanner extension, invoice extractor chrome, browser productivity tools, ADA compliance checker">
+    
+    <meta property="og:title" content="MicroAssets Blog — Browser Extension Guides">
+    <meta property="og:description" content="Expert guides on accessibility, contract scanning, and invoice automation.">
+    <meta property="og:type" content="blog">
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#09090b',
+                        surface: '#18181b',
+                        border: '#27272a',
+                        primary: '#a855f7',
+                        secondary: '#ec4899',
+                    },
+                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        body { background-color: #09090b; color: #fafafa; -webkit-font-smoothing: antialiased; }
+        .glass-panel { background: rgba(24, 24, 27, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); }
+        .gradient-text { background: linear-gradient(135deg, #e879f9 0%, #a855f7 50%, #6366f1 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    </style>
+</head>
+<body class="min-h-screen pt-20 pb-16">
+
+    <!-- Nav -->
+    <nav class="fixed top-0 w-full z-50 glass-panel border-b border-white/10">
+        <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="font-bold text-white tracking-tight">← MicroAssets</a>
+            <span class="text-zinc-400 text-sm font-semibold">Blog</span>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 mt-12">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4">The <span class="gradient-text">MicroAssets</span> Blog</h1>
+        <p class="text-zinc-400 text-lg mb-16">Expert guides on browser security, accessibility compliance, and developer productivity.</p>
+
+        <!-- Article 1 -->
+        <article class="mb-20" id="freelance-contract-nda">
+            <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">Contracts & Legal</span>
+            <h2 class="text-3xl font-bold mt-2 mb-6">Why 90% of Freelance Developers Sign Illegally Binding NDAs (And How to Stop)</h2>
+            
+            <div class="prose prose-invert max-w-none text-zinc-300 leading-relaxed space-y-4">
+                <p>If you are a freelance software engineer or agency owner, you probably sign Mutual Non-Disclosure Agreements (MNDAs) or Master Service Agreements (MSAs) every month. And if you are like 90% of developers, you skim them, assume they are "standard boilerplate," and sign on the dotted line.</p>
+                
+                <p><strong class="text-white">This is exactly how you lose your intellectual property.</strong></p>
+                
+                <p>Corporate lawyers don't write "standard boilerplate." They write terms designed specifically to transfer liability away from the enterprise and onto the freelancer. If a client gets sued because a library you used had a vulnerable zero-day exploit, aggressive <em>indemnification</em> clauses can force you to pay their legal fees out of pocket.</p>
+                
+                <p>Furthermore, sneaky <em>residuals clauses</em> ("Ideas or concepts retained in the unaided memory of the receiving party...") can silently strip you of the IP you thought you owned.</p>
+                
+                <p>You aren't a lawyer. Paying a firm $400/hour to review a $5,000 contract destroys your margins.</p>
+                
+                <div class="glass-panel p-6 rounded-2xl my-8 border-l-4 border-orange-500">
+                    <h3 class="text-xl font-bold text-white mb-2">💡 The Solution: Contract Risk Highlighter</h3>
+                    <p class="text-zinc-300 mb-4">A lightweight browser extension that instantly scans any Google Doc, DocuSign, or PDF for high-risk clauses. In seconds, it highlights non-competes, aggressive indemnification traps, and auto-renewal terms in bright red directly on your screen.</p>
+                    <a href="https://buy.stripe.com/3cI6oH8yq0YPfqlgkC0ZW09" target="_blank" class="inline-block px-6 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold rounded-xl hover:opacity-90 transition">Get Contract Highlighter — $39/mo →</a>
+                </div>
+            </div>
+        </article>
+
+        <div class="w-full h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent my-12"></div>
+
+        <!-- Article 2 -->
+        <article class="mb-20" id="ada-wcag-lawsuit">
+            <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider">Accessibility & Compliance</span>
+            <h2 class="text-3xl font-bold mt-2 mb-6">The Rise of the "Surf-By" ADA Lawsuit in 2026 (And Why Automated Tools Fail)</h2>
+            
+            <div class="prose prose-invert max-w-none text-zinc-300 leading-relaxed space-y-4">
+                <p>Accessibility isn't just a moral imperative anymore—it's a <strong class="text-white">massive legal liability</strong>. In recent years, "surf-by" ADA lawsuits have skyrocketed. Law firms use automated scrapers to find e-commerce sites and SaaS platforms missing fundamental WCAG 2.1 requirements, followed by immediate settlement demand letters.</p>
+                
+                <p>Most development teams rely on heavy, expensive desktop suites or generic browser auditors that inject messy HTML into the DOM just to test it, breaking the layout. Others rely on automated overlays (like accessiBe) which courts have repeatedly ruled do <em>not</em> protect you from liability.</p>
+                
+                <p>To truly protect your clients, developers must audit contrast ratios, ARIA roles, and heading structures interactively in the browser during the staging phase.</p>
+                
+                <div class="glass-panel p-6 rounded-2xl my-8 border-l-4 border-blue-500">
+                    <h3 class="text-xl font-bold text-white mb-2">🛡️ The Solution: WCAG Accessibility Auditor</h3>
+                    <p class="text-zinc-300 mb-4">One-click WCAG 2.1 AA compliance audits. Instantly calculates foreground/background contrast ratios, hunts for missing alt text, and validates ARIA landmarks—keeping the DOM pristine.</p>
+                    <a href="https://buy.stripe.com/cNi7sL6qi36Xdid0lE0ZW0f" target="_blank" class="inline-block px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-bold rounded-xl hover:opacity-90 transition">Get WCAG Auditor — $39/mo →</a>
+                </div>
+            </div>
+        </article>
+
+        <div class="w-full h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent my-12"></div>
+
+        <!-- Article 3 -->
+        <article class="mb-20" id="invoice-scraping-automation">
+            <span class="text-xs font-semibold text-green-400 uppercase tracking-wider">Bookkeeping & Automation</span>
+            <h2 class="text-3xl font-bold mt-2 mb-6">How to Automate Bulk Receipt Scraping for End-of-Month Bookkeeping</h2>
+            
+            <div class="prose prose-invert max-w-none text-zinc-300 leading-relaxed space-y-4">
+                <p>Bookkeeping is the bane of the modern founder's existence. At the end of every month, you waste hours logging into AWS, Stripe, Slack, and Adobe just to download PDFs, read the grand totals, and manually re-type them into QuickBooks or an Excel spreadsheet.</p>
+                
+                <p><strong class="text-white">Data entry doesn't generate revenue.</strong> It drains your time and introduces human error (did you forget the state tax on that software subscription?).</p>
+                
+                <p>While tools like AutoEntry act as massive, expensive enterprise solutions, indie hackers and small agencies just need a way to turn a web-based receipt instantly into a line of data.</p>
+                
+                <div class="glass-panel p-6 rounded-2xl my-8 border-l-4 border-green-500">
+                    <h3 class="text-xl font-bold text-white mb-2">📊 The Solution: Invoice Data Extractor</h3>
+                    <p class="text-zinc-300 mb-4">Simply open the billing page in your browser. The extension instantly crawls the unstructured HTML DOM, extracts the date, vendor name, tax amount, and grand total, and exports it directly to a clean .csv file.</p>
+                    <a href="https://buy.stripe.com/fZu7sL7um9vlba56K20ZW0a" target="_blank" class="inline-block px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold rounded-xl hover:opacity-90 transition">Get Invoice Extractor — $39/mo →</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- CTA -->
+        <div class="glass-panel rounded-3xl p-8 text-center mb-16">
+            <h2 class="text-2xl font-bold mb-4">Ready to <span class="gradient-text">supercharge</span> your workflow?</h2>
+            <p class="text-zinc-400 mb-6">Join thousands of developers using MicroAssets to eliminate manual work.</p>
+            <a href="index.html#products" class="px-8 py-4 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold text-lg hover:opacity-90 transition-opacity inline-block">Explore All Extensions →</a>
+        </div>
+    </main>
+
+    <footer class="max-w-4xl mx-auto px-6 pt-8 pb-8 border-t border-white/10 text-center text-zinc-500 text-sm">
+        <p>&copy; 2026 MicroAssets by David Mahler. <a href="terms.html" class="hover:text-white">Terms</a> · <a href="https://gist.github.com/daveestaaqui/443ab15e9ef7ff1399bf92407f044cde" class="hover:text-white">Privacy</a></p>
+    </footer>
+</body>
+</html>

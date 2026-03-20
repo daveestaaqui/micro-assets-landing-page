@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://daveestaaqui.github.io/micro-assets-landing-page/sitemap.xml
