@@ -151,6 +151,8 @@
             <div class="hidden md:flex gap-6 text-sm font-medium text-zinc-400">
                 <a href="#products" class="hover:text-white transition-colors">Products</a>
                 <a href="#pricing" class="hover:text-white transition-colors">Pricing</a>
+                <a href="blog.html" class="hover:text-white transition-colors">Blog</a>
+                <a href="support.html" class="hover:text-white transition-colors">Support</a>
                 <a href="#newsletter" class="hover:text-white transition-colors">Newsletter</a>
             </div>
             <a href="#products" class="px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-white text-sm font-semibold transition-all shadow-sm">
@@ -277,7 +279,7 @@
                 <div class="w-12 h-12 rounded-xl bg-zinc-700/50 flex items-center justify-center mb-6 text-white border border-white/10 relative z-10">
                     <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
                 </div>
-                <h3 class="text-xl font-bold mb-2 relative z-10">14 Free Extensions</h3>
+                <h3 class="text-xl font-bold mb-2 relative z-10">23 Free Extensions</h3>
                 <p class="text-zinc-400 text-sm flex-grow mb-6 relative z-10">
                     Check out our massive suite of free productivity utilities on the Chrome Web Store including Dark Mode, Tab Suspender, and Google Meet muters.
                 </p>
@@ -287,6 +289,53 @@
                 </div>
             </div>
 
+        </div>
+    </section>
+
+    <!-- Social Proof & Pricing Comparison -->
+    <section class="max-w-6xl mx-auto px-6 mt-20">
+        <h2 class="text-3xl font-bold text-center mb-12">Why teams choose <span class="gradient-text">FlowKit</span></h2>
+        
+        <!-- Trust badges -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+            <div class="glass-panel rounded-xl p-4 text-center">
+                <p class="text-3xl font-bold gradient-text">26+</p>
+                <p class="text-zinc-400 text-sm">Extensions on CWS</p>
+            </div>
+            <div class="glass-panel rounded-xl p-4 text-center">
+                <p class="text-3xl font-bold gradient-text">0</p>
+                <p class="text-zinc-400 text-sm">Data collected</p>
+            </div>
+            <div class="glass-panel rounded-xl p-4 text-center">
+                <p class="text-3xl font-bold gradient-text">100%</p>
+                <p class="text-zinc-400 text-sm">Runs locally</p>
+            </div>
+            <div class="glass-panel rounded-xl p-4 text-center">
+                <p class="text-3xl font-bold gradient-text">30-day</p>
+                <p class="text-zinc-400 text-sm">Money-back guarantee</p>
+            </div>
+        </div>
+
+        <!-- Pricing Comparison -->
+        <div id="pricing" class="glass-panel rounded-2xl p-8 overflow-x-auto">
+            <h3 class="text-xl font-bold mb-6">💰 How we compare</h3>
+            <table class="w-full text-sm">
+                <thead>
+                    <tr class="border-b border-white/10 text-left">
+                        <th class="pb-3 text-zinc-400 font-medium">Tool</th>
+                        <th class="pb-3 text-zinc-400 font-medium">FlowKit</th>
+                        <th class="pb-3 text-zinc-400 font-medium">Competitor</th>
+                        <th class="pb-3 text-zinc-400 font-medium">You Save</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-white/5">
+                    <tr><td class="py-3">WCAG Auditor</td><td class="py-3 text-green-400 font-bold">$9.99/mo</td><td class="py-3 text-zinc-500">Stark $15/mo</td><td class="py-3 text-purple-400">33%</td></tr>
+                    <tr><td class="py-3">Contract Scanner</td><td class="py-3 text-green-400 font-bold">$9.99/mo</td><td class="py-3 text-zinc-500">LawGeex $$$</td><td class="py-3 text-purple-400">90%+</td></tr>
+                    <tr><td class="py-3">Privacy Scanner</td><td class="py-3 text-green-400 font-bold">$4.99/mo</td><td class="py-3 text-zinc-500">Cookiebot $9/mo</td><td class="py-3 text-purple-400">44%</td></tr>
+                    <tr><td class="py-3">Invoice Extractor</td><td class="py-3 text-green-400 font-bold">$4.99/mo</td><td class="py-3 text-zinc-500">Dext $24/mo</td><td class="py-3 text-purple-400">79%</td></tr>
+                    <tr><td class="py-3">Time Tracker</td><td class="py-3 text-green-400 font-bold">$4.99/mo</td><td class="py-3 text-zinc-500">Harvest $12/mo</td><td class="py-3 text-purple-400">58%</td></tr>
+                </tbody>
+            </table>
         </div>
     </section>
 
@@ -303,7 +352,7 @@
             
             <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto relative z-10" action="https://formspree.io/f/xpwzgqkn" method="POST">
                 <input type="email" name="email" required placeholder="Enter your email" class="flex-grow bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all">
-                <input type="hidden" name="_subject" value="MicroAssets Newsletter Signup">
+                <input type="hidden" name="_subject" value="FlowKit Newsletter Signup">
                 <button type="submit" class="bg-white text-black font-semibold rounded-xl px-6 py-3 hover:bg-zinc-200 transition-colors">
                     Subscribe
                 </button>
@@ -316,7 +365,7 @@
     <footer class="max-w-6xl mx-auto px-6 pt-16 pb-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between text-zinc-500 text-sm">
         <p>&copy; 2026 FlowKit by David Mahler. All rights reserved.</p>
         <div class="flex gap-4 mt-4 md:mt-0">
-            <a href="https://gist.github.com/daveestaaqui/443ab15e9ef7ff1399bf92407f044cde" target="_blank" class="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
             <a href="terms.html" class="hover:text-white transition-colors">Terms of Service</a>
                 <a href="support.html" class="hover:text-white transition-colors">Support</a>
             <a href="mailto:sandwichfitness@gmail.com" class="hover:text-white transition-colors">Contact Support</a>
