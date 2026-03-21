@@ -100,7 +100,7 @@
     </footer>
 
     <script>
-    // ====== AI CHATBOT ENGINE ======
+    // ====== AI CHATBOT ENGINE WITH BUG LOGGING ======
     const KB = {
         installation: {
             keywords: ['install', 'add', 'download', 'get', 'setup', 'set up', 'chrome', 'browser'],
@@ -115,8 +115,8 @@
             answer: '**Billing & Subscriptions:**\n\n• All billing is handled through Stripe (secure, PCI-compliant)\n• Cancel anytime from your [Stripe billing portal](https://billing.stripe.com/p/login/your-portal)\n• 30-day money-back guarantee on all plans\n• No hidden fees, no data selling\n\n🔄 **To cancel:** Click the billing portal link in your Stripe receipt email.\n💰 **Refund:** Email flowkit.support@gmail.com within 30 days.'
         },
         notworking: {
-            keywords: ['not working', 'broken', 'error', 'bug', 'crash', 'problem', 'issue', 'fix', 'help', 'wrong', 'fail'],
-            answer: '**Troubleshooting Steps:**\n\n1. **Refresh the page** and try again\n2. **Disable/re-enable** the extension (chrome://extensions)\n3. **Clear extension storage:** Right-click icon → Manage Extension → Clear Data\n4. **Update Chrome** to the latest version\n5. **Reinstall** the extension from CWS\n\n⚠️ If the issue persists:\n- Check if another extension conflicts (try incognito)\n- Email flowkit.support@gmail.com with:\n  - Extension name\n  - Chrome version\n  - Screenshot of the error'
+            keywords: ['not working', 'broken', 'error', 'bug', 'crash', 'problem', 'issue', 'fix', 'help', 'wrong', 'fail', 'doesnt work', 'stopped'],
+            answer: '**Troubleshooting Steps:**\n\n1. **Refresh the page** and try again\n2. **Disable/re-enable** the extension (chrome://extensions)\n3. **Clear extension storage:** Right-click icon → Manage Extension → Clear Data\n4. **Update Chrome** to the latest version\n5. **Reinstall** the extension from CWS\n\n⚠️ If the issue persists:\n- Check if another extension conflicts (try incognito)\n- Email flowkit.support@gmail.com with:\n  - Extension name\n  - Chrome version\n  - Screenshot of the error\n\n📝 *Your report has been logged and will be reviewed automatically.*'
         },
         privacy: {
             keywords: ['privacy', 'data', 'collect', 'track', 'tracking', 'security', 'personal', 'information', 'safe'],
@@ -124,11 +124,11 @@
         },
         features: {
             keywords: ['feature', 'what does', 'how to', 'how do', 'can it', 'does it', 'use', 'function', 'capability'],
-            answer: '**FlowKit Extensions:**\n\n🆓 **Free Tools (36):** Dark Mode, JSON Formatter, Tab Suspender, QR Code Generator, Color Picker, Screenshot Capture, Password Generator, Word Counter, and 28 more!\n\n💰 **Pro Tools (15):** WCAG Auditor, Contract Scanner, SEO Analyzer, Email Template Builder, CSS Inspector, Network Monitor, and more.\n\nEach extension has its own popup with clear instructions. Click the extension icon to get started!'
+            answer: '**FlowKit Extensions:**\n\n🆓 **Free Tools (51):** Dark Mode, JSON Formatter, Tab Suspender, QR Code Generator, Color Picker, Screenshot Capture, Password Generator, Hash Generator, Timestamp Converter, and 42 more!\n\n💰 **Pro Tools (15):** WCAG Auditor, Contract Scanner, SEO Analyzer, Email Template Builder, CSS Inspector, Network Monitor, and more.\n\nEach extension has its own popup with clear instructions. Click the extension icon to get started!'
         },
         edge: {
             keywords: ['edge', 'firefox', 'safari', 'brave', 'opera', 'arc', 'other browser'],
-            answer: '**Browser Compatibility:**\n\n✅ **Chrome** — Full support\n✅ **Edge** — Same extensions work natively\n✅ **Brave** — Full support\n✅ **Arc** — Full support\n✅ **Opera** — Full support\n🦊 **Firefox** — 14 extensions available as MV2 variants\n❌ **Safari** — Not supported (different extension format)'
+            answer: '**Browser Compatibility:**\n\n✅ **Chrome** — 66 extensions, full support\n✅ **Edge** — Same extensions work natively (coming to Edge Add-ons)\n✅ **Brave** — Full support\n✅ **Arc** — Full support\n✅ **Opera** — Full support\n🦊 **Firefox** — 34 extensions available as MV2 variants\n❌ **Safari** — Not supported (different extension format)'
         },
         update: {
             keywords: ['update', 'version', 'new', 'latest', 'changelog', 'release'],
@@ -136,14 +136,81 @@
         }
     };
 
+    // ====== BUG LOGGING & PATTERN DETECTION ======
+    const EXTENSION_NAMES = ['dark mode','tab suspender','meet automute','color picker','json formatter',
+        'qr code','screenshot','password','regex','bookmark','clipboard','meta tag','site speed',
+        'color palette','html table','reading mode','text case','url shortener','font identifier',
+        'word counter','lorem ipsum','base64','json csv','css gradient','tab groups','note pad',
+        'hash generator','timestamp','diff viewer','page ruler','user agent','css minifier',
+        'http headers','robots','whois','cookie manager','json path','link checker','markdown',
+        'responsive viewer','wcag','contract','privacy scanner','invoice','time tracker','api tester',
+        'seo content','code snippet','email template','website monitor','form filler','css inspector',
+        'dom editor','network monitor','master suite'];
+
+    function detectExtension(msg) {
+        const m = msg.toLowerCase();
+        for (const name of EXTENSION_NAMES) {
+            if (m.includes(name)) return name;
+        }
+        return null;
+    }
+
+    function logIssue(userMsg, category) {
+        const logs = JSON.parse(localStorage.getItem('flowkit_issues') || '[]');
+        const ext = detectExtension(userMsg);
+        logs.push({
+            timestamp: new Date().toISOString(),
+            message: userMsg,
+            category: category,
+            extension: ext,
+            userAgent: navigator.userAgent
+        });
+        localStorage.setItem('flowkit_issues', JSON.stringify(logs));
+        checkPatterns(logs);
+    }
+
+    function checkPatterns(logs) {
+        // Count issues by extension in last 7 days
+        const weekAgo = Date.now() - 7*24*60*60*1000;
+        const recent = logs.filter(l => new Date(l.timestamp).getTime() > weekAgo);
+        const extCounts = {};
+        recent.forEach(l => {
+            if (l.extension) {
+                extCounts[l.extension] = (extCounts[l.extension] || 0) + 1;
+            }
+        });
+        // Store pattern alerts
+        const alerts = [];
+        for (const [ext, count] of Object.entries(extCounts)) {
+            if (count >= 2) {
+                alerts.push({ extension: ext, count: count, since: recent.find(l => l.extension === ext).timestamp });
+            }
+        }
+        if (alerts.length > 0) {
+            localStorage.setItem('flowkit_alerts', JSON.stringify(alerts));
+        }
+    }
+
+    function getKnownIssues() {
+        const alerts = JSON.parse(localStorage.getItem('flowkit_alerts') || '[]');
+        if (alerts.length === 0) return '';
+        return '\n\n⚠️ **Known Issues:**\n' + alerts.map(a =>
+            `• ${a.extension} — ${a.count} reports this week`
+        ).join('\n');
+    }
+
     function findAnswer(query) {
         const q = query.toLowerCase();
-        let bestMatch = null, bestScore = 0;
+        let bestMatch = null, bestScore = 0, bestKey = '';
         for (const [topic, data] of Object.entries(KB)) {
             const score = data.keywords.filter(kw => q.includes(kw)).length;
-            if (score > bestScore) { bestScore = score; bestMatch = data; }
+            if (score > bestScore) { bestScore = score; bestMatch = data; bestKey = topic; }
         }
-        if (bestMatch && bestScore > 0) return bestMatch.answer;
+        // Log bug reports
+        if (bestKey === 'notworking' || q.includes('bug') || q.includes('broken') || q.includes('error')) {
+            logIssue(query, 'bug');
+        }
+        if (bestMatch && bestScore > 0) return bestMatch.answer + getKnownIssues();
         return "I'm not sure about that specific question. Here are some things I can help with:\n\n• **Installation** — How to install extensions\n• **License** — Activating your Pro key\n• **Billing** — Payments, cancellations, refunds\n• **Troubleshooting** — Fixing issues\n• **Privacy** — What data we collect (none!)\n• **Features** — What each tool does\n\nOr email **flowkit.support@gmail.com** for personalized help!";
     }
 
@@ -182,7 +249,7 @@
     // ====== FAQ ======
     const faqs = [
         { q: 'How do I install a FlowKit extension?', a: 'Visit the Chrome Web Store, find the extension, and click "Add to Chrome". It works instantly — no account needed.' },
-        { q: 'Do FlowKit extensions work on Edge, Brave, and Arc?', a: 'Yes! All Chrome extensions work natively on Edge, Brave, Arc, and Opera. For Firefox, we have 14 dedicated MV2 variants.' },
+        { q: 'Do FlowKit extensions work on Edge, Brave, and Arc?', a: 'Yes! All Chrome extensions work natively on Edge, Brave, Arc, and Opera. For Firefox, we have 34 dedicated MV2 variants.' },
         { q: 'How do I activate my Pro license?', a: 'Open the extension, use it until you hit the free limit, then paste your license key from your Stripe receipt email. Click "Activate" and you\'re set!' },
         { q: 'Can I get a refund?', a: 'Yes — 30-day money-back guarantee, no questions asked. Email flowkit.support@gmail.com with your purchase email.' },
         { q: 'Do you collect any personal data?', a: 'Absolutely not. Zero data collection, zero tracking, zero analytics. Everything runs 100% locally in your browser.' },
@@ -201,6 +268,53 @@
         div.innerHTML = `<div class="flex justify-between items-center" onclick="this.parentElement.classList.toggle('open')"><h3 class="text-sm font-semibold text-zinc-200 pr-4">${f.q}</h3><svg class="faq-chevron w-5 h-5 text-zinc-500 flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></div><div class="faq-answer"><p class="text-zinc-400 text-sm mt-3 pt-3 border-t border-white/5">${f.a}</p></div>`;
         faqContainer.appendChild(div);
     });
+
+    // ====== ADMIN DASHBOARD (triple-click footer to access) ======
+    let footerClicks = 0;
+    document.querySelector('footer').addEventListener('click', () => {
+        footerClicks++;
+        if (footerClicks >= 3) {
+            footerClicks = 0;
+            showAdminDashboard();
+        }
+        setTimeout(() => { footerClicks = 0; }, 2000);
+    });
+
+    function showAdminDashboard() {
+        const logs = JSON.parse(localStorage.getItem('flowkit_issues') || '[]');
+        const alerts = JSON.parse(localStorage.getItem('flowkit_alerts') || '[]');
+        const weekAgo = Date.now() - 7*24*60*60*1000;
+        const recent = logs.filter(l => new Date(l.timestamp).getTime() > weekAgo);
+
+        let html = '<div style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);z-index:9999;padding:40px;overflow-y:auto;">';
+        html += '<div style="max-width:800px;margin:0 auto;">';
+        html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;"><h2 style="font-size:24px;font-weight:bold;color:white;">📊 Admin Bug Dashboard</h2><button onclick="this.closest(\'div[style*=fixed]\').remove()" style="padding:8px 16px;border-radius:8px;background:#ef4444;color:white;border:none;cursor:pointer;">Close</button></div>';
+        html += '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px;">';
+        html += '<div style="padding:16px;border-radius:12px;background:rgba(168,85,247,0.1);border:1px solid rgba(168,85,247,0.2);text-align:center;"><div style="font-size:28px;font-weight:bold;color:#a855f7;">'+logs.length+'</div><div style="font-size:12px;color:#a1a1aa;">Total Reports</div></div>';
+        html += '<div style="padding:16px;border-radius:12px;background:rgba(74,222,128,0.1);border:1px solid rgba(74,222,128,0.2);text-align:center;"><div style="font-size:28px;font-weight:bold;color:#4ade80;">'+recent.length+'</div><div style="font-size:12px;color:#a1a1aa;">This Week</div></div>';
+        html += '<div style="padding:16px;border-radius:12px;background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.2);text-align:center;"><div style="font-size:28px;font-weight:bold;color:#fbbf24;">'+alerts.length+'</div><div style="font-size:12px;color:#a1a1aa;">Active Alerts</div></div>';
+        html += '</div>';
+
+        if (alerts.length > 0) {
+            html += '<h3 style="font-size:16px;font-weight:bold;color:#f87171;margin-bottom:8px;">🚨 Pattern Alerts</h3>';
+            alerts.forEach(a => {
+                html += '<div style="padding:8px 12px;border-radius:8px;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.2);margin-bottom:4px;font-size:12px;"><strong style="color:#fca5a5;">'+a.extension+'</strong> — <span style="color:#f87171;">'+a.count+' reports</span></div>';
+            });
+        }
+
+        html += '<h3 style="font-size:16px;font-weight:bold;color:white;margin:16px 0 8px;">Recent Reports</h3>';
+        logs.slice(-20).reverse().forEach(l => {
+            html += '<div style="padding:6px 10px;border-radius:6px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);margin-bottom:3px;font-size:11px;">';
+            html += '<span style="color:#71717a;">'+new Date(l.timestamp).toLocaleString()+'</span> ';
+            if(l.extension) html += '<span style="color:#a855f7;font-weight:bold;">['+l.extension+']</span> ';
+            html += '<span style="color:#d4d4d8;">'+l.message.slice(0,100)+'</span></div>';
+        });
+
+        html += '<button onclick="localStorage.removeItem(\'flowkit_issues\');localStorage.removeItem(\'flowkit_alerts\');this.closest(\'div[style*=fixed]\').remove();" style="margin-top:16px;padding:8px 16px;border-radius:8px;background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.3);cursor:pointer;">Clear All Logs</button>';
+        html += '</div></div>';
+        document.body.insertAdjacentHTML('beforeend', html);
+    }
     </script>
 </body>
 </html>
+
