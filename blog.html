@@ -1,216 +1,108 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FlowKit Blog — Browser Extension Guides & Productivity Tips</title>
-    <meta name="description" content="Expert guides on WCAG accessibility, contract risk scanning, invoice automation, and browser extension productivity. By FlowKit.">
-    <meta name="keywords" content="WCAG chrome extension, contract scanner extension, invoice extractor chrome, browser productivity tools, ADA compliance checker">
-    
-    <meta property="og:title" content="FlowKit Blog — Browser Extension Guides">
-    <meta property="og:description" content="Expert guides on accessibility, contract scanning, and invoice automation.">
-    <meta property="og:type" content="blog">
-
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        background: '#09090b',
-                        surface: '#18181b',
-                        border: '#27272a',
-                        primary: '#a855f7',
-                        secondary: '#ec4899',
-                    },
-                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
-                }
-            }
-        }
-    </script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-        body { background-color: #09090b; color: #fafafa; -webkit-font-smoothing: antialiased; }
-        .glass-panel { background: rgba(24, 24, 27, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); }
-        .gradient-text { background: linear-gradient(135deg, #e879f9 0%, #a855f7 50%, #6366f1 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FlowKit Blog — Developer Tools, Extensions & Productivity</title>
+<meta name="description" content="Articles about browser extensions, VS Code tools, developer productivity, privacy, and web development.">
+<style>body{font-family:Inter,system-ui,sans-serif;background:#0d1117;color:#c9d1d9;max-width:720px;margin:0 auto;padding:20px;line-height:1.7}h1{color:#fff;font-size:2em;text-align:center}a{color:#667eea;text-decoration:none}a:hover{text-decoration:underline}.article-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:20px;margin:16px 0;transition:transform 0.2s}.article-card:hover{transform:translateY(-2px);border-color:#667eea}</style>
 </head>
-<body class="min-h-screen pt-20 pb-16">
+<body>
+<p><a href="/">&larr; FlowKit Home</a></p>
+<h1>FlowKit Blog</h1>
+<p style="text-align:center;color:#888;">Developer tools, browser extensions, and productivity tips.</p>
+<a href="blog/best-chrome-extensions-developers-2026.html" style="text-decoration:none;color:inherit;">
+<div class="article-card">
+<h3 style="color:#fff;margin:0 0 8px">15 Best Chrome Extensions for Developers in 2026</h3>
+<p style="color:#888;margin:0;font-size:14px">Discover the top 15 Chrome extensions every developer needs in 2026. Free tools for debugging, productivity, and code quality.</p>
+</div>
+</a>
+<a href="blog/best-free-chrome-extensions-developers-2026.html" style="text-decoration:none;color:inherit;">
+<div class="article-card">
+<h3 style="color:#fff;margin:0 0 8px">Best Free Chrome Extensions for Developers in 2026</h3>
+<p style="color:#888;margin:0;font-size:14px">Curated list of the best free Chrome extensions for web developers. JSON formatters, color pickers, screenshot tools, and more.</p>
+</div>
+</a>
+<a href="blog/chrome-extensions-vs-firefox-addons-2026.html" style="text-decoration:none;color:inherit;">
+<div class="article-card">
+<h3 style="color:#fff;margin:0 0 8px">Chrome Extensions vs Firefox Add-ons: Which Browser Has Better Extensions in 2026?</h3>
+<p style="color:#888;margin:0;font-size:14px">Chrome vs Firefox extensions compared. Which browser store has more extensions, better quality, and easier installation in 2026?</p>
+</div>
+</a>
+<a href="blog/chrome-ram-usage-reduce-extensions.html" style="text-decoration:none;color:inherit;">
+<div class="article-card">
+<h3 style="color:#fff;margin:0 0 8px">How to Reduce Chrome RAM Usage — Tab Suspender Extension</h3>
+<p style="color:#888;margin:0;font-size:14px">Chrome using too much RAM? Tab Suspender automatically suspends inactive tabs to save 80% memory. Free, lightweight.</p>
+</div>
+</a>
+<a href="blog/color-picker-chrome-extension.html" style="text-decoration:none;color:inherit;">
+<div class="article-card">
+<h3 style="color:#fff;margin:0 0 8px">Best Color Picker Chrome Extension 2026 — Eyedropper Tool</h3>
+<p style="color:#888;margin:0;font-size:14px">Pick any color from any webpage. Get hex, RGB, HSL values instantly. Free Chrome eyedropper extension.</p>
+</div>
+</a>
+<a href="blog/dark-mode-chrome-extension-all-websites.html" style="text-decoration:none;color:inherit;">
+<div class="article-card">
+<h3 style="color:#fff;margin:0 0 8px">Dark Mode for Chrome: How to Get Dark Mode on Every Website</h3>
+<p style="color:#888;margin:0;font-size:14px">Enable dark mode on ALL websites with a free Chrome extension. Reduce eye strain and save battery on OLED screens.</p>
+</div>
+</a>
+<a href="blog/dark-mode-chrome-extension-comparison.html" style="text-decoration:none;color:inherit;">
+<div class="article-card">
+<h3 style="color:#fff;margin:0 0 8px">Best Dark Mode Chrome Extension 2026 — Dark Mode Everywhere Review</h3>
+<p style="color:#888;margin:0;font-size:14px">Compare dark mode Chrome extensions. Dark Mode Everywhere is the fastest, lightest dark mode extension with zero tracking.</p>
+</div>
+</a>
+<a href="blog/free-tab-manager-chrome-2026.html" style="text-decoration:none;color:inherit;">
+<div class="article-card">
+<h3 style="color:#fff;margin:0 0 8px">Free Tab Manager for Chrome — Tab Suspender Review 2026</h3>
+<p style="color:#888;margin:0;font-size:14px">Stop Chrome from eating your RAM. Tab Suspender automatically frees memory by suspending inactive tabs. Free, no tracking.</p>
+</div>
+</a>
+<a href="blog/json-formatter-chrome-extension-free.html" style="text-decoration:none;color:inherit;">
+<div class="article-card">
+<h3 style="color:#fff;margin:0 0 8px">Best Free JSON Formatter Chrome Extension 2026</h3>
+<p style="color:#888;margin:0;font-size:14px">Format, validate, and syntax-highlight JSON responses in Chrome. Free JSON formatter extension with collapsible tree view.</p>
+</div>
+</a>
+<a href="blog/privacy-focused-browser-extensions.html" style="text-decoration:none;color:inherit;">
+<div class="article-card">
+<h3 style="color:#fff;margin:0 0 8px">Privacy-Focused Browser Extensions That Don't Track You</h3>
+<p style="color:#888;margin:0;font-size:14px">Most browser extensions track your browsing data. Here are privacy-focused alternatives that collect zero user data.</p>
+</div>
+</a>
+<a href="blog/productivity-tools-developers-free.html" style="text-decoration:none;color:inherit;">
+<div class="article-card">
+<h3 style="color:#fff;margin:0 0 8px">Free Productivity Tools for Developers — 2026 Ultimate Guide</h3>
+<p style="color:#888;margin:0;font-size:14px">66 free browser extensions and 15 VS Code extensions for developers. No tracking, no accounts, no subscriptions required.</p>
+</div>
+</a>
+<a href="blog/qr-code-generator-chrome-extension.html" style="text-decoration:none;color:inherit;">
+<div class="article-card">
+<h3 style="color:#fff;margin:0 0 8px">QR Code Generator Chrome Extension — Free, Instant</h3>
+<p style="color:#888;margin:0;font-size:14px">Generate QR codes for any URL or text instantly. Free Chrome extension with customizable colors and sizes.</p>
+</div>
+</a>
+<a href="blog/reduce-chrome-memory-usage-extensions.html" style="text-decoration:none;color:inherit;">
+<div class="article-card">
+<h3 style="color:#fff;margin:0 0 8px">How to Reduce Chrome Memory Usage with Extensions</h3>
+<p style="color:#888;margin:0;font-size:14px">Chrome using too much RAM? Here's how developer extensions can reduce memory usage by 80% without losing your tabs.</p>
+</div>
+</a>
+<a href="blog/screenshot-chrome-extension-full-page.html" style="text-decoration:none;color:inherit;">
+<div class="article-card">
+<h3 style="color:#fff;margin:0 0 8px">Full Page Screenshot Chrome Extension — Free, No Signup</h3>
+<p style="color:#888;margin:0;font-size:14px">Capture full-page, visible area, or selected region screenshots. Free Chrome extension, no account required.</p>
+</div>
+</a>
+<a href="blog/vs-code-extensions-productivity-2026.html" style="text-decoration:none;color:inherit;">
+<div class="article-card">
+<h3 style="color:#fff;margin:0 0 8px">20 Free VS Code Extensions That Actually Improve Productivity</h3>
+<p style="color:#888;margin:0;font-size:14px">Lightweight VS Code extensions for developers. Todo highlights, git blame, regex testing, and more. All free, all under 5KB.</p>
+</div>
+</a>
 
-    <!-- Nav -->
-    <nav class="fixed top-0 w-full z-50 glass-panel border-b border-white/10">
-        <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="index.html" class="font-bold text-white tracking-tight">← FlowKit</a>
-            <span class="text-zinc-400 text-sm font-semibold">Blog</span>
-        </div>
-    </nav>
-
-    <main class="max-w-4xl mx-auto px-6 mt-12">
-        <h1 class="text-4xl md:text-5xl font-extrabold mb-4">The <span class="gradient-text">FlowKit</span> Blog</h1>
-        <p class="text-zinc-400 text-lg mb-16">Expert guides on browser security, accessibility compliance, and developer productivity.</p>
-
-        <!-- Article 1 -->
-        <article class="mb-20" id="freelance-contract-nda">
-            <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">Contracts & Legal</span>
-            <h2 class="text-3xl font-bold mt-2 mb-6">Why 90% of Freelance Developers Sign Illegally Binding NDAs (And How to Stop)</h2>
-            
-            <div class="prose prose-invert max-w-none text-zinc-300 leading-relaxed space-y-4">
-                <p>If you are a freelance software engineer or agency owner, you probably sign Mutual Non-Disclosure Agreements (MNDAs) or Master Service Agreements (MSAs) every month. And if you are like 90% of developers, you skim them, assume they are "standard boilerplate," and sign on the dotted line.</p>
-                
-                <p><strong class="text-white">This is exactly how you lose your intellectual property.</strong></p>
-                
-                <p>Corporate lawyers don't write "standard boilerplate." They write terms designed specifically to transfer liability away from the enterprise and onto the freelancer. If a client gets sued because a library you used had a vulnerable zero-day exploit, aggressive <em>indemnification</em> clauses can force you to pay their legal fees out of pocket.</p>
-                
-                <p>Furthermore, sneaky <em>residuals clauses</em> ("Ideas or concepts retained in the unaided memory of the receiving party...") can silently strip you of the IP you thought you owned.</p>
-                
-                <p>You aren't a lawyer. Paying a firm $400/hour to review a $5,000 contract destroys your margins.</p>
-                
-                <div class="glass-panel p-6 rounded-2xl my-8 border-l-4 border-orange-500">
-                    <h3 class="text-xl font-bold text-white mb-2">💡 The Solution: Contract Risk Highlighter</h3>
-                    <p class="text-zinc-300 mb-4">A lightweight browser extension that instantly scans any Google Doc, DocuSign, or PDF for high-risk clauses. In seconds, it highlights non-competes, aggressive indemnification traps, and auto-renewal terms in bright red directly on your screen.</p>
-                    <a href="https://buy.stripe.com/8x25kDcOG8rhdid3xQ0ZW0h" target="_blank" class="inline-block px-6 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold rounded-xl hover:opacity-90 transition">Get Contract Highlighter — $9.99/mo →</a>
-                </div>
-            </div>
-        </article>
-
-        <div class="w-full h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent my-12"></div>
-
-        <!-- Article 2 -->
-        <article class="mb-20" id="ada-wcag-lawsuit">
-            <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider">Accessibility & Compliance</span>
-            <h2 class="text-3xl font-bold mt-2 mb-6">The Rise of the "Surf-By" ADA Lawsuit in 2026 (And Why Automated Tools Fail)</h2>
-            
-            <div class="prose prose-invert max-w-none text-zinc-300 leading-relaxed space-y-4">
-                <p>Accessibility isn't just a moral imperative anymore—it's a <strong class="text-white">massive legal liability</strong>. In recent years, "surf-by" ADA lawsuits have skyrocketed. Law firms use automated scrapers to find e-commerce sites and SaaS platforms missing fundamental WCAG 2.1 requirements, followed by immediate settlement demand letters.</p>
-                
-                <p>Most development teams rely on heavy, expensive desktop suites or generic browser auditors that inject messy HTML into the DOM just to test it, breaking the layout. Others rely on automated overlays (like accessiBe) which courts have repeatedly ruled do <em>not</em> protect you from liability.</p>
-                
-                <p>To truly protect your clients, developers must audit contrast ratios, ARIA roles, and heading structures interactively in the browser during the staging phase.</p>
-                
-                <div class="glass-panel p-6 rounded-2xl my-8 border-l-4 border-blue-500">
-                    <h3 class="text-xl font-bold text-white mb-2">🛡️ The Solution: WCAG Accessibility Auditor</h3>
-                    <p class="text-zinc-300 mb-4">One-click WCAG 2.1 AA compliance audits. Instantly calculates foreground/background contrast ratios, hunts for missing alt text, and validates ARIA landmarks—keeping the DOM pristine.</p>
-                    <a href="https://buy.stripe.com/7sYdR92a2fTJce96K20ZW0g" target="_blank" class="inline-block px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-bold rounded-xl hover:opacity-90 transition">Get WCAG Auditor — $9.99/mo →</a>
-                </div>
-            </div>
-        </article>
-
-        <div class="w-full h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent my-12"></div>
-
-        <!-- Article 3 -->
-        <article class="mb-20" id="invoice-scraping-automation">
-            <span class="text-xs font-semibold text-green-400 uppercase tracking-wider">Bookkeeping & Automation</span>
-            <h2 class="text-3xl font-bold mt-2 mb-6">How to Automate Bulk Receipt Scraping for End-of-Month Bookkeeping</h2>
-            
-            <div class="prose prose-invert max-w-none text-zinc-300 leading-relaxed space-y-4">
-                <p>Bookkeeping is the bane of the modern founder's existence. At the end of every month, you waste hours logging into AWS, Stripe, Slack, and Adobe just to download PDFs, read the grand totals, and manually re-type them into QuickBooks or an Excel spreadsheet.</p>
-                
-                <p><strong class="text-white">Data entry doesn't generate revenue.</strong> It drains your time and introduces human error (did you forget the state tax on that software subscription?).</p>
-                
-                <p>While tools like AutoEntry act as massive, expensive enterprise solutions, indie hackers and small agencies just need a way to turn a web-based receipt instantly into a line of data.</p>
-                
-                <div class="glass-panel p-6 rounded-2xl my-8 border-l-4 border-green-500">
-                    <h3 class="text-xl font-bold text-white mb-2">📊 The Solution: Invoice Data Extractor</h3>
-                    <p class="text-zinc-300 mb-4">Simply open the billing page in your browser. The extension instantly crawls the unstructured HTML DOM, extracts the date, vendor name, tax amount, and grand total, and exports it directly to a clean .csv file.</p>
-                    <a href="https://buy.stripe.com/cNi3cv6qi9vlfqld8q0ZW0j" target="_blank" class="inline-block px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold rounded-xl hover:opacity-90 transition">Get Invoice Extractor — $9.99/mo →</a>
-                </div>
-            </div>
-        </article>
-
-        <div class="w-full h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent my-12"></div>
-
-        <!-- Article 4 -->
-        <article class="mb-20" id="designer-tools-2026">
-            <span class="text-xs font-semibold text-pink-400 uppercase tracking-wider">Design & CSS</span>
-            <h2 class="text-3xl font-bold mt-2 mb-6">The 5 Browser Extensions Every Web Designer Needs in 2026</h2>
-            
-            <div class="prose prose-invert max-w-none text-zinc-300 leading-relaxed space-y-4">
-                <p>Modern web design happens in the browser. Whether you're perfecting gradients, identifying fonts on a competitor's site, or checking accessibility contrast ratios, your browser is your primary workspace.</p>
-                
-                <p>Here are the 5 free FlowKit extensions that every designer should pin to their toolbar:</p>
-                
-                <p><strong class="text-white">1. Color Picker Eyedropper</strong> — Instantly sample any color from any webpage. Get HEX, RGB, and HSL values with one click.</p>
-                <p><strong class="text-white">2. Font Identifier & CSS Inspector</strong> — Hover over any text to see the exact font family, size, weight, line-height, and color.</p>
-                <p><strong class="text-white">3. CSS Gradient Generator</strong> — Build beautiful linear and radial gradients with a visual picker. Copy the CSS with one click.</p>
-                <p><strong class="text-white">4. Screenshot Capture</strong> — Take instant screenshots of the visible area for design reviews and client presentations.</p>
-                <p><strong class="text-white">5. Dark Mode Everywhere</strong> — Force dark mode on any website to test how your designs look with inverted color schemes.</p>
-                
-                <div class="glass-panel p-6 rounded-2xl my-8 border-l-4 border-pink-500">
-                    <h3 class="text-xl font-bold text-white mb-2">🎨 All 5 are 100% free</h3>
-                    <p class="text-zinc-300 mb-4">No ads, no tracking, no data collection. Install them all in under 60 seconds.</p>
-                    <a href="index.html#products" class="inline-block px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-bold rounded-xl hover:opacity-90 transition">Browse All Free Extensions →</a>
-                </div>
-            </div>
-        </article>
-
-        <div class="w-full h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent my-12"></div>
-
-        <!-- Article 5 -->
-        <article class="mb-20" id="developer-productivity-stack">
-            <span class="text-xs font-semibold text-cyan-400 uppercase tracking-wider">Developer Productivity</span>
-            <h2 class="text-3xl font-bold mt-2 mb-6">How to Build a Zero-Distraction Developer Browser in Under 5 Minutes</h2>
-            
-            <div class="prose prose-invert max-w-none text-zinc-300 leading-relaxed space-y-4">
-                <p>Context switching is the silent productivity killer. Studies show it takes an average of <strong class="text-white">23 minutes to regain focus</strong> after an interruption. Social media feeds, Reddit rabbit holes, and notification pop-ups cost developers hours every day.</p>
-                
-                <p>Here's how to build a distraction-free browser workspace using free FlowKit extensions:</p>
-                
-                <p><strong class="text-white">Step 1:</strong> Install <em>LinkedIn Hide Feed</em> and <em>Reddit Redirect</em> to eliminate two of the biggest time sinks while keeping the useful parts accessible.</p>
-                <p><strong class="text-white">Step 2:</strong> Add <em>Tab Suspender</em> to automatically freeze background tabs and save up to 80% of RAM usage.</p>
-                <p><strong class="text-white">Step 3:</strong> Pin <em>Pomodoro Anywhere</em> for 25-minute focus sprints with built-in break reminders.</p>
-                <p><strong class="text-white">Step 4:</strong> Use <em>Tab Groups Saver</em> to save and restore your project workspaces. No more "which tabs were open for the API project?"</p>
-                <p><strong class="text-white">Step 5:</strong> Install <em>Meet/Zoom Auto-Mute</em> so you're never the person with background noise in standup.</p>
-                
-                <div class="glass-panel p-6 rounded-2xl my-8 border-l-4 border-cyan-500">
-                    <h3 class="text-xl font-bold text-white mb-2">⚡ Total setup time: 3 minutes</h3>
-                    <p class="text-zinc-300 mb-4">All 6 extensions are free, run locally, and collect zero data.</p>
-                    <a href="index.html#products" class="inline-block px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-xl hover:opacity-90 transition">Install the Productivity Stack →</a>
-                </div>
-            </div>
-        </article>
-
-        <div class="w-full h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent my-12"></div>
-
-        <!-- Article 6 -->
-        <article class="mb-20" id="privacy-first-browsing">
-            <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider">Privacy & Security</span>
-            <h2 class="text-3xl font-bold mt-2 mb-6">Why Privacy-First Extensions Matter More Than Ever (And How to Verify Them)</h2>
-            
-            <div class="prose prose-invert max-w-none text-zinc-300 leading-relaxed space-y-4">
-                <p>In 2025 alone, multiple popular Chrome extensions were caught <strong class="text-white">secretly selling browsing data</strong> to data brokers. Extensions with millions of users were harvesting every URL visited, every search query typed, and every form field filled.</p>
-                
-                <p>The problem? Most users never read permissions. They click "Add to Chrome" and assume Google vetted it. But Google's review process is automated and <em>easily gamed</em>.</p>
-                
-                <p><strong class="text-white">How to verify an extension is safe:</strong></p>
-                <ul class="list-disc list-inside space-y-1">
-                    <li>Check the <code class="bg-zinc-800 px-1 rounded">permissions</code> field in the manifest (fewer = better)</li>
-                    <li>Look for <code class="bg-zinc-800 px-1 rounded">host_permissions: ["<all_urls>"]</code> — this means it can access EVERY page you visit</li>
-                    <li>Check if it makes network requests (use DevTools → Network tab)</li>
-                    <li>Look for a privacy policy on the developer's website</li>
-                </ul>
-                
-                <p>Every FlowKit extension is built with these principles: <strong class="text-white">minimal permissions</strong>, <strong class="text-white">zero network requests</strong>, and <strong class="text-white">100% local execution</strong>.</p>
-                
-                <div class="glass-panel p-6 rounded-2xl my-8 border-l-4 border-emerald-500">
-                    <h3 class="text-xl font-bold text-white mb-2">🔐 Our Privacy Promise</h3>
-                    <p class="text-zinc-300 mb-4">We're so committed to privacy that we built an extension specifically for protecting sensitive data: <strong>LLM Privacy Scrub</strong> strips PII from text before you paste it into ChatGPT, Claude, or any AI tool.</p>
-                    <a href="index.html#products" class="inline-block px-6 py-3 bg-gradient-to-r from-emerald-500 to-green-600 text-white font-bold rounded-xl hover:opacity-90 transition">Browse Privacy-First Extensions →</a>
-                </div>
-            </div>
-        </article>
-
-        <!-- CTA -->
-        <div class="glass-panel rounded-3xl p-8 text-center mb-16">
-            <h2 class="text-2xl font-bold mb-4">Ready to <span class="gradient-text">supercharge</span> your workflow?</h2>
-            <p class="text-zinc-400 mb-6">Join thousands of developers using FlowKit to eliminate manual work.</p>
-            <a href="index.html#products" class="px-8 py-4 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold text-lg hover:opacity-90 transition-opacity inline-block">Explore All Extensions →</a>
-        </div>
-    </main>
-
-    <footer class="max-w-4xl mx-auto px-6 pt-8 pb-8 border-t border-white/10 text-center text-zinc-500 text-sm">
-        <p>&copy; 2026 FlowKit by FlowKit Team. <a href="terms.html" class="hover:text-white">Terms</a> · <a href="privacy.html" class="hover:text-white">Privacy</a> · <a href="changelog.html" class="hover:text-white">Changelog</a> · <a href="support.html" class="hover:text-white">Support</a></p>
-    </footer>
+<hr style="border-color:rgba(255,255,255,0.1);margin:40px 0">
+<p style="text-align:center"><a href="/">FlowKit</a> — 66+ free browser extensions for developers.</p>
 </body>
 </html>
-
