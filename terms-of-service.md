@@ -2,7 +2,7 @@
 
 **Last Updated:** March 16, 2026
 
-This End User License Agreement ("EULA") is a legal agreement between you (either an individual or a single entity) and David Mahler / MicroAssets ("Licensor") for the software products, which includes computer software and may include associated media, printed materials, and "online" or electronic documentation ("Software Product" or "Software").
+This End User License Agreement ("EULA") is a legal agreement between you (either an individual or a single entity) and FlowKit Team / MicroAssets ("Licensor") for the software products, which includes computer software and may include associated media, printed materials, and "online" or electronic documentation ("Software Product" or "Software").
 
 By installing, copying, or otherwise using the Software Product, you agree to be bound by the terms of this EULA. If you do not agree to the terms of this EULA, do not install or use the Software Product.
 
