@@ -37,10 +37,10 @@
         <div class="hero-content">
             <div class="hero-badge">
                 <span class="spore-dot"></span>
-                85+ curated extensions · Chrome · Firefox · Android
+                85+ extensions & apps · Chrome · Firefox · Android
             </div>
             <h1>Small tools.<br><em>Deep roots.</em></h1>
-            <p class="hero-subtitle">OmniSuite is an ever-growing ecosystem of standalone browser extensions — each one built to do one thing exceptionally well. No bloat. No tracking. No nonsense.</p>
+            <p class="hero-subtitle">OmniSuite is an ever-growing ecosystem of standalone browser extensions and Android apps — each one purpose-built to do one thing exceptionally well. No bloat. No tracking. No nonsense.</p>
             <div class="hero-actions">
                 <a href="#tools" class="btn-primary">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
@@ -49,7 +49,7 @@
                 <a href="#omnisuite" class="btn-ghost">Learn about OmniSuite</a>
             </div>
             <div class="hero-stats">
-                <div class="stat"><strong>85+</strong><span>Extensions</span></div>
+                <div class="stat"><strong>170+</strong><span>Extensions & Apps</span></div>
                 <div class="stat-divider"></div>
                 <div class="stat"><strong>3</strong><span>Platforms</span></div>
                 <div class="stat-divider"></div>
@@ -63,15 +63,14 @@
     <!-- ═══ ABOUT / OMNISUITE ═══ -->
     <section class="about-section" id="omnisuite">
         <div class="container">
-            <div class="about-grid">
-                <div class="about-visual reveal">
-                    <img src="logo.png" alt="SporlyWorks OmniSuite Logo" class="about-logo-img">
-                </div>
-                <div class="about-text reveal">
-                    <span class="section-tag">The Ecosystem</span>
-                    <h2>What is OmniSuite?</h2>
-                    <p class="about-lead">OmniSuite is the flagship product of <strong>SporlyWorks</strong> — a curated ecosystem of 85+ standalone browser extensions designed for developers, designers, marketers, and operations teams.</p>
-                    <p>Unlike monolithic "Swiss Army knife" extensions that slow your browser and request invasive permissions, every OmniSuite tool is its own lightweight, purpose-built extension. Install only what you need. Each tool does one thing, and does it brilliantly.</p>
+            <div class="about-hero reveal">
+                <img src="logo.png" alt="SporlyWorks OmniSuite Logo" class="about-logo-centered">
+            </div>
+            <div class="about-content reveal">
+                    <span class="section-tag center">The Ecosystem</span>
+                    <h2 class="section-title">What is OmniSuite?</h2>
+                    <p class="about-lead">OmniSuite is the flagship product of <strong>SporlyWorks</strong> — a curated ecosystem of 170+ standalone browser extensions and Android apps designed for developers, designers, marketers, and operations teams.</p>
+                    <p class="about-body">Unlike monolithic "Swiss Army knife" extensions that slow your browser and request invasive permissions, every OmniSuite tool is its own lightweight, purpose-built app. Install only what you need. Each tool does one thing, and does it brilliantly.</p>
                     <div class="about-pillars">
                         <div class="pillar">
                             <div class="pillar-icon">🍄</div>
@@ -100,42 +99,48 @@
             <span class="section-tag center">Organized by Purpose</span>
             <h2 class="section-title">Tools for every layer of your stack</h2>
             <div class="cat-grid">
-                <div class="cat-card reveal">
+                <a href="category/developer-tools.html" class="cat-card reveal">
                     <div class="cat-icon">{ }</div>
                     <div class="cat-count">22+</div>
                     <div class="cat-label">Developer Tools</div>
                     <p>JSON, regex, API testing, JWT decoding, diff viewers, and code snippet managers.</p>
-                </div>
-                <div class="cat-card reveal">
+                    <span class="cat-arrow">View all →</span>
+                </a>
+                <a href="category/design-css.html" class="cat-card reveal">
                     <div class="cat-icon">🎨</div>
                     <div class="cat-count">14+</div>
                     <div class="cat-label">Design & CSS</div>
                     <p>Color pickers, gradient generators, font inspectors, flexbox and grid builders.</p>
-                </div>
-                <div class="cat-card reveal">
+                    <span class="cat-arrow">View all →</span>
+                </a>
+                <a href="category/seo-analytics.html" class="cat-card reveal">
                     <div class="cat-icon">📈</div>
                     <div class="cat-count">12+</div>
                     <div class="cat-label">SEO & Analytics</div>
                     <p>Meta tag viewers, robots.txt inspectors, content analyzers, and site speed auditors.</p>
-                </div>
-                <div class="cat-card reveal">
+                    <span class="cat-arrow">View all →</span>
+                </a>
+                <a href="category/privacy-security.html" class="cat-card reveal">
                     <div class="cat-icon">🔒</div>
                     <div class="cat-count">10+</div>
                     <div class="cat-label">Privacy & Security</div>
                     <p>Cookie managers, GDPR scanners, LLM scrubbers, password generators.</p>
-                </div>
-                <div class="cat-card reveal">
+                    <span class="cat-arrow">View all →</span>
+                </a>
+                <a href="category/productivity.html" class="cat-card reveal">
                     <div class="cat-icon">⚡</div>
                     <div class="cat-count">15+</div>
                     <div class="cat-label">Productivity</div>
                     <p>Tab managers, clipboard history, timers, form fillers, and reading mode cleaners.</p>
-                </div>
-                <div class="cat-card reveal">
+                    <span class="cat-arrow">View all →</span>
+                </a>
+                <a href="category/platform-cleaners.html" class="cat-card reveal">
                     <div class="cat-icon">🧹</div>
                     <div class="cat-count">12+</div>
                     <div class="cat-label">Platform Cleaners</div>
                     <p>Instagram, LinkedIn, Reddit, YouTube, Amazon — distraction-free browsing.</p>
-                </div>
+                    <span class="cat-arrow">View all →</span>
+                </a>
             </div>
         </div>
     </section>
@@ -791,7 +796,7 @@
         if (!variant) { variant = Math.random() < 0.5 ? 'A' : 'B'; localStorage.setItem('ab_variant', variant); }
         if (variant === 'B') {
             const h1 = document.querySelector('.hero h1');
-            if (h1) h1.innerHTML = 'Your browser,<br><em>supercharged.</em>';
+            if (h1) h1.innerHTML = 'Your workflow,<br><em>supercharged.</em>';
         }
     </script>
 </body>
