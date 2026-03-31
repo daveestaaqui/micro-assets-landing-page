@@ -181,6 +181,68 @@
             .trust-bar { gap: 24px; }
             .hero { padding: 60px 24px 48px; }
         }
+    
+        /* ─── INTERACTIVE ANIMATIONS ─── */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px) scale(0.98); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        @keyframes subtleFloat {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0); }
+        }
+        @keyframes glowPulse {
+            0% { box-shadow: 0 0 0 0 rgba(45, 106, 79, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(45, 106, 79, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(45, 106, 79, 0); }
+        }
+        .reveal {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            visibility: visible;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        
+        .hero { animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .hero h1 em {
+            background-size: 200% auto;
+            animation: shine 4s linear infinite;
+        }
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+
+        /* Enriched Card Interactions */
+        .feature-card {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .feature-card::before {
+            content: ''; position: absolute; top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 60%);
+            opacity: 0; transition: opacity 0.5s; z-index: -1;
+            pointer-events: none;
+            transform: scale(0.5);
+        }
+        .feature-card:hover::before {
+            opacity: 1;
+            transform: scale(1);
+            transition: all 0.6s ease-out;
+        }
+        .feature-icon { transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .feature-card:hover .feature-icon { transform: scale(1.15) rotate(4deg); }
+
+        .btn-primary:active { transform: scale(0.96); }
+        .cat-card:hover { border-color: var(--forest); }
+        .cat-card:hover .count { animation: subtleFloat 2s ease-in-out infinite; }
+
     </style>
 </head>
 <body>
@@ -217,7 +279,7 @@
     </section>
 
     <!-- TRUST BAR -->
-    <div class="trust-bar">
+    <div class="trust-bar reveal">
         <div class="trust-item">
             <strong>170+</strong> browser extensions
         </div>
@@ -234,37 +296,37 @@
 
     <!-- FEATURES -->
     <section class="section" id="tools">
-        <div class="section-header">
+        <div class="section-header reveal">
             <h2>Built for your actual workflow</h2>
             <p>Not another "100 features in one extension." Each tool is standalone, lightweight, and does its job.</p>
         </a>
         <div class="features-grid">
-            <a href="compare.html" class="feature-card" style="text-decoration: none; color: inherit; display: block;">
+            <a href="compare.html" class="feature-card reveal" style="text-decoration: none; color: inherit; display: block;">
                 <div class="feature-icon green">{ }</div>
                 <h3>JSON Formatter & Viewer</h3>
                 <p>Instant syntax highlighting, collapsible trees, and search for raw JSON. Works on any page, any API response.</p>
             </a>
-            <a href="compare.html" class="feature-card" style="text-decoration: none; color: inherit; display: block;">
+            <a href="compare.html" class="feature-card reveal" style="text-decoration: none; color: inherit; display: block;">
                 <div class="feature-icon blue">🎨</div>
                 <h3>Color Picker & Eyedropper</h3>
                 <p>Pick any pixel on any page. Copy as HEX, RGB, or HSL. Palette history saved locally.</p>
             </a>
-            <a href="compare.html" class="feature-card" style="text-decoration: none; color: inherit; display: block;">
+            <a href="compare.html" class="feature-card reveal" style="text-decoration: none; color: inherit; display: block;">
                 <div class="feature-icon warm">📝</div>
                 <h3>Contract Highlighter</h3>
                 <p>AI-powered clause detection for legal documents. Flags risks, auto-terms, and renewal deadlines.</p>
             </a>
-            <a href="compare.html" class="feature-card" style="text-decoration: none; color: inherit; display: block;">
+            <a href="compare.html" class="feature-card reveal" style="text-decoration: none; color: inherit; display: block;">
                 <div class="feature-icon green">🔍</div>
                 <h3>SEO Content Analyzer</h3>
                 <p>One-click meta tag audit, heading structure, Open Graph preview, and keyword density check.</p>
             </a>
-            <a href="compare.html" class="feature-card" style="text-decoration: none; color: inherit; display: block;">
+            <a href="compare.html" class="feature-card reveal" style="text-decoration: none; color: inherit; display: block;">
                 <div class="feature-icon blue">⚡</div>
                 <h3>Site Speed Analyzer</h3>
                 <p>PageSpeed scores, Core Web Vitals, and load waterfall — all from your browser toolbar.</p>
             </a>
-            <a href="compare.html" class="feature-card" style="text-decoration: none; color: inherit; display: block;">
+            <a href="compare.html" class="feature-card reveal" style="text-decoration: none; color: inherit; display: block;">
                 <div class="feature-icon warm">🧪</div>
                 <h3>API Tester Pro</h3>
                 <p>Make GET, POST, PUT, DELETE requests directly from a popup. Headers, body, auth — no Postman needed.</p>
@@ -274,32 +336,32 @@
 
     <!-- CATEGORIES -->
     <section class="categories" id="categories">
-        <div class="section-header">
+        <div class="section-header reveal">
             <h2>Every tool, organized</h2>
             <p>Browse by what you need, not by what we want to sell you.</p>
         </a>
         <div class="cat-grid">
-            <div class="cat-card">
+            <div class="cat-card reveal">
                 <div class="count">28</div>
                 <div class="label">Developer Tools</div>
             </div>
-            <div class="cat-card">
+            <div class="cat-card reveal">
                 <div class="count">22</div>
                 <div class="label">SEO & Marketing</div>
             </div>
-            <div class="cat-card">
+            <div class="cat-card reveal">
                 <div class="count">18</div>
                 <div class="label">Design & CSS</div>
             </div>
-            <div class="cat-card">
+            <div class="cat-card reveal">
                 <div class="count">16</div>
                 <div class="label">Productivity</div>
             </div>
-            <div class="cat-card">
+            <div class="cat-card reveal">
                 <div class="count">14</div>
                 <div class="label">Security & Privacy</div>
             </div>
-            <div class="cat-card">
+            <div class="cat-card reveal">
                 <div class="count">12</div>
                 <div class="label">Data & Conversion</div>
             </div>
@@ -309,7 +371,7 @@
     
 
     <!-- FINAL CTA -->
-    <section class="final-cta">
+    <section class="final-cta reveal">
         <h2>Your browser and phone, sharper</h2>
         <p>250+ tools across Chrome, Firefox, and Android. Zero tracking. One search away.</p>
         <div class="hero-actions" style="margin-top: 20px;">
@@ -331,5 +393,57 @@
         </div>
     </footer>
 
+
+    <!-- DYNAMIC INTERACTIONS JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Scroll Reveal Observer
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        // Stagger delays if they are close together
+                        const siblings = Array.from(entry.target.parentNode.children);
+                        const index = siblings.indexOf(entry.target);
+                        if(entry.target.classList.contains('feature-card') || entry.target.classList.contains('cat-card')) {
+                            entry.target.style.animationDelay = `${index * 0.1}s`;
+                        }
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                root: null,
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+
+            // Mouse Glow Effect on feature cards
+            document.querySelectorAll('.feature-card').forEach(card => {
+                card.addEventListener('mousemove', e => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    card.style.setProperty('--x', `${x}px`);
+                    card.style.setProperty('--y', `${y}px`);
+                    // We can dynamically move a background glow via JS instead of just CSS
+                    card.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.0) 100%), #fff`;
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.style.background = '#fff';
+                });
+            });
+            
+            // Add pulse to primary CTA
+            const cta = document.querySelector('.btn-primary');
+            if(cta) {
+                cta.style.animation = 'glowPulse 2s infinite';
+            }
+        });
+    </script>
 </body>
+
 </html>
