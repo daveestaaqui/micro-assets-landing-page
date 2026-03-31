@@ -110,6 +110,13 @@ nav.scrolled {
         radial-gradient(circle 2px at 55% 40%, rgba(116,166,141,0.08) 0%, transparent 100%);
 }
 .hero-content { position: relative; z-index: 1; max-width: 720px; }
+.hero-logo {
+    width: 160px; height: 160px; border-radius: 28px;
+    box-shadow: 0 12px 48px rgba(27,67,50,0.15);
+    margin: 0 auto 32px; display: block;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hero-logo:hover { transform: scale(1.06) rotate(-2deg); }
 .hero-badge {
     display: inline-flex; align-items: center; gap: 8px;
     background: rgba(45,106,79,0.06); border: 1px solid rgba(45,106,79,0.12);
