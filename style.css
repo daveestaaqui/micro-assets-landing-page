@@ -69,7 +69,7 @@ nav.scrolled {
     display: flex; align-items: center; justify-content: space-between;
 }
 .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-.nav-logo-img { width: 42px; height: 42px; border-radius: 10px; }
+.nav-logo-img { width: 56px; height: 56px; border-radius: 12px; }
 .nav-logo-text { display: flex; flex-direction: column; }
 .brand-name { font-family: 'DM Serif Display', serif; font-size: 18px; color: var(--forest-deep); line-height: 1.1; }
 .brand-sub { font-size: 11px; color: var(--warm-gray); font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; }
