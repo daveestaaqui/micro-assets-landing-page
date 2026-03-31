@@ -2,7 +2,7 @@
 
 **Last Updated:** March 16, 2026
 
-This End User License Agreement ("EULA") is a legal agreement between you (either an individual or a single entity) and FlowKit Team / MicroAssets ("Licensor") for the software products, which includes computer software and may include associated media, printed materials, and "online" or electronic documentation ("Software Product" or "Software").
+This End User License Agreement ("EULA") is a legal agreement between you (either an individual or a single entity) and FlowKit Team / OmniKit ("Licensor") for the software products, which includes computer software and may include associated media, printed materials, and "online" or electronic documentation ("Software Product" or "Software").
 
 By installing, copying, or otherwise using the Software Product, you agree to be bound by the terms of this EULA. If you do not agree to the terms of this EULA, do not install or use the Software Product.
 
@@ -12,7 +12,7 @@ Licensor grants you a revocable, non-exclusive, non-transferable, limited licens
 - For "Premium" (B2B) extensions: You are granted a license contingent upon an active, paid recurring subscription via Stripe.
 
 ## 2. DISCLAIMER OF PROFESSIONAL ADVICE (CRITICAL)
-**2.1 Financial and Legal Tools:** Several Software Products within the MicroAssets suite (including but not limited to the "Contract Highlighter" and "Invoice Extractor") analyze text, PDFs, or financial data. 
+**2.1 Financial and Legal Tools:** Several Software Products within the OmniKit suite (including but not limited to the "Contract Highlighter" and "Invoice Extractor") analyze text, PDFs, or financial data. 
 **2.2 No Attorney-Client Relationship:** The Software Product DOES NOT provide legal, financial, tax, or accounting advice. The Software is an automated text-parsing tool designed to assist in document review. It is not a substitute for a qualified attorney or certified public accountant. 
 **2.3 No Guarantee of Accuracy:** Licensor makes no warranties regarding the accuracy, completeness, or reliability of the data extracted or clauses highlighted. You are solely responsible for verifying all contracts, invoices, and documents manually. Licensor shall not be held liable for any missed clauses, erroneous financial data, breached contracts, or resulting damages.
 
