@@ -1,7 +1,7 @@
 # FlowKit — 66+ Free Developer Browser Extensions
 
-[![Extensions](https://img.shields.io/badge/extensions-66+-667eea)](https://daveestaaqui.github.io/micro-assets-landing-page/)
-[![Browsers](https://img.shields.io/badge/browsers-5-764ba2)](https://daveestaaqui.github.io/micro-assets-landing-page/)
+[![Extensions](https://img.shields.io/badge/extensions-66+-667eea)](https://sporlyworks.com/)
+[![Browsers](https://img.shields.io/badge/browsers-5-764ba2)](https://sporlyworks.com/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![VS Code](https://img.shields.io/badge/VS_Code-15_extensions-007acc)](https://github.com/daveestaaqui/flowkit-vscode/releases)
 
@@ -42,7 +42,7 @@ Free, lightweight developer tools for Chrome, Firefox, Edge, Opera, and Safari. 
 | Privacy Scanner | Check what a site tracks | 8KB |
 | Meta Tag Viewer | Inspect page metadata | 4KB |
 
-**+ 49 more extensions** — [Browse all](https://daveestaaqui.github.io/micro-assets-landing-page/)
+**+ 49 more extensions** — [Browse all](https://sporlyworks.com/)
 
 ## 📦 Also Available
 
