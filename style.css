@@ -70,12 +70,10 @@ nav.scrolled {
     display: flex; align-items: center; justify-content: space-between;
 }
 .nav-logo {
-    font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--forest-deep);
-    text-decoration: none; letter-spacing: -0.5px;
-    display: flex; align-items: center; gap: 10px;
+    display: flex; align-items: center;
 }
 .nav-logo img {
-    width: 32px; height: 32px; border-radius: 8px;
+    height: 48px; width: auto; border-radius: 8px;
 }
 .nav-links { display: flex; gap: 28px; align-items: center; }
 .nav-links a { color: var(--charcoal-soft); text-decoration: none; font-size: 14px; font-weight: 600; transition: color 0.2s; }
