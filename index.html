@@ -27,8 +27,26 @@
     <nav id="mainNav">
         <div class="nav-inner">
             <a href="/" class="nav-logo" id="navLogo" style="text-decoration: none; position: relative; display: flex; align-items: flex-end; justify-content: center; height: 110px; width: 220px; margin-left: 20px;">
-                <img src="mushroom-crop.png?v=5" alt="SporlyWorks Mushroom" style="position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); opacity: 0.85; z-index: 1;">
-                <span class="company-name" style="position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); font-family: 'DM Serif Display', serif; font-size: 34px; font-weight: 400; color: var(--forest-deep); text-decoration: none; margin: 0; text-shadow: 0 0 20px rgba(249,248,244,1), 0 0 10px rgba(249,248,244,1), 0 2px 4px rgba(249,248,244,0.8); z-index: 2; white-space: nowrap;">SporlyWorks</span>
+                <img src="mushroom-crop.png?v=6" alt="SporlyWorks Mushroom" style="position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); opacity: 0.9; z-index: 1;">
+                
+                <!-- Hand-drawn SVG Root System -->
+                <svg width="220" height="110" style="position: absolute; top: 0; left: 0; z-index: 2; pointer-events: none;">
+                    <g transform="translate(0, 5)">
+                        <!-- Main Central Taproots -->
+                        <path d="M 110 80 Q 110 93 108 100" stroke="var(--forest-deep)" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.85"/>
+                        <path d="M 110 82 Q 114 92 116 101" stroke="var(--forest-deep)" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.8"/>
+                        <!-- Left Radial Roots into S-p-o-r -->
+                        <path d="M 108 81 Q 95 85 88 98" stroke="var(--forest-deep)" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.75"/>
+                        <path d="M 107 83 Q 80 88 64 99" stroke="var(--forest-deep)" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.6"/>
+                        <path d="M 106 85 Q 60 92 42 101" stroke="var(--forest-deep)" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.4"/>
+                        <!-- Right Radial Roots into l-y-W-o-r-k-s -->
+                        <path d="M 112 81 Q 125 85 132 98" stroke="var(--forest-deep)" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.75"/>
+                        <path d="M 113 83 Q 140 88 156 99" stroke="var(--forest-deep)" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.6"/>
+                        <path d="M 114 85 Q 160 92 178 101" stroke="var(--forest-deep)" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.4"/>
+                    </g>
+                </svg>
+
+                <span class="company-name" style="position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); font-family: 'DM Serif Display', serif; font-size: 34px; font-weight: 400; color: var(--forest-deep); text-decoration: none; margin: 0; text-shadow: 0 0 16px rgba(249,248,244,1), 0 0 8px rgba(249,248,244,0.9); z-index: 3; white-space: nowrap;">SporlyWorks</span>
             </a>
             <div class="nav-links" id="navLinks">
                 <a href="#omnisuite">About</a>
