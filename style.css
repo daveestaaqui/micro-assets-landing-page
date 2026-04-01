@@ -72,8 +72,9 @@ nav.scrolled {
     max-width: 1200px; margin: 0 auto; padding: 0 32px;
     display: flex; align-items: center; justify-content: space-between;
 }
-.nav-logo { display: flex; align-items: center; }
-.nav-logo img { height: 48px; width: auto; border-radius: 10px; }
+.nav-logo { display: flex; align-items: center; text-decoration: none; }
+.nav-logo img { height: 44px; width: auto; border-radius: 10px; }
+.company-name { font-family: 'DM Serif Display', serif; font-size: 24px; color: var(--forest-deep); margin-left: 12px; line-height: 1; margin-top: 4px; }
 .nav-links { display: flex; gap: 32px; align-items: center; }
 .nav-links a { color: var(--charcoal-soft); text-decoration: none; font-size: 15px; font-weight: 500; transition: color 0.3s ease; }
 .nav-links a:hover { color: var(--forest); }
@@ -100,10 +101,11 @@ nav.scrolled {
         radial-gradient(circle 600px at 80% 40%, rgba(154,127,96,0.04) 0%, transparent 70%);
 }
 .hero-content { position: relative; z-index: 1; max-width: 800px; }
+.company-intro { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--sage); margin-bottom: 24px; }
 .hero-logo {
-    width: 140px; height: 140px; border-radius: 36px;
-    box-shadow: 0 24px 64px rgba(15,44,29,0.12), 0 0 0 1px rgba(15,44,29,0.04);
-    margin: 0 auto 40px; display: block;
+    width: 120px; height: 120px; border-radius: 36px;
+    box-shadow: 0 16px 48px rgba(15,44,29,0.08), 0 0 0 1px rgba(15,44,29,0.04);
+    margin: 0 auto 32px; display: block; mix-blend-mode: multiply;
     transition: transform 0.6s var(--transition-smooth), box-shadow 0.6s var(--transition-smooth);
 }
 .hero-logo:hover {
@@ -127,11 +129,15 @@ nav.scrolled {
     50% { opacity: 0.3; transform: scale(1.5); }
 }
 .hero h1 {
-    font-size: clamp(48px, 6.5vw, 84px); line-height: 1.05;
-    color: var(--forest-deep); margin-bottom: 24px;
+    font-size: clamp(56px, 8vw, 100px); line-height: 1;
+    color: var(--forest-deep); margin-bottom: 8px;
     letter-spacing: -2px;
 }
-.hero h1 em { font-style: normal; color: var(--forest-light); }
+.hero-tagline {
+    font-family: 'DM Serif Display', serif; font-size: clamp(28px, 4vw, 40px);
+    color: var(--forest-light); margin-bottom: 32px; letter-spacing: -0.5px;
+}
+.hero-tagline em { font-style: normal; color: var(--forest); }
 .hero-subtitle {
     font-size: 20px; color: var(--warm-gray); max-width: 600px;
     margin: 0 auto 48px; line-height: 1.6; font-weight: 400;
