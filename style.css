@@ -73,7 +73,14 @@ nav.scrolled {
     display: flex; align-items: center; justify-content: space-between;
 }
 .nav-logo { display: flex; align-items: center; text-decoration: none; }
-.nav-logo img { height: 44px; width: auto; border-radius: 10px; }
+.nav-logo img { height: 52px; width: auto; border-radius: 10px; }
+.pro-badge {
+    position: absolute; top: 12px; right: 12px;
+    background: linear-gradient(135deg, #e8b931, #d4a017); color: #1a1a1a;
+    font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 3px 10px; border-radius: 100px;
+}
+.ext-card { position: relative; }
 .company-name { font-family: 'DM Serif Display', serif; font-size: 24px; color: var(--forest-deep); margin-left: 12px; line-height: 1; margin-top: 4px; }
 .nav-links { display: flex; gap: 32px; align-items: center; }
 .nav-links a { color: var(--charcoal-soft); text-decoration: none; font-size: 15px; font-weight: 500; transition: color 0.3s ease; }
