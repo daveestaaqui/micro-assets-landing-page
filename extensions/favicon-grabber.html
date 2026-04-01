@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favicon Grabber — Site Icon Extractor — Free Browser Extension | SporlyWorks</title>
+    <meta name="description" content="Extract favicons from any website. Download in multiple sizes or copy the URL. Available for Chrome, Firefox, Edge, Opera, and Android. Part of OmniSuite by SporlyWorks.">
+    <meta property="og:title" content="Favicon Grabber — Site Icon Extractor — SporlyWorks">
+    <meta property="og:description" content="Extract favicons from any website. Download in multiple sizes or copy the URL.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sporlyworks.com/extensions/favicon-grabber.html">
+    <link rel="canonical" href="https://sporlyworks.com/extensions/favicon-grabber.html">
+    <link rel="icon" type="image/png" href="../logo-64.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .ext-page { max-width: 720px; margin: 0 auto; padding: 140px 24px 80px; }
+        .ext-page h1 { font-size: 36px; color: var(--forest-deep); margin-bottom: 16px; letter-spacing: -1px; }
+        .ext-page .ext-desc { font-size: 17px; color: var(--warm-gray); line-height: 1.7; margin-bottom: 40px; }
+        .ext-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--forest); margin-bottom: 16px; padding: 4px 14px; background: rgba(45,106,79,0.06); border-radius: 100px; }
+        .platform-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; margin-bottom: 48px; }
+        .platform-card {
+            display: flex; flex-direction: column; align-items: center; gap: 10px;
+            padding: 28px 20px; background: #fff; border: 1.5px solid var(--cream-dark);
+            border-radius: var(--radius-md); text-decoration: none; color: inherit;
+            transition: all 0.3s var(--transition-smooth); text-align: center;
+        }
+        .platform-card:hover { border-color: var(--forest); transform: translateY(-3px); box-shadow: var(--shadow-md); }
+        .platform-card.disabled {
+            opacity: 0.4; pointer-events: none; filter: grayscale(1);
+        }
+        .platform-icon { font-size: 32px; }
+        .platform-name { font-weight: 700; font-size: 15px; color: var(--charcoal); }
+        .platform-status { font-size: 12px; color: var(--warm-gray); }
+        .platform-card.available .platform-status { color: var(--forest); }
+        .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--forest); text-decoration: none; margin-bottom: 32px; transition: gap 0.2s; }
+        .back-link:hover { gap: 10px; }
+        .ext-features { margin-bottom: 48px; }
+        .ext-features h3 { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 700; color: var(--charcoal); margin-bottom: 16px; }
+        .feature-list { list-style: none; padding: 0; }
+        .feature-list li { padding: 10px 0; border-bottom: 1px solid var(--cream-dark); font-size: 14px; color: var(--charcoal-soft); display: flex; align-items: center; gap: 8px; }
+        .feature-list li::before { content: '✓'; color: var(--forest); font-weight: 700; }
+        .ext-meta { padding: 24px; background: var(--cream); border-radius: var(--radius-md); font-size: 13px; color: var(--warm-gray); }
+        .ext-meta strong { color: var(--charcoal); }
+    </style>
+</head>
+<body>
+    <nav id="mainNav" class="scrolled">
+        <div class="nav-inner">
+            <a href="../" class="nav-logo" id="navLogo"><img src="../logo-64.png" alt="SporlyWorks" width="32" height="32">SporlyWorks</a>
+            <div class="nav-links" id="navLinks">
+                <a href="../#omnisuite">About</a>
+                <a href="../#tools">Extensions</a>
+                <a href="../#categories">Categories</a>
+                <a href="../privacy.html">Privacy</a>
+                <a href="mailto:support@sporlyworks.com" class="nav-cta">Get Support</a>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="ext-page">
+        <a href="../#tools" class="back-link">← All Extensions</a>
+        <div class="ext-badge">OmniSuite Extension</div>
+        <h1>Favicon Grabber — Site Icon Extractor</h1>
+        <p class="ext-desc">Extract favicons from any website. Download in multiple sizes or copy the URL.</p>
+
+        <h3 style="font-family:'Inter',sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--charcoal);margin-bottom:16px;">Available Platforms</h3>
+        <div class="platform-grid">
+            <a href="https://chromewebstore.google.com/detail/hmihjlhimnfamlolnfdemmgigonelppn" target="_blank" class="platform-card available">
+                <span class="platform-icon">🌐</span>
+                <span class="platform-name">Chrome</span>
+                <span class="platform-status">Install from Chrome Web Store</span>
+            </a>
+            <a href="https://addons.mozilla.org/en-US/firefox/addon/favicon-grabber/" target="_blank" class="platform-card available">
+                <span class="platform-icon">🦊</span>
+                <span class="platform-name">Firefox</span>
+                <span class="platform-status">Install from Firefox Add-ons</span>
+            </a>
+            <a href="https://chromewebstore.google.com/detail/hmihjlhimnfamlolnfdemmgigonelppn" target="_blank" class="platform-card available" title="Chrome extensions work natively on Edge">
+                <span class="platform-icon">🔷</span>
+                <span class="platform-name">Edge</span>
+                <span class="platform-status">Install via Chrome Web Store</span>
+            </a>
+            <a href="https://chromewebstore.google.com/detail/hmihjlhimnfamlolnfdemmgigonelppn" target="_blank" class="platform-card available" title="Chrome extensions work natively on Opera with Install Chrome Extensions addon">
+                <span class="platform-icon">🔴</span>
+                <span class="platform-name">Opera</span>
+                <span class="platform-status">Install via Chrome Web Store</span>
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.sporlyworks.favicon_grabber" target="_blank" class="platform-card available">
+                <span class="platform-icon">🤖</span>
+                <span class="platform-name">Android</span>
+                <span class="platform-status">Get it on Google Play</span>
+            </a>
+        </div>
+
+        <div class="ext-features">
+            <h3>Why Favicon Grabber?</h3>
+            <ul class="feature-list">
+                <li>Lightweight — under 50KB, loads instantly</li>
+                <li>Privacy-first — zero tracking, zero analytics, zero data collection</li>
+                <li>Works offline — no internet connection required</li>
+                <li>Free forever — no subscriptions, no hidden costs</li>
+                <li>Part of the OmniSuite ecosystem — 85+ tools, same quality standard</li>
+            </ul>
+        </div>
+
+        <div class="ext-meta">
+            <strong>Developer:</strong> SporlyWorks &nbsp;|&nbsp;
+            <strong>Version:</strong> 1.0 &nbsp;|&nbsp;
+            <strong>Support:</strong> <a href="mailto:support@sporlyworks.com" style="color:var(--forest);">support@sporlyworks.com</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 SporlyWorks. All rights reserved. &nbsp;|&nbsp; <a href="../privacy.html" style="color:var(--forest);text-decoration:none;">Privacy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobileToggle').addEventListener('click', () => {
+            document.getElementById('navLinks').classList.toggle('open');
+        });
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Favicon Grabber — Site Icon Extractor",
+        "applicationCategory": "BrowserExtension",
+        "operatingSystem": "Chrome, Firefox, Edge, Opera",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "SporlyWorks",
+            "url": "https://sporlyworks.com"
+        }
+    }
+    </script>
+</body>
+</html>
