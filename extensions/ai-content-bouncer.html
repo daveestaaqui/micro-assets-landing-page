@@ -3,15 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Content Bouncer — Free Browser Extension | SporlyWorks</title>
-    <meta name="description" content="Detects and highlights AI-generated text on web pages using heuristic analysis. Toggle detection from the popup. Available for Chrome, Firefox, Edge, Opera, and Android. Part of OmniSuite by SporlyWorks.">
-    <meta property="og:title" content="AI Content Bouncer — SporlyWorks">
-    <meta property="og:description" content="Detects and highlights AI-generated text on web pages using heuristic analysis. Toggle detection from the popup.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://sporlyworks.com/extensions/ai-content-bouncer.html">
-    <link rel="canonical" href="https://sporlyworks.com/extensions/ai-content-bouncer.html">
+    <title>AI Content Bouncer — SporlyWorks OmniSuite</title>
+    <meta name="description" content="Detects and highlights AI-generated text on web pages using heuristic analysis. Toggle detection from the popup.">
     <link rel="icon" type="image/png" href="../logo-64.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
     <style>
@@ -27,9 +21,7 @@
             transition: all 0.3s var(--transition-smooth); text-align: center;
         }
         .platform-card:hover { border-color: var(--forest); transform: translateY(-3px); box-shadow: var(--shadow-md); }
-        .platform-card.disabled {
-            opacity: 0.4; pointer-events: none; filter: grayscale(1);
-        }
+        .platform-card.disabled { opacity: 0.4; pointer-events: none; filter: grayscale(1); }
         .platform-icon { font-size: 32px; }
         .platform-name { font-weight: 700; font-size: 15px; color: var(--charcoal); }
         .platform-status { font-size: 12px; color: var(--warm-gray); }
@@ -37,140 +29,72 @@
         .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--forest); text-decoration: none; margin-bottom: 32px; transition: gap 0.2s; }
         .back-link:hover { gap: 10px; }
         .ext-features { margin-bottom: 48px; }
-        .ext-features h3 { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 700; color: var(--charcoal); margin-bottom: 16px; }
+        .ext-features h3 { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 700; margin-bottom: 16px; }
         .feature-list { list-style: none; padding: 0; }
         .feature-list li { padding: 10px 0; border-bottom: 1px solid var(--cream-dark); font-size: 14px; color: var(--charcoal-soft); display: flex; align-items: center; gap: 8px; }
         .feature-list li::before { content: '✓'; color: var(--forest); font-weight: 700; }
         .ext-meta { padding: 24px; background: var(--cream); border-radius: var(--radius-md); font-size: 13px; color: var(--warm-gray); }
-        .ext-meta strong { color: var(--charcoal); }
+        .pro-banner { background: var(--forest-deep); color: white; padding: 24px; border-radius: var(--radius-md); margin-bottom: 48px; display: flex; align-items: center; justify-content: space-between; }
+        .pro-banner h3 { color: white; margin: 0 0 4px; font-size: 18px; }
+        .pro-banner p { color: var(--sage); margin: 0; font-size: 14px; }
+        .btn-pro { background: white; color: var(--forest-deep); padding: 10px 20px; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 14px; transition: 0.3s; }
+        .btn-pro:hover { transform: scale(1.05); }
     </style>
 </head>
 <body>
     <nav id="mainNav" class="scrolled">
         <div class="nav-inner">
-            <a href="../index.html" class="nav-logo" id="navLogo">
+            <a href="../index.html" class="nav-logo">
                 <img src="../logo-128.png" alt="SporlyWorks logo" width="44" height="44">
                 <span class="company-name">SporlyWorks</span>
             </a>
             <div class="nav-links" id="navLinks">
-                <a href="../#omnisuite">About</a>
+                <a href="../#pricing" style="color:var(--forest);font-weight:700;">OmniSuite Pro</a>
                 <a href="../#tools">Extensions</a>
-                <a href="../#categories">Categories</a>
-                <a href="../privacy.html">Privacy</a>
-                <a href="mailto:support@sporlyworks.com" class="nav-cta">Get Support</a>
             </div>
-            <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
-                <span></span><span></span><span></span>
-            </button>
         </div>
     </nav>
 
     <main class="ext-page">
         <a href="../#tools" class="back-link">← All Extensions</a>
-        <div class="ext-badge">OmniSuite Extension</div>
+        <div class="ext-badge">OmniSuite Ecosystem</div>
         <h1>AI Content Bouncer</h1>
         <p class="ext-desc">Detects and highlights AI-generated text on web pages using heuristic analysis. Toggle detection from the popup.</p>
+        
+        
 
         <div class="platform-grid">
             <a href="https://chromewebstore.google.com/detail/adiokjgmebibpplkhpehljlamghhbhki" target="_blank" class="platform-card available">
-                <span class="platform-icon">🌐</span>
-                <span class="platform-name">Chrome / Edge / Opera</span>
-                <span class="platform-status">Install from Chrome Web Store</span>
-            </a>
+    <span class="platform-icon">🌐</span>
+    <span class="platform-name">Chrome / Edge / Opera</span>
+    <span class="platform-status">Install from Chrome Web Store</span>
+</a>
             <a href="https://addons.mozilla.org/en-US/firefox/addon/ai-content-bouncer/" target="_blank" class="platform-card available">
-                <span class="platform-icon">🦊</span>
-                <span class="platform-name">Firefox</span>
-                <span class="platform-status">Install from Firefox Add-ons</span>
-            </a>
+    <span class="platform-icon">🦊</span>
+    <span class="platform-name">Firefox</span>
+    <span class="platform-status">Install from Firefox Add-ons</span>
+</a>
             <a href="https://play.google.com/store/apps/details?id=com.sporlyworks.ai_content_bouncer" target="_blank" class="platform-card available">
-                <span class="platform-icon">🤖</span>
-                <span class="platform-name">Android</span>
-                <span class="platform-status">Get it on Google Play</span>
-            </a>
+    <span class="platform-icon">🤖</span>
+    <span class="platform-name">Android</span>
+    <span class="platform-status">Get it on Google Play</span>
+</a>
         </div>
 
         <div class="ext-features">
             <h3>Why AI Content Bouncer?</h3>
             <ul class="feature-list">
-                <li>Lightweight — under 50KB, loads instantly</li>
-                <li>Privacy-first — zero tracking, zero analytics, zero data collection</li>
-                <li>Works offline — no internet connection required</li>
-                <li>Free forever — no subscriptions, no hidden costs</li>
-                <li>Part of the OmniSuite ecosystem — 85+ tools, same quality standard</li>
+                <li>Professional tracking & privacy safety</li>
+                <li>Zero bloated analytics—works offline</li>
+                <li>Built for modern browsers</li>
+                <li>Part of the SporlyWorks OmniSuite</li>
             </ul>
         </div>
 
         <div class="ext-meta">
             <strong>Developer:</strong> SporlyWorks &nbsp;|&nbsp;
-            <strong>Version:</strong> 1.0 &nbsp;|&nbsp;
-            <strong>Support:</strong> <a href="mailto:support@sporlyworks.com" style="color:var(--forest);">support@sporlyworks.com</a>
+            <strong>Version:</strong> 1.0
         </div>
     </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-bottom">
-                <p>&copy; 2026 SporlyWorks. All rights reserved. &nbsp;|&nbsp; <a href="../privacy.html" style="color:var(--forest);text-decoration:none;">Privacy</a></p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        document.getElementById('mobileToggle').addEventListener('click', () => {
-            document.getElementById('navLinks').classList.toggle('open');
-        });
-    </script>
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "AI Content Bouncer",
-        "applicationCategory": "BrowserExtension",
-        "operatingSystem": "Chrome, Firefox, Edge, Opera",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        },
-        "author": {
-            "@type": "Organization",
-            "name": "SporlyWorks",
-            "url": "https://sporlyworks.com"
-        }
-    }
-    </script>
-
-<script>
-// Mobile Navigation Toggle
-document.addEventListener('DOMContentLoaded', () => {
-    const toggle = document.getElementById('mobileToggle');
-    const links = document.getElementById('navLinks');
-    if (toggle && links) {
-        toggle.addEventListener('click', () => {
-            links.classList.toggle('active');
-            toggle.classList.toggle('open');
-        });
-        
-        // Close menu on link click
-        links.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                links.classList.remove('active');
-                toggle.classList.remove('open');
-            });
-        });
-    }
-    
-    // Smooth sticky nav
-    const nav = document.getElementById('mainNav');
-    if (nav) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) nav.classList.add('scrolled');
-            else nav.classList.remove('scrolled');
-        });
-    }
-});
-</script>
-
 </body>
 </html>
