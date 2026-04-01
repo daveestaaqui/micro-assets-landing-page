@@ -36,5 +36,37 @@
 
 <hr style="border-color:rgba(255,255,255,0.1);margin:40px 0">
 <p><a href="https://sporlyworks.com/">OmniSuite</a> — 66+ free browser extensions for developers. Zero tracking. Open source.</p>
+
+<script>
+// Mobile Navigation Toggle
+document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.getElementById('mobileToggle');
+    const links = document.getElementById('navLinks');
+    if (toggle && links) {
+        toggle.addEventListener('click', () => {
+            links.classList.toggle('active');
+            toggle.classList.toggle('open');
+        });
+        
+        // Close menu on link click
+        links.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                links.classList.remove('active');
+                toggle.classList.remove('open');
+            });
+        });
+    }
+    
+    // Smooth sticky nav
+    const nav = document.getElementById('mainNav');
+    if (nav) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+        });
+    }
+});
+</script>
+
 </body>
 </html>
