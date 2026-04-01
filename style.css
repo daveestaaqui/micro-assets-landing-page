@@ -127,14 +127,7 @@ nav.scrolled {
     font-size: 14px; font-weight: 500; color: var(--forest);
     margin-bottom: 40px; box-shadow: var(--shadow-soft);
 }
-.spore-dot {
-    width: 6px; height: 6px; border-radius: 50%; background: var(--forest);
-    animation: sporePulse 3s ease-in-out infinite; box-shadow: 0 0 8px var(--forest);
-}
-@keyframes sporePulse {
-    0%, 100% { opacity: 0.8; transform: scale(1); }
-    50% { opacity: 0.3; transform: scale(1.5); }
-}
+
 .hero h1 {
     font-size: clamp(56px, 8vw, 100px); line-height: 1;
     color: var(--forest-deep); margin-bottom: 8px;
