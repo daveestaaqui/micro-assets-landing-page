@@ -6,7 +6,7 @@
     <title>SporlyWorks — Cultivating Intelligent Workflows. | 85+ Free Browser Extensions</title>
     <meta name="description" content="SporlyWorks is a curated ecosystem of 85+ lightweight, privacy-first browser extensions and Android apps for developers, designers, and teams. No bloat. No tracking. No nonsense.">
     <meta name="keywords" content="chrome extensions, developer tools, browser extensions, free chrome extensions, productivity tools, SEO tools, CSS tools, JSON formatter, password generator, privacy extensions">
-    <meta property="og:title" content="SporlyWorks by SporlyWorks — 85+ Free Developer Extensions">
+    <meta property="og:title" content="SporlyWorks — 85+ Free Developer Extensions | Cultivating Intelligent Workflows">
     <meta property="og:description" content="Cultivating Intelligent Workflows. 85+ standalone browser extensions — each one purpose-built to do one thing exceptionally well.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sporlyworks.com">
@@ -15,11 +15,12 @@
     <meta name="twitter:title" content="SporlyWorks — 85+ Free Chrome Extensions">
     <meta name="twitter:description" content="Cultivating Intelligent Workflows. Privacy-first browser extensions for developers.">
     <link rel="canonical" href="https://sporlyworks.com/">
-    <link rel="icon" type="image/png" href="logo-64.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="64x64" href="logo-64.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preload" as="image" href="logo-128.png">
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 
@@ -73,7 +74,7 @@
             <div class="about-content reveal">
                     <span class="section-tag center">The Ecosystem</span>
                     <h2 class="section-title">What is SporlyWorks?</h2>
-                    <p class="about-lead">SporlyWorks is the flagship product of <strong>SporlyWorks</strong> — a curated ecosystem of 170+ standalone browser extensions and Android apps designed for developers, designers, marketers, and operations teams.</p>
+                    <p class="about-lead">SporlyWorks is a curated ecosystem of 170+ standalone browser extensions and Android apps designed for developers, designers, marketers, and operations teams.</p>
                     <p class="about-body">Unlike monolithic "Swiss Army knife" extensions that slow your browser and request invasive permissions, every SporlyWorks tool is its own lightweight, purpose-built app. Install only what you need. Each tool does one thing, and does it brilliantly.</p>
                     <div class="about-pillars">
                         <div class="pillar">
@@ -764,7 +765,7 @@
     <section class="closing-section">
         <div class="container">
             <div class="closing-card reveal">
-                <img src="sporlyworks-logo.png" alt="SporlyWorks" class="closing-logo" width="80" height="80" style="border-radius: 50%;">
+                <img src="logo-128.png" alt="SporlyWorks" class="closing-logo" width="80" height="80" style="border-radius: 16px;">
                 <h2>Your browser, your rules.</h2>
                 <p>85+ tools. Free core features. No accounts, no subscriptions needed. Pro unlocks the full power when you're ready.</p>
                 <div style="margin-top: 32px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
@@ -785,7 +786,7 @@
             <div class="footer-inner">
                 <div class="footer-brand">
                     <img src="logo-64.png" alt="SporlyWorks" class="footer-logo" width="40" height="40">
-                    <p>SporlyWorks by SporlyWorks<br>Cultivating Intelligent Workflows.</p>
+                    <p>SporlyWorks<br>Cultivating Intelligent Workflows.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Product</h4>
@@ -796,7 +797,7 @@
                 <div class="footer-col">
                     <h4>Legal</h4>
                     <a href="privacy.html">Privacy Policy</a>
-                    <a href="terms-of-service.md">Terms of Service</a>
+                    <a href="terms.html">Terms of Service</a>
                     <a href="mailto:flowkit.support@gmail.com">Contact</a>
                 </div>
             </div>
@@ -894,36 +895,7 @@
     }
     </script>
 
-<script>
-// Mobile Navigation Toggle
-document.addEventListener('DOMContentLoaded', () => {
-    const toggle = document.getElementById('mobileToggle');
-    const links = document.getElementById('navLinks');
-    if (toggle && links) {
-        toggle.addEventListener('click', () => {
-            links.classList.toggle('active');
-            toggle.classList.toggle('open');
-        });
-        
-        // Close menu on link click
-        links.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                links.classList.remove('active');
-                toggle.classList.remove('open');
-            });
-        });
-    }
-    
-    // Smooth sticky nav
-    const nav = document.getElementById('mainNav');
-    if (nav) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) nav.classList.add('scrolled');
-            else nav.classList.remove('scrolled');
-        });
-    }
-});
-</script>
+<!-- Duplicate nav/scroll handler removed (already in main <script> block above) -->
 
 </body>
 </html>
