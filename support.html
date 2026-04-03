@@ -99,7 +99,7 @@
         <div class="glass-panel rounded-3xl p-8 text-center mb-16">
             <h2 class="text-xl font-bold mb-2">Still need help?</h2>
             <p class="text-zinc-400 mb-4">Email us and we'll respond within 24 hours.</p>
-            <a href="mailto:flowkit.support@gmail.com" class="inline-block px-8 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold hover:opacity-90 transition">📧 flowkit.support@gmail.com</a>
+            <a href="mailto:support@sporlyworks.com" class="inline-block px-8 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold hover:opacity-90 transition">📧 support@sporlyworks.com</a>
         </div>
     </main>
     <footer class="max-w-5xl mx-auto px-6 pt-8 pb-8 border-t border-white/10 text-center text-zinc-500 text-sm">
@@ -115,15 +115,15 @@
         },
         license: {
             keywords: ['license', 'key', 'activate', 'activation', 'unlock', 'pro', 'premium', 'upgrade'],
-            answer: '**License Activation:**\n\n1. Open the extension popup\n2. Use it until you hit the free limit\n3. Click the license activation area\n4. Paste your license key from your Stripe receipt\n5. Click "Activate"\n\n🔑 Your key is in the email from Stripe after purchase.\n\n❓ Lost your key? Email flowkit.support@gmail.com with your purchase email.'
+            answer: '**License Activation:**\n\n1. Open the extension popup\n2. Use it until you hit the free limit\n3. Click the license activation area\n4. Paste your license key from your Stripe receipt\n5. Click "Activate"\n\n🔑 Your key is in the email from Stripe after purchase.\n\n❓ Lost your key? Email support@sporlyworks.com with your purchase email.'
         },
         billing: {
             keywords: ['billing', 'payment', 'cancel', 'refund', 'subscription', 'charge', 'price', 'cost', 'money'],
-            answer: '**Billing & Subscriptions:**\n\n• All billing is handled through Stripe (secure, PCI-compliant)\n• Cancel anytime from your [Stripe billing portal](https://billing.stripe.com/p/login/your-portal)\n• 30-day money-back guarantee on all plans\n• No hidden fees, no data selling\n\n🔄 **To cancel:** Click the billing portal link in your Stripe receipt email.\n💰 **Refund:** Email flowkit.support@gmail.com within 30 days.'
+            answer: '**Billing & Subscriptions:**\n\n• All billing is handled through Stripe (secure, PCI-compliant)\n• Cancel anytime from your [Stripe billing portal](https://billing.stripe.com/p/login/your-portal)\n• 30-day money-back guarantee on all plans\n• No hidden fees, no data selling\n\n🔄 **To cancel:** Click the billing portal link in your Stripe receipt email.\n💰 **Refund:** Email support@sporlyworks.com within 30 days.'
         },
         notworking: {
             keywords: ['not working', 'broken', 'error', 'bug', 'crash', 'problem', 'issue', 'fix', 'help', 'wrong', 'fail', 'doesnt work', 'stopped'],
-            answer: '**Troubleshooting Steps:**\n\n1. **Refresh the page** and try again\n2. **Disable/re-enable** the extension (chrome://extensions)\n3. **Clear extension storage:** Right-click icon → Manage Extension → Clear Data\n4. **Update Chrome** to the latest version\n5. **Reinstall** the extension from CWS\n\n⚠️ If the issue persists:\n- Check if another extension conflicts (try incognito)\n- Email flowkit.support@gmail.com with:\n  - Extension name\n  - Chrome version\n  - Screenshot of the error\n\n📝 *Your report has been logged and will be reviewed automatically.*'
+            answer: '**Troubleshooting Steps:**\n\n1. **Refresh the page** and try again\n2. **Disable/re-enable** the extension (chrome://extensions)\n3. **Clear extension storage:** Right-click icon → Manage Extension → Clear Data\n4. **Update Chrome** to the latest version\n5. **Reinstall** the extension from CWS\n\n⚠️ If the issue persists:\n- Check if another extension conflicts (try incognito)\n- Email support@sporlyworks.com with:\n  - Extension name\n  - Chrome version\n  - Screenshot of the error\n\n📝 *Your report has been logged and will be reviewed automatically.*'
         },
         privacy: {
             keywords: ['privacy', 'data', 'collect', 'track', 'tracking', 'security', 'personal', 'information', 'safe'],
@@ -218,7 +218,7 @@
             logIssue(query, 'bug');
         }
         if (bestMatch && bestScore > 0) return bestMatch.answer + getKnownIssues();
-        return "I'm not sure about that specific question. Here are some things I can help with:\n\n• **Installation** — How to install extensions\n• **License** — Activating your Pro key\n• **Billing** — Payments, cancellations, refunds\n• **Troubleshooting** — Fixing issues\n• **Privacy** — What data we collect (none!)\n• **Features** — What each tool does\n\nOr email **flowkit.support@gmail.com** for personalized help!";
+        return "I'm not sure about that specific question. Here are some things I can help with:\n\n• **Installation** — How to install extensions\n• **License** — Activating your Pro key\n• **Billing** — Payments, cancellations, refunds\n• **Troubleshooting** — Fixing issues\n• **Privacy** — What data we collect (none!)\n• **Features** — What each tool does\n\nOr email **support@sporlyworks.com** for personalized help!";
     }
 
     function sendChat() {
@@ -250,7 +250,7 @@
         }
     }
     function resetLicense() {
-        document.getElementById('licenseResult').innerHTML = '<span class="text-yellow-400">⚠️ To reset your license, uninstall and reinstall the extension, then re-enter your key. Or email flowkit.support@gmail.com.</span>';
+        document.getElementById('licenseResult').innerHTML = '<span class="text-yellow-400">⚠️ To reset your license, uninstall and reinstall the extension, then re-enter your key. Or email support@sporlyworks.com.</span>';
     }
 
     // ====== FAQ ======
@@ -258,12 +258,12 @@
         { q: 'How do I install a SporlyWorks extension?', a: 'Visit the Chrome Web Store, find the extension, and click "Add to Chrome". It works instantly — no account needed.' },
         { q: 'Do SporlyWorks extensions work on Edge, Brave, and Arc?', a: 'Yes! All Chrome extensions work natively on Edge, Brave, Arc, and Opera. For Firefox, we have 34 dedicated MV2 variants.' },
         { q: 'How do I activate my Pro license?', a: 'Open the extension, use it until you hit the free limit, then paste your license key from your Stripe receipt email. Click "Activate" and you\'re set!' },
-        { q: 'Can I get a refund?', a: 'Yes — 30-day money-back guarantee, no questions asked. Email flowkit.support@gmail.com with your purchase email.' },
+        { q: 'Can I get a refund?', a: 'Yes — 30-day money-back guarantee, no questions asked. Email support@sporlyworks.com with your purchase email.' },
         { q: 'Do you collect any personal data?', a: 'Absolutely not. Zero data collection, zero tracking, zero analytics. Everything runs 100% locally in your browser.' },
         { q: 'What happens if I cancel my subscription?', a: 'You keep using the extension until the end of your billing period. After that, it reverts to the free tier with limited uses.' },
-        { q: 'I lost my license key. How do I get it back?', a: 'Check your Stripe receipt email. If you can\'t find it, email flowkit.support@gmail.com with the email you used to purchase.' },
+        { q: 'I lost my license key. How do I get it back?', a: 'Check your Stripe receipt email. If you can\'t find it, email support@sporlyworks.com with the email you used to purchase.' },
         { q: 'An extension isn\'t working. What should I do?', a: 'Try: 1) Refresh the page, 2) Disable/re-enable the extension at chrome://extensions, 3) Clear extension data, 4) Reinstall from the Chrome Web Store.' },
-        { q: 'Do you offer team or business pricing?', a: 'Yes! Our Master Suite ($49 one-time) includes all 15 Pro tools. Email flowkit.support@gmail.com for bulk licensing.' },
+        { q: 'Do you offer team or business pricing?', a: 'Yes! Our Master Suite ($49 one-time) includes all 15 Pro tools. Email support@sporlyworks.com for bulk licensing.' },
         { q: 'How often are extensions updated?', a: 'We release updates regularly. Chrome auto-updates extensions — you don\'t need to do anything. Check our Changelog for details.' },
         { q: 'Can I use SporlyWorks offline?', a: 'Most extensions work fully offline since they run locally. Only the URL Shortener and Website Monitor need internet access.' },
         { q: 'What payment methods do you accept?', a: 'We accept all major credit/debit cards through Stripe. Apple Pay and Google Pay are also supported.' },
