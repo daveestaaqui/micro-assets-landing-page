@@ -232,7 +232,7 @@
             const answer = findAnswer(msg);
             const formatted = answer.replace(/\*\*(.*?)\*\*/g, '<strong style="color:#e0e0e0;">$1</strong>')
                 .replace(/\n/g, '<br>')
-                .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" style="color:#a855f7;text-decoration:underline;">$1</a>');
+                .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" style="color:#205c40; font-weight:bold;text-decoration:underline;">$1</a>');
             log.innerHTML += `<div class="chat-bubble-ai rounded-xl p-3 text-sm text-zinc-300">${formatted}</div>`;
             log.scrollTop = log.scrollHeight;
         }, 500);
@@ -297,7 +297,7 @@
         html += '<div style="max-width:800px;margin:0 auto;">';
         html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;"><h2 style="font-size:24px;font-weight:bold;color:white;">📊 Admin Bug Dashboard</h2><button onclick="this.closest(\'div[style*=fixed]\').remove()" style="padding:8px 16px;border-radius:8px;background:#ef4444;color:white;border:none;cursor:pointer;">Close</button></div>';
         html += '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px;">';
-        html += '<div style="padding:16px;border-radius:12px;background:rgba(168,85,247,0.1);border:1px solid rgba(168,85,247,0.2);text-align:center;"><div style="font-size:28px;font-weight:bold;color:#a855f7;">'+logs.length+'</div><div style="font-size:12px;color:#a1a1aa;">Total Reports</div></div>';
+        html += '<div style="padding:16px;border-radius:12px;background:rgba(168,85,247,0.1);border:1px solid rgba(168,85,247,0.2);text-align:center;"><div style="font-size:28px;font-weight:bold;color:#205c40; font-weight:bold;">'+logs.length+'</div><div style="font-size:12px;color:#a1a1aa;">Total Reports</div></div>';
         html += '<div style="padding:16px;border-radius:12px;background:rgba(74,222,128,0.1);border:1px solid rgba(74,222,128,0.2);text-align:center;"><div style="font-size:28px;font-weight:bold;color:#4ade80;">'+recent.length+'</div><div style="font-size:12px;color:#a1a1aa;">This Week</div></div>';
         html += '<div style="padding:16px;border-radius:12px;background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.2);text-align:center;"><div style="font-size:28px;font-weight:bold;color:#fbbf24;">'+alerts.length+'</div><div style="font-size:12px;color:#a1a1aa;">Active Alerts</div></div>';
         html += '</div>';
@@ -311,9 +311,9 @@
 
         html += '<h3 style="font-size:16px;font-weight:bold;color:white;margin:16px 0 8px;">Recent Reports</h3>';
         logs.slice(-20).reverse().forEach(l => {
-            html += '<div style="padding:6px 10px;border-radius:6px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);margin-bottom:3px;font-size:11px;">';
+            html += '<div style="padding:6px 10px;border-radius:6px;background:rgba(154,127,96,0.1);border:1px solid rgba(255,255,255,0.05);margin-bottom:3px;font-size:11px;">';
             html += '<span style="color:#71717a;">'+new Date(l.timestamp).toLocaleString()+'</span> ';
-            if(l.extension) html += '<span style="color:#a855f7;font-weight:bold;">['+l.extension+']</span> ';
+            if(l.extension) html += '<span style="color:#205c40; font-weight:bold;font-weight:bold;">['+l.extension+']</span> ';
             html += '<span style="color:#d4d4d8;">'+l.message.slice(0,100)+'</span></div>';
         });
 
