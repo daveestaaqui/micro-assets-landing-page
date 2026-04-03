@@ -21,7 +21,6 @@
             transition: all 0.3s var(--transition-smooth); text-align: center;
         }
         .platform-card:hover { border-color: var(--forest); transform: translateY(-3px); box-shadow: var(--shadow-md); }
-        .platform-card.disabled { opacity: 0.4; pointer-events: none; filter: grayscale(1); }
         .platform-icon { font-size: 32px; }
         .platform-name { font-weight: 700; font-size: 15px; color: var(--charcoal); }
         .platform-status { font-size: 12px; color: var(--warm-gray); }
@@ -37,7 +36,7 @@
         .pro-banner { background: var(--forest-deep); color: white; padding: 24px; border-radius: var(--radius-md); margin-bottom: 48px; display: flex; align-items: center; justify-content: space-between; }
         .pro-banner h3 { color: white; margin: 0 0 4px; font-size: 18px; }
         .pro-banner p { color: var(--sage); margin: 0; font-size: 14px; }
-        .btn-pro { background: white; color: var(--forest-deep); padding: 10px 20px; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 14px; transition: 0.3s; }
+        .btn-pro { background: linear-gradient(135deg, #1a6b3c, #0F2C1D); color: white; padding: 10px 20px; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 14px; transition: 0.3s; border: none; }
         .btn-pro:hover { transform: scale(1.05); }
     </style>
 </head>
@@ -60,7 +59,13 @@
         <h1>Dark Search — Google Night Mode</h1>
         <p class="ext-desc">Applies a dark theme to Google Search results pages. Toggle the dark mode on or off from the extension popup.</p>
         
-        
+        <div class="pro-banner">
+            <div>
+                <h3>Dark Search</h3>
+                <p>Free & open-source. Install now.</p>
+            </div>
+            <a href="https://chromewebstore.google.com/detail/plnkdnnmlgjjkdnkcgaaiadaakngcjfd" target="_blank" class="btn-pro">Install Free on Chrome</a>
+        </div>
 
         <div class="platform-grid">
             <a href="https://chromewebstore.google.com/detail/plnkdnnmlgjjkdnkcgaaiadaakngcjfd" target="_blank" class="platform-card available">
@@ -68,16 +73,8 @@
     <span class="platform-name">Chrome / Edge / Opera</span>
     <span class="platform-status">Install from Chrome Web Store</span>
 </a>
-            <a href="https://addons.mozilla.org/en-US/firefox/addon/google-dark-search/" target="_blank" class="platform-card available">
-    <span class="platform-icon">🦊</span>
-    <span class="platform-name">Firefox</span>
-    <span class="platform-status">Install from Firefox Add-ons</span>
-</a>
-            <a href="https://play.google.com/store/apps/details?id=com.sporlyworks.google_dark_search" target="_blank" class="platform-card available">
-    <span class="platform-icon">🤖</span>
-    <span class="platform-name">Android</span>
-    <span class="platform-status">Get it on Google Play</span>
-</a>
+            
+            
         </div>
 
         <div class="ext-features">
@@ -86,7 +83,7 @@
                 <li>Professional tracking & privacy safety</li>
                 <li>Zero bloated analytics—works offline</li>
                 <li>Built for modern browsers</li>
-                <li>Part of OmniSuite by SporlyWorks</li>
+                <li>Part of the SporlyWorks OmniSuite</li>
             </ul>
         </div>
 
