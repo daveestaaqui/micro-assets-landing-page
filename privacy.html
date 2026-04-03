@@ -3,106 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy — SporlyWorks</title>
-    <meta name="description" content="Privacy Policy for SporlyWorks browser extensions and mobile applications.">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Privacy Policy — OmniSuite by SporlyWorks</title>
+    <meta name="description" content="Privacy Policy for OmniSuite browser extensions and mobile applications.">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=23">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-        body { background-color: #09090b; color: #d4d4d8; font-family: 'Inter', sans-serif; }
-        .glass-panel { background: rgba(24,24,27,0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); }
+        .privacy-page { max-width: 800px; margin: 0 auto; padding: 140px 24px 80px; }
+        .privacy-page h1 { font-size: 40px; color: var(--forest-deep); margin-bottom: 8px; letter-spacing: -1px; }
+        .privacy-page .last-updated { font-size: 14px; color: var(--sage); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 48px; display: block; }
+        
+        .privacy-content { background: #fff; padding: 48px; border-radius: var(--radius-lg); border: 1.5px solid var(--cream-dark); box-shadow: var(--shadow-soft); }
+        .privacy-section { margin-bottom: 40px; }
+        .privacy-section:last-child { margin-bottom: 0; }
+        
+        .privacy-section h2 { font-size: 22px; color: var(--forest-deep); margin-bottom: 16px; font-family: 'Inter', sans-serif; font-weight: 700; border-bottom: 2px solid var(--cream); padding-bottom: 8px; }
+        .privacy-section h3 { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--sage); margin-bottom: 12px; margin-top: 24px; }
+        .privacy-section p { font-size: 16px; color: var(--charcoal-soft); line-height: 1.7; margin-bottom: 16px; }
+        
+        .privacy-list { list-style: none; padding: 0; margin-bottom: 16px; }
+        .privacy-list li { position: relative; padding-left: 24px; font-size: 16px; color: var(--charcoal-soft); line-height: 1.6; margin-bottom: 12px; }
+        .privacy-list li::before { content: '•'; position: absolute; left: 8px; color: var(--forest); font-weight: bold; }
+        .privacy-list strong { color: var(--charcoal); font-weight: 600; }
+        
+        code { background: var(--cream); padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 14px; color: var(--forest-deep); }
     </style>
 </head>
-<body class="min-h-screen pt-20 pb-16">
-    <nav class="fixed top-0 w-full z-50 glass-panel border-b border-white/10">
-        <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="index.html" class="flex items-center"><img src="unified-logo.png?v=21" alt="SporlyWorks" style="height: 38px; width: auto; object-fit: contain; filter: brightness(0) invert(1);"></a>
-            <span class="text-zinc-400 text-sm font-semibold">Privacy Policy</span>
+<body>
+    <nav id="mainNav" class="scrolled">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo" style="text-decoration: none;">
+                <img src="logo-64.png" alt="SporlyWorks logo" width="40" height="40" style="background: rgba(249,248,244,0.6); border-radius: 12px; padding: 4px; border: 1px solid rgba(15,44,29,0.05); margin-right: 12px;">
+                <span class="company-name" style="font-family: 'DM Serif Display', serif; font-size: 24px; font-weight: 400; color: var(--forest-deep); text-decoration: none;">SporlyWorks</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html#pricing" style="color:var(--forest);font-weight:700;">OmniSuite Pro</a>
+                <a href="index.html#tools">Extensions</a>
+            </div>
         </div>
     </nav>
-    <main class="max-w-4xl mx-auto px-6 mt-8">
-        <div class="glass-panel rounded-2xl p-8 md:p-12">
-            <h1 class="text-3xl font-bold text-white mb-2">Privacy Policy</h1>
-            <p class="text-zinc-500 text-sm mb-8">Last updated: March 29, 2026</p>
 
-            <div class="space-y-8 text-sm leading-relaxed">
-                <section>
-                    <h2 class="text-xl font-semibold text-white mb-3">1. Introduction</h2>
-                    <p class="text-zinc-400">SporlyWorks ("we", "us", "our") develops browser extensions and mobile applications designed to enhance web productivity. This Privacy Policy explains how we handle information when you use any of our products.</p>
-                </section>
+    <main class="privacy-page">
+        <h1>Privacy Policy</h1>
+        <span class="last-updated">Last updated: April 3, 2026</span>
 
-                <section>
-                    <h2 class="text-xl font-semibold text-white mb-3">2. Information We Collect</h2>
-                    <h3 class="text-white font-medium mb-2 mt-4">2.1 Information You Provide</h3>
-                    <ul class="space-y-2 text-zinc-400 ml-4 list-disc">
-                        <li><strong>License Keys:</strong> When you purchase a PRO upgrade, we store a license key locally in your browser to validate your purchase. This key is linked only to your Stripe transaction — we do not store your name, credit card, or billing address.</li>
-                        <li><strong>Email Address:</strong> If provided during checkout via Stripe, your email is used solely to deliver your license key and handle support requests.</li>
-                    </ul>
+        <div class="privacy-content">
+            <div class="privacy-section">
+                <h2>1. Introduction</h2>
+                <p>SporlyWorks ("we", "us", "our") develops the OmniSuite browser extensions and mobile applications designed to enhance web productivity. This Privacy Policy explains how we handle information when you use any of our products. Our core philosophy is simple: <strong>No bloat. No tracking. Pure productivity.</strong></p>
+            </div>
 
-                    <h3 class="text-white font-medium mb-2 mt-6">2.2 Information We Do NOT Collect</h3>
-                    <ul class="space-y-2 text-zinc-400 ml-4 list-disc">
-                        <li>We do <strong>not</strong> collect browsing history, keystrokes, or page content.</li>
-                        <li>We do <strong>not</strong> use cookies, analytics trackers, or fingerprinting.</li>
-                        <li>We do <strong>not</strong> sell, share, or transfer any user data to third parties.</li>
-                        <li>We do <strong>not</strong> transmit any data from your browser to our servers during normal usage.</li>
-                    </ul>
+            <div class="privacy-section">
+                <h2>2. Information We Collect</h2>
+                
+                <h3>2.1 Information You Provide</h3>
+                <ul class="privacy-list">
+                    <li><strong>License Keys:</strong> When you purchase an OmniSuite PRO upgrade, we store a license key locally in your browser to validate your purchase. This key is linked only to your Stripe transaction.</li>
+                    <li><strong>Email Address:</strong> If provided during checkout via Stripe, your email is used solely to deliver your license key and handle support requests.</li>
+                </ul>
 
-                    <h3 class="text-white font-medium mb-2 mt-6">2.3 Network Requests</h3>
-                    <p class="text-zinc-400">The only outbound network request our extensions make is a <strong>license validation check</strong> to our server (<code>microassets-license-production.up.railway.app</code>) when you enter a license key. This request sends only the key itself and receives a valid/invalid response. No other data is transmitted.</p>
-                </section>
+                <h3>2.2 Information We Do NOT Collect</h3>
+                <ul class="privacy-list">
+                    <li>We do <strong>not</strong> collect browsing history, keystrokes, or page content.</li>
+                    <li>We do <strong>not</strong> use cookies, analytics trackers, or fingerprinting.</li>
+                    <li>We do <strong>not</strong> sell, share, or transfer any user data to third parties.</li>
+                    <li>We do <strong>not</strong> transmit any data from your browser to our servers during normal offline usage.</li>
+                </ul>
 
-                <section>
-                    <h2 class="text-xl font-semibold text-white mb-3">3. Data Storage</h2>
-                    <p class="text-zinc-400">All extension settings and preferences are stored locally on your device using the browser's built-in storage API (<code>chrome.storage.local</code> or equivalent). This data never leaves your device.</p>
-                </section>
+                <h3>2.3 Network Requests</h3>
+                <p>The only outbound network request our extensions make is a <strong>license validation check</strong> to our server (<code>microassets-license-production.up.railway.app</code>) when you enter a license key. This request sends only the key itself and receives a valid/invalid response. No other data is transmitted.</p>
+            </div>
 
-                <section>
-                    <h2 class="text-xl font-semibold text-white mb-3">4. Third-Party Services</h2>
-                    <ul class="space-y-2 text-zinc-400 ml-4 list-disc">
-                        <li><strong>Stripe:</strong> Payment processing is handled entirely by <a href="https://stripe.com/privacy" target="_blank" class="text-purple-400 hover:text-purple-300">Stripe</a>. We never see or store your payment card details.</li>
-                        <li><strong>Google Play Billing:</strong> For Android app purchases, transactions are processed by Google Play. See <a href="https://policies.google.com/privacy" target="_blank" class="text-purple-400 hover:text-purple-300">Google's Privacy Policy</a>.</li>
-                    </ul>
-                </section>
+            <div class="privacy-section">
+                <h2>3. Local Storage</h2>
+                <p>Our extensions (such as the Bookmark Manager, Code Snippet Manager, etc.) store your saved data entirely locally on your device using your browser's built-in <code>chrome.storage</code> or <code>localStorage</code> API. We have no access to this data.</p>
+            </div>
 
-                <section>
-                    <h2 class="text-xl font-semibold text-white mb-3">5. Children's Privacy</h2>
-                    <p class="text-zinc-400">Our products are general-audience tools not directed at children under 13. We do not knowingly collect personal information from children.</p>
-                </section>
+            <div class="privacy-section">
+                <h2>4. Third-Party Services</h2>
+                <ul class="privacy-list">
+                    <li><strong>Stripe:</strong> We use Stripe to process payments. When you purchase PRO, your payment data is handled securely by Stripe. We do not have access to your credit card details.</li>
+                    <li><strong>Google Play Store:</strong> For our Android applications, Google may collect crash logs or usage metrics according to your device's Android settings and the Google Play privacy policy.</li>
+                </ul>
+            </div>
 
-                <section>
-                    <h2 class="text-xl font-semibold text-white mb-3">6. Data Retention</h2>
-                    <p class="text-zinc-400">License keys are retained on our validation server for the duration of your subscription or purchase. If you request deletion, email <a href="mailto:flowkit.support@gmail.com" class="text-purple-400 hover:text-purple-300">flowkit.support@gmail.com</a> and we will remove your record within 30 days.</p>
-                </section>
-
-                <section>
-                    <h2 class="text-xl font-semibold text-white mb-3">7. Your Rights</h2>
-                    <p class="text-zinc-400 mb-2">You may:</p>
-                    <ul class="space-y-2 text-zinc-400 ml-4 list-disc">
-                        <li>Uninstall any extension at any time to remove all locally stored data.</li>
-                        <li>Request deletion of your license key record by emailing us.</li>
-                        <li>Request a copy of any data we hold about you (typically just an email and license key).</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2 class="text-xl font-semibold text-white mb-3">8. Security</h2>
-                    <p class="text-zinc-400">Our license validation server uses HTTPS encryption for all communications. License keys are randomly generated cryptographic tokens with no personally identifiable information encoded within them.</p>
-                </section>
-
-                <section>
-                    <h2 class="text-xl font-semibold text-white mb-3">9. Changes to This Policy</h2>
-                    <p class="text-zinc-400">We may update this policy occasionally. The "Last Updated" date above will reflect any changes. Continued use of our products constitutes acceptance of the updated policy.</p>
-                </section>
-
-                <section>
-                    <h2 class="text-xl font-semibold text-white mb-3">10. Contact</h2>
-                    <p class="text-zinc-400">Questions or concerns? Reach us at <a href="mailto:flowkit.support@gmail.com" class="text-purple-400 hover:text-purple-300">flowkit.support@gmail.com</a>.</p>
-                </section>
+            <div class="privacy-section">
+                <h2>5. Contact Us</h2>
+                <p>If you have any questions or concerns about this Privacy Policy or our practices, please contact us at:</p>
+                <p><a href="mailto:support@sporlyworks.com" style="color: var(--forest); font-weight: 600; text-decoration: none;">support@sporlyworks.com</a></p>
             </div>
         </div>
     </main>
-    <footer class="max-w-4xl mx-auto px-6 pt-8 pb-8 text-center text-zinc-500 text-sm">
-        <p>&copy; 2026 SporlyWorks by SporlyWorks Team. <a href="terms.html" class="hover:text-white">Terms</a> · <a href="support.html" class="hover:text-white">Support</a></p>
-    </footer>
 
+    <footer style="margin-top: 64px; text-align: center; border-top: 1px solid var(--cream-dark); padding: 48px 24px;">
+        <p style="font-size: 14px; color: var(--warm-gray); margin-bottom: 16px;">&copy; 2026 SporlyWorks. All rights reserved.</p>
+        <p style="font-size: 13px; color: var(--sage);">OmniSuite by SporlyWorks — Cultivating Intelligent Workflows.</p>
+    </footer>
 </body>
 </html>
