@@ -5,23 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Download SporlyWorks Native Suite</title>
     <meta name="description" content="Download the SporlyWorks native desktop installer to securely install extensions completely offline and bypass store restrictions.">
-    <link rel="icon" type="image/x-icon" href="../favicon.ico">
-    <link rel="icon" type="image/png" sizes="64x64" href="../logo-64.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="64x64" href="logo-64.png">
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body style="background-color: var(--cream);">
 
     <!-- ═══ NAVIGATION ═══ -->
     <nav id="mainNav">
         <div class="nav-inner">
-            <a href="../index.html" style="text-decoration:none; display:flex; align-items:center; gap:12px;">
-                <img src="../logo-64.png" alt="SporlyWorks Logo" style="height:32px;">
+            <a href="index.html" style="text-decoration:none; display:flex; align-items:center; gap:12px;">
+                <img src="logo-64.png" alt="SporlyWorks Logo" style="height:32px;">
                 <span style="font-family:'DM Serif Display', serif; font-size:20px; color:var(--forest-deep);">SporlyWorks</span>
             </a>
             <div class="nav-links" id="navLinks">
-                <a href="../index.html#omnisuite">About</a>
-                <a href="../index.html#tools">Extensions</a>
+                <a href="index.html#omnisuite">About</a>
+                <a href="index.html#tools">Extensions</a>
                 <a href="mailto:support@sporlyworks.com" class="nav-cta">Get Support</a>
             </div>
             <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
@@ -42,7 +42,7 @@
             <div style="background: white; border-radius: 24px; padding: 48px; border: 1px solid var(--cream-dark); box-shadow: 0 16px 40px rgba(15,44,29,0.06); text-align: left;">
                 
                 <h3 style="font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 700; color: var(--charcoal); margin-bottom: 16px;">Download the Installer</h3>
-                <p style="color: var(--warm-gray); font-size: 15px; margin-bottom: 32px;">The Desktop GUI fetches the latest uncompressed extensions directly from our secure CDN and drops them right into your `SporlyWorks_Suite` folder.</p>
+                <p style="color: var(--warm-gray); font-size: 15px; margin-bottom: 32px;">The Desktop GUI fetches the latest extensions directly from our secure CDN and drops them right into your <code style="background:#f1f5f9; padding:2px 6px; border-radius:4px; font-size:13px;">SporlyWorks_Suite</code> folder.</p>
                 
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 32px;">
                     <a href="binaries/SporlyWorks_Installer_Windows.exe" download style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; background: #f8fafc; border: 1px solid #e2e8f0; padding: 24px; border-radius: 16px; text-decoration: none; transition: all 0.3s ease; color: var(--charcoal);" onmouseover="this.style.borderColor='var(--forest)'; this.style.backgroundColor='white'; this.style.boxShadow='0 8px 16px rgba(15,44,29,0.08)';" onmouseout="this.style.borderColor='#e2e8f0'; this.style.backgroundColor='#f8fafc'; this.style.boxShadow='none';">
@@ -55,7 +55,7 @@
                         <span style="font-weight: 600; font-size: 15px;">Mac OS</span>
                     </a>
                     
-                    <a href="binaries/SporlyWorks_Installer_Linux" download style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; background: #f8fafc; border: 1px solid #e2e8f0; padding: 24px; border-radius: 16px; text-decoration: none; transition: all 0.3s ease; color: var(--charcoal);" onmouseover="this.style.borderColor='var(--forest)'; this.style.backgroundColor='white'; this.style.boxShadow='0 8px 16px rgba(15,44,29,0.08)';" onmouseout="this.style.borderColor='#e2e8f0'; this.style.backgroundColor='#f8fafc'; this.style.boxShadow='none';">
+                    <a href="binaries/SporlyWorks_Installer_Linux.zip" download style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; background: #f8fafc; border: 1px solid #e2e8f0; padding: 24px; border-radius: 16px; text-decoration: none; transition: all 0.3s ease; color: var(--charcoal);" onmouseover="this.style.borderColor='var(--forest)'; this.style.backgroundColor='white'; this.style.boxShadow='0 8px 16px rgba(15,44,29,0.08)';" onmouseout="this.style.borderColor='#e2e8f0'; this.style.backgroundColor='#f8fafc'; this.style.boxShadow='none';">
                         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5.8 11.3 2-2.2c.4-.4.4-1.1 0-1.5l-2-2.2"/><path d="m11.8 15.3 2-2.2c.4-.4.4-1.1 0-1.5l-2-2.2"/><path d="M14 20h6"/><path d="M8 12h6"/></svg>
                         <span style="font-weight: 600; font-size: 15px;">Linux</span>
                     </a>
@@ -70,9 +70,9 @@
                     <ol style="color: var(--warm-gray); font-size: 14px; margin-left: 20px; padding-left: 4px; line-height: 1.6;">
                         <li>Run the setup application to download your selected extensions.</li>
                         <li>Open your Chromium browser (Chrome, Edge, Brave).</li>
-                        <li>Go strictly to `chrome://extensions` in your address bar.</li>
+                        <li>Navigate to <code style="background:#f1f5f9; padding:2px 6px; border-radius:4px; font-size:13px;">chrome://extensions</code> in your address bar.</li>
                         <li>Toggle <strong>Developer Mode</strong> on the top right.</li>
-                        <li>Click <strong>Load unpacked</strong> and select the folders inside `~/SporlyWorks_Suite/`.</li>
+                        <li>Click <strong>Load unpacked</strong> and select the folders inside <code style="background:#f1f5f9; padding:2px 6px; border-radius:4px; font-size:13px;">~/SporlyWorks_Suite/</code>.</li>
                     </ol>
                 </div>
 
@@ -82,7 +82,7 @@
                         Android Users
                     </h4>
                     <p style="color: var(--warm-gray); font-size: 14px; line-height: 1.6;">
-                        Standard Google Chrome on Android does not inherently support installing extensions. To experience the <strong>SporlyWorks Suite</strong> on mobile, we recommend installing the open-source <strong>Kiwi Browser</strong> from the Play Store. Once installed, simply download the extensions as ZIP files, open `chrome://extensions` within Kiwi, and sideload them directly!
+                        Standard Google Chrome on Android does not support extensions. To use the <strong>SporlyWorks Suite</strong> on mobile, install <strong><a href="https://play.google.com/store/apps/details?id=com.kiwibrowser.browser" target="_blank" style="color: var(--forest); text-decoration: underline;">Kiwi Browser</a></strong> from the Play Store. Once installed, open <code style="background:#f1f5f9; padding:2px 6px; border-radius:4px; font-size:13px;">chrome://extensions</code> within Kiwi, enable Developer Mode, and sideload the extensions directly.
                     </p>
                 </div>
                 
