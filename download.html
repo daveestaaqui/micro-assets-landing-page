@@ -3,12 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download SporlyWorks OmniSuite — All 87 Extensions</title>
-    <meta name="description" content="Download the complete SporlyWorks OmniSuite — 87 browser extensions in one zip. Works on macOS, Windows, and Linux. No installer needed.">
+    <title>Download SporlyWorks OmniSuite — Chrome &amp; Firefox Extensions</title>
+    <meta name="description" content="Download the complete SporlyWorks OmniSuite — 87 Chrome extensions and 85 Firefox add-ons in simple zip files. Works on every OS.">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="64x64" href="logo-64.png">
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .dl-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 0.3s ease;
+        }
+        .dl-card:hover {
+            border-color: var(--forest);
+            box-shadow: 0 8px 24px rgba(15,44,29,0.08);
+        }
+        .dl-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--forest), var(--forest-deep));
+            color: white;
+            padding: 14px 28px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+        .dl-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(15,44,29,0.18);
+        }
+        .dl-btn.secondary {
+            background: white;
+            color: var(--forest-deep);
+            border: 2px solid var(--forest);
+        }
+        .dl-btn.secondary:hover {
+            background: var(--cream);
+        }
+        .browser-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            margin-top: 16px;
+        }
+        .browser-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 14px;
+            color: var(--charcoal);
+        }
+        .browser-item .b-icon { font-size: 20px; }
+        .browser-item .b-label { font-weight: 600; }
+        .browser-item .b-url { font-size: 12px; color: var(--warm-gray); font-family: monospace; }
+    </style>
 </head>
 <body style="background-color: var(--cream);">
 
@@ -31,65 +89,175 @@
     </nav>
 
     <!-- ═══ HERO ═══ -->
-    <section class="hero" id="hero" style="min-height: 85vh; padding-top: 120px; display:flex; align-items:center;">
+    <section class="hero" id="hero" style="padding-top: 120px; padding-bottom: 40px;">
         <div class="hero-bg-pattern"></div>
-        <div class="container" style="position:relative; z-index:1; max-width:800px; text-align:center;">
-            
+        <div class="container" style="position:relative; z-index:1; max-width:860px; text-align:center;">
             <span class="section-tag center" style="margin-bottom: 16px;">Works on Every OS</span>
-            <h1 style="font-family: 'DM Serif Display', serif; font-size: 56px; color: var(--forest-deep); line-height: 1.1; margin-bottom: 24px;">Download the Complete Suite.</h1>
-            <p class="hero-subtitle" style="font-weight: 400; margin-bottom: 48px;">One zip file. 87 extensions. Unzip and load into any Chromium browser — Chrome, Edge, Brave, or Opera. No installer, no app store, no issues.</p>
-            
-            <div style="background: white; border-radius: 24px; padding: 48px; border: 1px solid var(--cream-dark); box-shadow: 0 16px 40px rgba(15,44,29,0.06); text-align: left;">
-                
-                <h3 style="font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 700; color: var(--charcoal); margin-bottom: 16px;">Download the Extension Pack</h3>
-                <p style="color: var(--warm-gray); font-size: 15px; margin-bottom: 32px;">Everything comes in a single <code style="background:#f1f5f9; padding:2px 6px; border-radius:4px; font-size:13px;">.zip</code> file. Unzip it anywhere on your computer. Each extension is its own folder — load only the ones you want.</p>
-                
-                <!-- Single Universal Download -->
-                <a href="binaries/SporlyWorks_OmniSuite_Complete.zip" download style="display: flex; align-items: center; justify-content: center; gap: 16px; background: linear-gradient(135deg, var(--forest), var(--forest-deep)); color: white; padding: 24px 36px; border-radius: 16px; text-decoration: none; transition: all 0.3s ease; font-size: 17px; font-weight: 700; margin-bottom: 16px;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 32px rgba(15,44,29,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                    Download OmniSuite (.zip)
-                </a>
-                <p style="text-align: center; color: var(--warm-gray); font-size: 13px; margin-bottom: 32px;">~11 MB · 87 extensions · Works on macOS, Windows, Linux</p>
-                
-                <!-- Setup Guide -->
-                <div style="background: var(--cream); border-radius: 16px; padding: 24px; border: 1px solid var(--cream-dark); margin-bottom: 16px;">
-                    <h4 style="font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 700; color: var(--forest-deep); margin-bottom: 12px; display:flex; align-items:center; gap:8px;">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
-                        How to Install (3 steps)
-                    </h4>
-                    <ol style="color: var(--warm-gray); font-size: 14px; margin-left: 20px; padding-left: 4px; line-height: 2;">
-                        <li><strong>Unzip</strong> the downloaded file anywhere on your computer.</li>
-                        <li>Open your browser and go to <code style="background:#f1f5f9; padding:2px 6px; border-radius:4px; font-size:13px;">chrome://extensions</code> — then turn on <strong>Developer Mode</strong> (top right).</li>
-                        <li>Click <strong>"Load unpacked"</strong> and select any extension folder from the unzipped directory.</li>
-                    </ol>
-                    <p style="color: var(--warm-gray); font-size: 13px; margin-top: 12px; font-style: italic;">Repeat step 3 for each extension you want. Install only what you need.</p>
-                </div>
-
-                <!-- Browser URLs -->
-                <div style="background: #f8fafc; border-radius: 16px; padding: 24px; border: 1px solid #e2e8f0; margin-bottom: 16px;">
-                    <h4 style="font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 700; color: var(--charcoal); margin-bottom: 12px;">Extension Page URLs by Browser</h4>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 14px; color: var(--warm-gray);">
-                        <div><strong>Chrome:</strong> <code style="background:#f1f5f9; padding:2px 6px; border-radius:4px; font-size:12px;">chrome://extensions</code></div>
-                        <div><strong>Edge:</strong> <code style="background:#f1f5f9; padding:2px 6px; border-radius:4px; font-size:12px;">edge://extensions</code></div>
-                        <div><strong>Brave:</strong> <code style="background:#f1f5f9; padding:2px 6px; border-radius:4px; font-size:12px;">brave://extensions</code></div>
-                        <div><strong>Opera:</strong> <code style="background:#f1f5f9; padding:2px 6px; border-radius:4px; font-size:12px;">opera://extensions</code></div>
-                    </div>
-                </div>
-
-                <!-- Android -->
-                <div style="background: #f8fafc; border-radius: 16px; padding: 24px; border: 1px solid #e2e8f0;">
-                    <h4 style="font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 700; color: var(--charcoal); margin-bottom: 12px; display:flex; align-items:center; gap:8px;">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
-                        Android Users
-                    </h4>
-                    <p style="color: var(--warm-gray); font-size: 14px; line-height: 1.6;">
-                        Standard Chrome on Android doesn't support extensions. To use SporlyWorks on mobile, install <strong><a href="https://play.google.com/store/apps/details?id=com.kiwibrowser.browser" target="_blank" style="color: var(--forest); text-decoration: underline;">Kiwi Browser</a></strong> from the Play Store. Then open <code style="background:#f1f5f9; padding:2px 6px; border-radius:4px; font-size:13px;">chrome://extensions</code> in Kiwi, enable Developer Mode, and load the extensions.
-                    </p>
-                </div>
-                
-            </div>
+            <h1 style="font-family: 'DM Serif Display', serif; font-size: 52px; color: var(--forest-deep); line-height: 1.1; margin-bottom: 20px;">Download the Complete Suite.</h1>
+            <p class="hero-subtitle" style="font-weight: 400; margin-bottom: 48px; max-width: 620px; margin-left: auto; margin-right: auto;">Simple zip files. Unzip, load into your browser, done. No installer, no app store, no issues.</p>
         </div>
     </section>
+
+    <!-- ═══ DOWNLOAD CARDS ═══ -->
+    <section style="padding: 0 0 60px 0;">
+        <div class="container" style="max-width: 860px;">
+
+            <!-- Chrome Extensions -->
+            <div class="dl-card" style="margin-bottom: 20px;">
+                <div style="display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+                    <div style="flex: 1; min-width: 240px;">
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                            <span style="font-size: 28px;">🌐</span>
+                            <h3 style="font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 700; color: var(--charcoal); margin: 0;">Chrome Extensions</h3>
+                        </div>
+                        <p style="color: var(--warm-gray); font-size: 14px; margin-bottom: 16px;">87 extensions for Chromium-based browsers. Works with Chrome, Edge, Brave, Opera, Vivaldi, Arc, and more.</p>
+                        <p style="color: var(--warm-gray); font-size: 12px;">~11 MB · .zip format · All operating systems</p>
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                        <a href="binaries/SporlyWorks_OmniSuite_Complete.zip" download class="dl-btn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            Download Chrome Pack
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Firefox Extensions -->
+            <div class="dl-card" style="margin-bottom: 20px;">
+                <div style="display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+                    <div style="flex: 1; min-width: 240px;">
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                            <span style="font-size: 28px;">🦊</span>
+                            <h3 style="font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 700; color: var(--charcoal); margin: 0;">Firefox Extensions</h3>
+                        </div>
+                        <p style="color: var(--warm-gray); font-size: 14px; margin-bottom: 16px;">85 add-ons built for Firefox (Manifest v2). Works on Firefox Desktop and Firefox for Android.</p>
+                        <p style="color: var(--warm-gray); font-size: 12px;">~11 MB · .zip format · All operating systems</p>
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                        <a href="binaries/SporlyWorks_Firefox_Extensions.zip" download class="dl-btn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            Download Firefox Pack
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Both Packs -->
+            <div class="dl-card" style="margin-bottom: 40px; background: linear-gradient(135deg, #f0fdf4, #f8fafc); border-color: var(--sage);">
+                <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 20px; text-align: center;">
+                    <div>
+                        <h3 style="font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 700; color: var(--forest-deep); margin: 0 0 8px 0;">Want everything?</h3>
+                        <p style="color: var(--warm-gray); font-size: 14px; margin: 0;">Download both packs — 172 total extensions across Chrome and Firefox.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══ HOW TO INSTALL ═══ -->
+            <div style="background: white; border-radius: 24px; padding: 40px; border: 1px solid var(--cream-dark); box-shadow: 0 8px 24px rgba(15,44,29,0.04); margin-bottom: 32px;">
+                
+                <h2 style="font-family: 'DM Serif Display', serif; font-size: 28px; color: var(--forest-deep); margin-bottom: 24px;">How to Install</h2>
+
+                <!-- Chromium Instructions -->
+                <div style="margin-bottom: 28px;">
+                    <h4 style="font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 700; color: var(--charcoal); margin-bottom: 12px;">🌐 Chrome, Edge, Brave, Opera, Vivaldi, Arc</h4>
+                    <ol style="color: var(--warm-gray); font-size: 14px; margin-left: 20px; padding-left: 4px; line-height: 2;">
+                        <li><strong>Unzip</strong> the Chrome pack anywhere on your computer.</li>
+                        <li>Open your browser's extensions page (see URLs below) and turn on <strong>Developer Mode</strong>.</li>
+                        <li>Click <strong>"Load unpacked"</strong> and select any extension folder.</li>
+                    </ol>
+                    <p style="color: var(--warm-gray); font-size: 13px; margin-top: 8px; font-style: italic;">Repeat step 3 for each extension you want. Install only what you need.</p>
+                </div>
+
+                <!-- Firefox Instructions -->
+                <div style="margin-bottom: 28px;">
+                    <h4 style="font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 700; color: var(--charcoal); margin-bottom: 12px;">🦊 Firefox</h4>
+                    <ol style="color: var(--warm-gray); font-size: 14px; margin-left: 20px; padding-left: 4px; line-height: 2;">
+                        <li><strong>Unzip</strong> the Firefox pack anywhere on your computer.</li>
+                        <li>Open Firefox and go to <code style="background:#f1f5f9; padding:2px 6px; border-radius:4px; font-size:12px;">about:debugging#/runtime/this-firefox</code></li>
+                        <li>Click <strong>"Load Temporary Add-on..."</strong> and select the <code style="background:#f1f5f9; padding:2px 6px; border-radius:4px; font-size:12px;">manifest.json</code> file inside any extension folder.</li>
+                    </ol>
+                </div>
+
+                <!-- Browser URL Reference -->
+                <h4 style="font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 700; color: var(--charcoal); margin-bottom: 12px;">Extensions Page by Browser</h4>
+                <div class="browser-grid">
+                    <div class="browser-item">
+                        <div>
+                            <div class="b-label">Chrome</div>
+                            <div class="b-url">chrome://extensions</div>
+                        </div>
+                    </div>
+                    <div class="browser-item">
+                        <div>
+                            <div class="b-label">Edge</div>
+                            <div class="b-url">edge://extensions</div>
+                        </div>
+                    </div>
+                    <div class="browser-item">
+                        <div>
+                            <div class="b-label">Brave</div>
+                            <div class="b-url">brave://extensions</div>
+                        </div>
+                    </div>
+                    <div class="browser-item">
+                        <div>
+                            <div class="b-label">Opera</div>
+                            <div class="b-url">opera://extensions</div>
+                        </div>
+                    </div>
+                    <div class="browser-item">
+                        <div>
+                            <div class="b-label">Vivaldi</div>
+                            <div class="b-url">vivaldi://extensions</div>
+                        </div>
+                    </div>
+                    <div class="browser-item">
+                        <div>
+                            <div class="b-label">Arc</div>
+                            <div class="b-url">arc://extensions</div>
+                        </div>
+                    </div>
+                    <div class="browser-item">
+                        <div>
+                            <div class="b-label">Firefox</div>
+                            <div class="b-url">about:debugging</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══ MOBILE ═══ -->
+            <div style="background: white; border-radius: 24px; padding: 40px; border: 1px solid var(--cream-dark); box-shadow: 0 8px 24px rgba(15,44,29,0.04);">
+                <h2 style="font-family: 'DM Serif Display', serif; font-size: 28px; color: var(--forest-deep); margin-bottom: 24px;">Mobile &amp; Android</h2>
+                
+                <div style="background: #f8fafc; border-radius: 16px; padding: 24px; border: 1px solid #e2e8f0; margin-bottom: 16px;">
+                    <h4 style="font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 700; color: var(--charcoal); margin-bottom: 12px;">Firefox for Android</h4>
+                    <p style="color: var(--warm-gray); font-size: 14px; line-height: 1.6;">
+                        <strong>Firefox for Android</strong> natively supports add-ons from the Firefox Add-ons store. Download the Firefox extension pack above and sideload them, or browse the official catalog directly in Firefox's settings under <strong>Add-ons</strong>.
+                    </p>
+                </div>
+
+                <div style="background: #f8fafc; border-radius: 16px; padding: 24px; border: 1px solid #e2e8f0;">
+                    <h4 style="font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 700; color: var(--charcoal); margin-bottom: 12px;">Chromium Extensions on Android</h4>
+                    <p style="color: var(--warm-gray); font-size: 14px; line-height: 1.6;">
+                        Standard Chrome on Android does not support extensions. For Chromium-based extension support on Android, use <strong>Yandex Browser</strong> (available on <a href="https://play.google.com/store/apps/details?id=com.yandex.browser" target="_blank" rel="noopener" style="color: var(--forest); text-decoration: underline;">Google Play</a>), which allows installing Chrome extensions by visiting the Chrome Web Store in desktop mode.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        // Nav scroll
+        window.addEventListener('scroll', () => {
+            document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 40);
+        });
+        // Mobile menu
+        document.getElementById('mobileToggle').addEventListener('click', () => {
+            document.getElementById('navLinks').classList.toggle('open');
+        });
+    </script>
 
 </body>
 </html>
