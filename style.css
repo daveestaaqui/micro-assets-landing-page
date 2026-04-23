@@ -117,7 +117,7 @@ nav.scrolled {
         radial-gradient(circle 600px at 20% 60%, rgba(74,74,74,0.03) 0%, transparent 70%),
         radial-gradient(circle 600px at 80% 40%, rgba(74,74,74,0.04) 0%, transparent 70%);
 }
-.hero-content { position: relative; z-index: 1; max-width: 800px; }
+.hero-content { position: relative; max-width: 800px; }
 .company-intro { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--slate-light); margin-bottom: 24px; }
 .hero-logo {
     width: 140px; height: 140px; border-radius: var(--radius-md);
