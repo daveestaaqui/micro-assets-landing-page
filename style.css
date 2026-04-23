@@ -30,20 +30,20 @@
 html { scroll-behavior: smooth; }
 
 body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     color: var(--charcoal);
     background-color: var(--parchment);
     /* Multi-layered parchment texture - adjusted to match logo background better */
-    background-image: url("parchment-bg.png");
+    background-image: url("parchment-bg-opt.jpg");
     background-repeat: repeat;
     background-size: 800px; /* Scale the high-res texture for better density */
-    background-attachment: fixed;
+    background-attachment: scroll;
     -webkit-font-smoothing: antialiased;
     line-height: 1.6;
     overflow-x: hidden;
 }
 
-h1, h2, h3 { font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; }
+h1, h2, h3 { font-family: 'DM Serif Display', serif; font-weight: 400; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
 
 /* ═══ REVEAL ANIMATIONS ═══ */
@@ -62,9 +62,10 @@ nav {
     transition: all 0.5s var(--transition-smooth);
 }
 nav.scrolled {
-    background: rgba(249, 248, 244, 0.85);
-    backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
-    border-bottom: 1px solid rgba(26,26,26,0.05);
+    background: rgba(253, 251, 247, 0.8);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border-bottom: 1px solid rgba(26, 26, 26, 0.05);
     padding: 16px 0;
 }
 .nav-inner {
@@ -72,7 +73,7 @@ nav.scrolled {
     display: flex; align-items: center; justify-content: space-between;
 }
 .nav-logo { display: flex; align-items: center; text-decoration: none; }
-.nav-logo img { flex-shrink: 0; mix-blend-mode: multiply; filter: contrast(1.1); }
+.nav-logo img { flex-shrink: 0; /*  */ /*  */ }
 .pro-badge {
     position: absolute; top: 12px; right: 12px;
     background: linear-gradient(135deg, #e8b931, #d4a017); color: #1a1a1a;
@@ -121,7 +122,7 @@ nav.scrolled {
 .company-intro { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--slate-light); margin-bottom: 24px; }
 .hero-logo {
     width: 140px; height: 140px; border-radius: var(--radius-md);
-    mix-blend-mode: multiply;
+    /*  */
     margin: 0 auto 32px; display: block;
     transition: transform 0.6s var(--transition-smooth);
 }
@@ -131,7 +132,7 @@ nav.scrolled {
 }
 .hero-badge {
     display: inline-flex; align-items: center; gap: 10px;
-    background: rgba(255,255,255,0.7); backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.7); backdrop-
     border: 1px solid rgba(26,26,26,0.05);
     padding: 10px 24px; border-radius: var(--radius-sm);
     font-size: 14px; font-weight: 500; color: var(--slate);
@@ -170,7 +171,7 @@ nav.scrolled {
     background: rgba(255,255,255,0.5); color: var(--charcoal); padding: 18px 40px;
     border-radius: var(--radius-sm); font-size: 16px; font-weight: 500;
     text-decoration: none; border: 1px solid rgba(26,26,26,0.1);
-    backdrop-filter: blur(8px); transition: all 0.4s var(--transition-smooth);
+    backdrop- transition: all 0.4s var(--transition-smooth);
 }
 .btn-ghost:hover { border-color: var(--charcoal); background: #ffffff; transform: translateY(-2px); box-shadow: var(--shadow-soft); }
 
@@ -226,7 +227,7 @@ nav.scrolled {
 .cat-card:hover { border-color: var(--charcoal); transform: translateY(-4px); box-shadow: var(--shadow-hover); }
 .cat-card:hover::after { opacity: 1; }
 .cat-icon { font-size: 32px; margin-bottom: 16px; }
-.cat-count { font-family: 'Inter', sans-serif; font-weight: 300; font-size: 40px; color: var(--slate); line-height: 1; margin-bottom: 8px;}
+.cat-count { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 300; font-size: 40px; color: var(--slate); line-height: 1; margin-bottom: 8px;}
 .cat-label { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--charcoal); margin: 8px 0 12px; }
 .cat-card p { font-size: 15px; color: var(--charcoal-soft); line-height: 1.6; }
 .cat-arrow { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: var(--slate); margin-top: 20px; transition: transform 0.3s; }
@@ -249,21 +250,24 @@ nav.scrolled {
 .search-bar svg { color: var(--slate); flex-shrink: 0; }
 .search-bar input {
     flex: 1; border: none; background: none; outline: none;
-    font-size: 16px; font-family: 'Inter', sans-serif; color: var(--charcoal);
+    font-size: 16px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: var(--charcoal);
 }
 .search-bar input::placeholder { color: var(--charcoal-soft); font-weight: 400; }
 
 .features-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
 .ext-card {
     display: flex; flex-direction: column; text-decoration: none; color: inherit;
-    background: var(--surface); border: 1px solid rgba(26,26,26,0.06);
+    background: rgba(255, 255, 255, 0.45); 
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(26,26,26,0.08);
     border-radius: var(--radius-md); padding: 32px;
     transition: all 0.4s var(--transition-smooth);
     box-shadow: 0 4px 20px rgba(26,26,26,0.02);
 }
 .ext-card:hover { border-color: var(--charcoal); box-shadow: var(--shadow-hover); transform: translateY(-4px); }
 .ext-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
-.ext-icon { width: 48px; height: 48px; border-radius: 4px; object-fit: cover; mix-blend-mode: multiply; }
+.ext-icon { width: 48px; height: 48px; border-radius: 4px; object-fit: cover; /*  */ }
 .ext-title { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--charcoal); line-height: 1.2; }
 .ext-desc { font-size: 15px; color: var(--charcoal-soft); line-height: 1.6; margin-bottom: 24px; flex-grow: 1; }
 .ext-footer {
@@ -289,9 +293,9 @@ nav.scrolled {
 .trust-inner p { font-size: 18px; color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 60px; }
 
 .promise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-.promise-item { padding: 40px; background: rgba(255,255,255,0.02); border-radius: var(--radius-lg); border: 1px solid rgba(255,255,255,0.05); backdrop-filter: blur(10px); }
+.promise-item { padding: 40px; background: rgba(255,255,255,0.02); border-radius: var(--radius-lg); border: 1px solid rgba(255,255,255,0.05); backdrop- }
 .promise-icon { font-size: 32px; margin-bottom: 16px; }
-.promise-item h4 { font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 600; margin-bottom: 12px; }
+.promise-item h4 { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 18px; font-weight: 600; margin-bottom: 12px; }
 .promise-item p { font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.6; margin: 0; }
 
 /* ═══ EXTENSION DETAIL PAGE SPECIFICS ═══ */
@@ -300,7 +304,7 @@ nav.scrolled {
 .ext-page-header {
     background: var(--surface);
     padding: 160px 24px 80px; text-align: center;
-    border-bottom: 1px solid rgba(26,26,26,0.05);
+    border-bottom: 1px solid transparent;
 }
 .ext-page-badge {    
     display: inline-block; font-size: 13px; font-weight: 600; text-transform: uppercase;
@@ -370,7 +374,7 @@ footer { padding: 80px 24px 40px; background: var(--surface); border-top: 1px so
         display: none; flex-direction: column; width: 100%;
         position: absolute; top: 100%; left: 0;
         background: var(--surface); padding: 24px;
-        border-bottom: 1px solid rgba(26,26,26,0.05);
+        border-bottom: 1px solid transparent;
         box-shadow: var(--shadow-soft);
     }
     .nav-links.active { display: flex; }
@@ -379,3 +383,12 @@ footer { padding: 80px 24px 40px; background: var(--surface); border-top: 1px so
     .mobile-toggle.open span:nth-child(2) { opacity: 0; }
     .mobile-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 }
+
+
+/* Scrolling Fix */
+body { border: none; outline: none; }
+#mainNav.scrolled { border-bottom: 1px solid rgba(0,0,0,0.02); box-shadow: 0 4px 24px -12px rgba(0,0,0,0.05); }
+
+.nav-logo img { background: transparent !important; border: none !important; box-shadow: none !important; }
+
+.nav-logo img { height: 150px !important; width: auto !important; background: transparent !important; }
