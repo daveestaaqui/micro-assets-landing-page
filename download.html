@@ -4,82 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Download SporlyWorks OmniSuite — Chrome &amp; Firefox Extensions</title>
-    <meta name="description" content="Download the complete SporlyWorks OmniSuite — 87 Chrome extensions and 85 Firefox add-ons in simple zip files. Works on every OS.">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="icon" type="image/png" sizes="64x64" href="logo-64.png">
+    <meta name="description" content="Download the complete SporlyWorks OmniSuite — all our Chrome extensions and Firefox add-ons in simple zip files. Works on every OS.">
+    <link rel="icon" type="image/x-icon" href="favicon.ic    <link rel="icon" type="image/png" sizes="256x256" href="logo-nav.png">
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=5">
     <style>
         .dl-card {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 16px;
-            padding: 32px;
-            transition: all 0.3s ease;
+            background: white;
+            border: 1px solid rgba(26,26,26,0.06);
+            border-radius: var(--radius-md);
+            padding: 40px;
+            transition: all 0.4s var(--transition-smooth);
+            box-shadow: var(--shadow-soft);
         }
         .dl-card:hover {
-            border-color: var(--forest);
-            box-shadow: 0 8px 24px rgba(15,44,29,0.08);
+            border-color: var(--charcoal);
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-4px);
         }
         .dl-btn {
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: linear-gradient(135deg, var(--forest), var(--forest-deep));
+            background: var(--charcoal);
             color: white;
-            padding: 14px 28px;
-            border-radius: 999px;
+            padding: 18px 32px;
+            border-radius: var(--radius-sm);
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 600;
             font-size: 15px;
-            transition: all 0.3s ease;
+            transition: all 0.4s var(--transition-smooth);
+            box-shadow: 0 4px 12px rgba(26,26,26,0.1);
         }
         .dl-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(15,44,29,0.18);
+            box-shadow: 0 12px 24px rgba(26,26,26,0.15);
         }
         .dl-btn.secondary {
             background: white;
-            color: var(--forest-deep);
-            border: 2px solid var(--forest);
+            color: var(--charcoal);
+            border: 1px solid rgba(26,26,26,0.1);
         }
         .dl-btn.secondary:hover {
-            background: var(--cream);
+            background: #fff;
+            border-color: var(--charcoal);
         }
         .browser-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 12px;
-            margin-top: 16px;
+            gap: 16px;
+            margin-top: 24px;
         }
         .browser-item {
             display: flex;
             align-items: center;
-            gap: 10px;
-            padding: 12px 16px;
+            gap: 12px;
+            padding: 16px;
             background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
+            border: 1px solid rgba(26,26,26,0.05);
+            border-radius: var(--radius-sm);
             font-size: 14px;
             color: var(--charcoal);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
         }
-        .browser-item .b-icon { font-size: 20px; }
-        .browser-item .b-label { font-weight: 600; }
-        .browser-item .b-url { font-size: 12px; color: var(--warm-gray); font-family: monospace; }
+        .browser-item .b-label { font-weight: 700; letter-spacing: -0.3px; }
+        .browser-item .b-url { font-size: 12px; color: var(--slate-light); font-family: 'Inter', sans-serif; opacity: 0.8; }
     </style>
 </head>
-<body style="background-color: var(--cream);">
+<body style="background: transparent;">
 
     <!-- ═══ NAVIGATION ═══ -->
-    <nav id="mainNav">
+    <nav id="mainNav" class="scrolled">
         <div class="nav-inner">
-            <a href="index.html" style="text-decoration:none; display:flex; align-items:center; gap:12px;">
-                <img src="logo-64.png" alt="SporlyWorks Logo" style="height:32px;">
-                <span style="font-family:'DM Serif Display', serif; font-size:20px; color:var(--forest-deep);">SporlyWorks</span>
+            <a href="index.html" class="nav-logo">
+                <img src="logo-nav.png?v=50" alt="SporlyWorks Logo" height="42">
+                <div style="display: flex; align-items: center; margin-left: 14px;">
+                    <span class="company-name" style="margin-left: 0; font-weight: 700; letter-spacing: -0.5px;">SporlyWorks</span>
+                </div>
             </a>
             <div class="nav-links" id="navLinks">
-                <a href="index.html#omnisuite">About</a>
+                <a href="index.html">Home</a>
                 <a href="index.html#tools">Extensions</a>
+                <a href="pricing.html">Pricing</a>
                 <a href="mailto:support@sporlyworks.com" class="nav-cta">Get Support</a>
             </div>
             <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
@@ -89,13 +95,14 @@
     </nav>
 
     <!-- ═══ HERO ═══ -->
-    <section class="hero" id="hero" style="padding-top: 120px; padding-bottom: 40px;">
+    <section class="hero" id="hero" style="padding-top: 180px; padding-bottom: 60px;">
         <div class="hero-bg-pattern"></div>
         <div class="container" style="position:relative; z-index:1; max-width:860px; text-align:center;">
-            <span class="section-tag center" style="margin-bottom: 16px;">Works on Every OS</span>
-            <h1 style="font-family: 'DM Serif Display', serif; font-size: 52px; color: var(--forest-deep); line-height: 1.1; margin-bottom: 20px;">Download the Complete Suite.</h1>
-            <p class="hero-subtitle" style="font-weight: 400; margin-bottom: 48px; max-width: 620px; margin-left: auto; margin-right: auto;">Simple zip files. Unzip, load into your browser, done. No installer, no app store, no issues.</p>
+            <span class="section-tag center" style="margin-bottom: 24px;">Works on Every OS</span>
+            <h1 style="font-family: 'DM Serif Display', serif; font-size: 64px; color: var(--charcoal); line-height: 1.1; margin-bottom: 24px; letter-spacing: -1.5px;">Download the Complete Suite.</h1>
+            <p class="hero-subtitle" style="font-weight: 400; margin-bottom: 48px; max-width: 640px; margin-left: auto; margin-right: auto; color: var(--charcoal-soft);">Simple zip files. Unzip, load into your browser, done. No installer, no app store, no tracking.</p>
         </div>
+    </section>       </div>
     </section>
 
     <!-- ═══ DOWNLOAD CARDS ═══ -->
@@ -110,7 +117,7 @@
                             <span style="font-size: 28px;">🌐</span>
                             <h3 style="font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 700; color: var(--charcoal); margin: 0;">Chrome Extensions</h3>
                         </div>
-                        <p style="color: var(--warm-gray); font-size: 14px; margin-bottom: 16px;">87 extensions for Chromium-based browsers. Works with Chrome, Edge, Brave, Opera, Vivaldi, Arc, and more.</p>
+                        <p style="color: var(--warm-gray); font-size: 14px; margin-bottom: 16px;">All our extensions for Chromium-based browsers. Works with Chrome, Edge, Brave, Opera, Vivaldi, Arc, and more.</p>
                         <p style="color: var(--warm-gray); font-size: 12px;">~11 MB · .zip format · All operating systems</p>
                     </div>
                     <div style="display: flex; align-items: center;">
@@ -130,7 +137,7 @@
                             <span style="font-size: 28px;">🦊</span>
                             <h3 style="font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 700; color: var(--charcoal); margin: 0;">Firefox Extensions</h3>
                         </div>
-                        <p style="color: var(--warm-gray); font-size: 14px; margin-bottom: 16px;">85 add-ons built for Firefox (Manifest v2). Works on Firefox Desktop and Firefox for Android.</p>
+                        <p style="color: var(--warm-gray); font-size: 14px; margin-bottom: 16px;">All our add-ons built for Firefox (Manifest v2). Works on Firefox Desktop and Firefox for Android.</p>
                         <p style="color: var(--warm-gray); font-size: 12px;">~11 MB · .zip format · All operating systems</p>
                     </div>
                     <div style="display: flex; align-items: center;">
@@ -149,7 +156,7 @@
                             <span style="font-size: 28px;">📱</span>
                             <h3 style="font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 700; color: var(--charcoal); margin: 0;">Android Apps</h3>
                         </div>
-                        <p style="color: var(--warm-gray); font-size: 14px; margin-bottom: 16px;">86 standalone Android apps (.aab format). Sideload directly on any Android device — no Play Store required.</p>
+                        <p style="color: var(--warm-gray); font-size: 14px; margin-bottom: 16px;">All our standalone Android apps (.aab format). Sideload directly on any Android device — no Play Store required.</p>
                         <p style="color: var(--warm-gray); font-size: 12px;">~327 MB · .zip format · Android devices</p>
                     </div>
                     <div style="display: flex; align-items: center;">
@@ -166,7 +173,7 @@
                 <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 20px; text-align: center;">
                     <div>
                         <h3 style="font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 700; color: var(--forest-deep); margin: 0 0 8px 0;">Want everything?</h3>
-                        <p style="color: var(--warm-gray); font-size: 14px; margin: 0;">Download all three packs — 87 Chrome extensions, 85 Firefox add-ons, and 86 Android apps.</p>
+                        <p style="color: var(--warm-gray); font-size: 14px; margin: 0;">Download all three packs — all our Chrome extensions, Firefox add-ons, and Android apps.</p>
                     </div>
                 </div>
             </div>

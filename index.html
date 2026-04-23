@@ -3,24 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SporlyWorks — Cultivating Intelligent Workflows.</title>
-    <meta name="description" content="OmniSuite is a curated ecosystem of 87+ lightweight, privacy-first Chrome extensions, Firefox add-ons, and Android apps for developers, designers, and teams. No bloat. No tracking. No nonsense.">
+    <title>SporlyWorks — Cultivating Intelligent Workflows</title>
+    <meta name="description" content="OmniSuite is a curated ecosystem of lightweight, privacy-first Chrome extensions, Firefox add-ons, and Android apps for developers, designers, and teams. No bloat. No tracking. No nonsense.">
     <meta name="keywords" content="chrome extensions, developer tools, browser extensions, free chrome extensions, productivity tools, SEO tools, CSS tools, JSON formatter, password generator, privacy extensions">
-    <meta property="og:title" content="SporlyWorks — Cultivating Intelligent Workflows.">
-    <meta property="og:description" content="Cultivating Intelligent Workflows. 87+ standalone browser extensions and Android apps — each one purpose-built to do one thing exceptionally well.">
+    <meta property="og:title" content="SporlyWorks — Cultivating Intelligent Workflows">
+    <meta property="og:description" content="Cultivating Intelligent Workflows. A growing collection of standalone browser extensions and Android apps — each one purpose-built to do one thing exceptionally well.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sporlyworks.com">
     <meta property="og:image" content="https://sporlyworks.com/logo-256.png">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="SporlyWorks — Cultivating Intelligent Workflows.">
+    <meta name="twitter:title" content="SporlyWorks — Cultivating Intelligent Workflows">
     <meta name="twitter:description" content="Cultivating Intelligent Workflows. Privacy-first browser extensions for developers.">
     <link rel="canonical" href="https://sporlyworks.com/">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="icon" type="image/png" sizes="64x64" href="logo-64.png">
+    <link rel="icon" type="image/png" sizes="256x256" href="logo-nav.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preload" as="image" href="logo-128.png">
+    <link rel="preload" as="image" href="unified-logo.png">
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="style.css?v=5">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -28,7 +27,7 @@
       "name": "OmniSuite",
       "operatingSystem": "Chrome, Firefox, Android",
       "applicationCategory": "DeveloperApplication",
-      "description": "A curated ecosystem of 87+ standalone browser extensions and native apps for developers, designers, and marketers. Privacy-first, lightweight, and bloat-free.",
+      "description": "A curated ecosystem of standalone browser extensions and native apps for developers, designers, and marketers. Privacy-first, lightweight, and bloat-free.",
       "offers": {
         "@type": "Offer",
         "price": "0",
@@ -47,17 +46,16 @@
     <!-- ═══ NAVIGATION ═══ -->
     <nav id="mainNav">
         <div class="nav-inner">
-            <!-- Invisible Spacer to keep nav-links flush right -->
-            <div style="width: 1px;"></div>
-            <div class="nav-links" id="navLinks">
-                <a href="#omnisuite">About</a>
-                <a href="#tools">Extensions</a>
+            <a href="index.html" class="nav-logo">
+                <img src="logo-nav.png?v=50" alt="SporlyWorks S Logo" height="42">
+                <div style="display: flex; align-items: center; margin-left: 14px;">
+                    <span class="company-name" style="margin-left: 0; font-weight: 700; letter-spacing: -0.5px;">SporlyWorks</span>
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="#features">Features</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="auth.html" class="nav-cta" id="navLoginBtn">Log In</a>
             </div>
-            <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
-                <span></span><span></span><span></span>
-            </button>
         </div>
     </nav>
 
@@ -66,15 +64,13 @@
         <div class="hero-bg-pattern"></div>
         <div class="hero-content">
             <!-- Master Brand Composite (Graphic + SporlyWorks + Tagline) -->
-            <img src="unified-logo.png?v=23" alt="SporlyWorks — Cultivating Intelligent Workflows" style="max-width: 520px; width: 90%; height: auto; object-fit: contain; margin-bottom: 24px; display: block; margin-left: auto; margin-right: auto;">
+            <img src="unified-logo.png?v=50" alt="SporlyWorks — Cultivating Intelligent Workflows" style="max-width: 520px; width: 90%; height: auto; object-fit: contain; margin-bottom: 24px; display: block; margin-left: auto; margin-right: auto;">
             
             <p class="hero-subtitle" style="margin-bottom: 32px; font-weight: 400; opacity: 0.85;">A boutique development studio crafting privacy-first productivity applications. No bloat. No tracking. Pure performance.</p>
 
             <div style="margin-top: 0; display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap;">
-                <a href="download.html" style="background: linear-gradient(135deg, var(--forest), var(--forest-deep)); color: white; padding: 18px 40px; border-radius: 999px; font-weight: 600; font-size: 17px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.4s ease; box-shadow: 0 8px 24px rgba(15, 44, 29, 0.18);">Download the Native Suite</a>
+                <a href="download.html" class="btn-primary">Download the Native Suite</a>
             </div>
-            
-            <!-- (Stats removed per user request) -->
         </div>
     </section>
 
@@ -84,16 +80,16 @@
 
             <div class="about-content reveal" style="text-align: center;">
                     
-                    <img src="omnisuite-logo.png" alt="OmniSuite" style="max-width: 250px; width: 80%; height: auto; object-fit: contain; margin: 32px auto 16px; display: block;">
+                    <img src="omnisuite-logo.png?v=43" alt="OmniSuite" style="max-width: 250px; width: 80%; height: auto; object-fit: contain; margin: 32px auto 16px; display: block; mix-blend-mode: multiply; filter: brightness(1.02) contrast(1.05);">
                     
                     <h2 class="section-title">The Complete Developer Toolkit</h2>
                     
-                    <p class="about-lead">OmniSuite is our curated ecosystem of <span class="app-count">85</span>+ standalone browser extensions and Android apps designed for developers, designers, marketers, and operations teams.</p>
+                    <p class="about-lead">OmniSuite is our curated ecosystem of standalone browser extensions and Android apps designed for developers, designers, marketers, and operations teams.</p>
                     
                     <p class="about-body">Unlike monolithic "Swiss Army knife" extensions that slow your browser and request invasive permissions, every OmniSuite tool is its own lightweight, purpose-built app. Install only what you need. Each tool does one thing, and does it brilliantly.</p>
                     
                     <div style="margin-top: 32px; display: flex; align-items: center; justify-content: center;">
-                        <a href="#tools" style="background: var(--cream); color: var(--forest-deep); border: 2px solid var(--cream-dark); padding: 14px 32px; border-radius: 999px; font-weight: 600; font-size: 15px; text-decoration: none; transition: all 0.3s ease;">View All <span class="app-count">85</span>+ Extensions</a>
+                        <a href="#tools" class="btn-ghost" style="padding: 14px 32px; font-weight: 600; font-size: 15px; text-decoration: none;">View All Extensions</a>
                     </div>
                     
                     <div class="about-pillars" style="margin-top: 64px;">
@@ -537,6 +533,8 @@
                 <p>Measure elements on any webpage in pixels. Hover to see dimensions, click to copy measurements.</p>
             </a>
 
+
+
             <a href="https://chromewebstore.google.com/detail/mhkmhnfnbjbbhlhhlgofkkcjjklcodij" class="ext-card reveal track-click" data-app="page-seo-analyzer" target="_blank">
                 <span class="ext-icon">🍄</span>
                 <h3>Page SEO Analyzer & Meta Inspector</h3>
@@ -717,9 +715,9 @@
     <section class="closing-section">
         <div class="container">
             <div class="closing-card reveal">
-                <img src="logo-128.png" alt="SporlyWorks" class="closing-logo" width="80" height="80" style="border-radius: 16px;">
+                <img src="logo-128.png?v=42" alt="SporlyWorks" class="closing-logo" width="80" height="80" style="border-radius: 4px;">
                 <h2>Your browser, your rules.</h2>
-                <p><span class="app-count">85</span>+ tools. Free core features. No accounts, no subscriptions needed. Pro unlocks the full power when you're ready.</p>
+                <p>A growing collection of tools. Free core features. No accounts, no subscriptions needed. Pro unlocks the full power when you're ready.</p>
                 <div style="margin-top: 32px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
                     <a href="download.html" style="background: linear-gradient(135deg, var(--forest), var(--forest-deep)); color: white; padding: 16px 36px; border-radius: 999px; font-weight: 600; font-size: 15px; text-decoration: none; transition: all 0.3s ease;">Download the Native Installer</a>
                 </div>
@@ -737,8 +735,8 @@
         <div class="container">
             <div class="footer-inner">
                 <div class="footer-brand">
-                    <img src="logo-64.png" alt="SporlyWorks" class="footer-logo" width="40" height="40">
-                    <p>SporlyWorks<br>Cultivating Intelligent Workflows.</p>
+                    <img src="logo-64.png?v=42" alt="SporlyWorks" class="footer-logo" width="40" height="40">
+                    <p>SporlyWorks<br>Micro-Tools, Mega Impact</p>
                 </div>
                 <div class="footer-col">
                     <h4>Product</h4>
@@ -763,7 +761,7 @@
     <div class="chat-widget" id="chatWidget">
         <div class="chat-panel" id="chatPanel">
             <div class="chat-header">
-                <img src="logo-64.png" alt="" class="chat-logo" width="28" height="28">
+                <img src="logo-64.png?v=42" alt="" class="chat-logo" width="28" height="28">
                 <span>SporlyWorks Support</span>
             </div>
             <div class="chat-body">
@@ -874,21 +872,18 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+            fetch('/api/track', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ event: 'visit_landing' })
+            }).catch(e => console.error(e));
+            
             const extCount = document.querySelectorAll('.ext-card').length;
             if(extCount > 0) {
                 document.querySelectorAll('.app-count').forEach(el => {
                     el.textContent = extCount;
                 });
             }
-            
-            // Update nav UI if logged in
-            if (localStorage.getItem('sw_token')) {
-                const navLoginBtn = document.getElementById('navLoginBtn');
-                if (navLoginBtn) {
-                    navLoginBtn.innerText = "Dashboard";
-                    navLoginBtn.href = "dashboard.html";
-                    navLoginBtn.style.background = "var(--cream-dark)";
-                    navLoginBtn.style.color = "var(--charcoal)";
                 }
             }
         });

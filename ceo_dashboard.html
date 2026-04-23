@@ -208,6 +208,66 @@
             margin-top: 16px;
             display: none;
         }
+
+        .funnel-container {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 24px;
+            padding: 32px;
+            margin-bottom: 48px;
+        }
+
+        .funnel-header {
+            color: var(--sage);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .funnel-step {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 24px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            position: relative;
+        }
+
+        .funnel-step:last-child {
+            border-bottom: none;
+        }
+
+        .step-name {
+            font-weight: 600;
+            font-size: 16px;
+            color: white;
+            flex: 1;
+        }
+
+        .step-count {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            min-width: 80px;
+            text-align: right;
+        }
+
+        .step-dropoff {
+            font-size: 14px;
+            font-weight: 600;
+            color: #ff6b6b;
+            min-width: 100px;
+            text-align: right;
+            margin-left: 24px;
+        }
+        
+        .step-conversion {
+            color: var(--sage);
+        }
     </style>
 </head>
 <body>
@@ -252,6 +312,18 @@
             <div class="subtitle">Funnel Analytics</div>
             <h1>Business Health Dashboard</h1>
             <p style="color: rgba(255,255,255,0.6); max-width: 600px;">Real-time tracking of registration metrics, suite upgrades, and overall conversion health to drive the First Dollar initiative.</p>
+        </div>
+
+        <div class="funnel-container">
+            <div class="funnel-header">Conversion Funnel Drop-off</div>
+            <div id="funnelSteps">
+                <div class="funnel-step"><span class="step-name">Landing Page Visits</span><span class="step-count" id="f_vis">0</span><span class="step-dropoff" id="d_vis"></span></div>
+                <div class="funnel-step"><span class="step-name">Registrations</span><span class="step-count" id="f_reg">0</span><span class="step-dropoff" id="d_reg"></span></div>
+                <div class="funnel-step"><span class="step-name">1st Dashboard Logins</span><span class="step-count" id="f_log">0</span><span class="step-dropoff" id="d_log"></span></div>
+                <div class="funnel-step"><span class="step-name">Upgrade Clicks</span><span class="step-count" id="f_upg">0</span><span class="step-dropoff" id="d_upg"></span></div>
+                <div class="funnel-step"><span class="step-name">Checkouts Initiated</span><span class="step-count" id="f_chk">0</span><span class="step-dropoff" id="d_chk"></span></div>
+                <div class="funnel-step"><span class="step-name">Successful Payments</span><span class="step-count" id="f_suc">0</span><span class="step-dropoff step-conversion" id="d_suc"></span></div>
+            </div>
         </div>
 
         <div class="metrics-grid">
@@ -314,7 +386,7 @@
     </div>
 
     <script>
-        const API_URL = 'http://127.0.0.1:8080/metrics';
+        const API_URL = 'https://microassets-license-server-production.up.railway.app/metrics';
 
         async function login() {
             const key = document.getElementById('adminKey').value;
@@ -366,6 +438,37 @@
             
             document.getElementById('valKeys').innerText = data.total_keys || 0;
             document.getElementById('valBackup').innerText = data.backup_count || 0;
+            
+            if (data.funnel) {
+                const vis = data.funnel.visit_landing || 0;
+                const reg = data.funnel.register_user || 0;
+                const log = data.funnel.login_first_time || 0;
+                const upg = data.funnel.click_upgrade || 0;
+                const chk = data.funnel.initiate_checkout || 0;
+                const suc = data.funnel.success_conversion || 0;
+                
+                document.getElementById('f_vis').innerText = vis;
+                document.getElementById('f_reg').innerText = reg;
+                document.getElementById('f_log').innerText = log;
+                document.getElementById('f_upg').innerText = upg;
+                document.getElementById('f_chk').innerText = chk;
+                document.getElementById('f_suc').innerText = suc;
+                
+                const calcDrop = (current, prev) => {
+                    if (prev === 0) return "-";
+                    const pct = Math.round((prev - current) / prev * 100);
+                    return `-${pct}%`;
+                };
+                
+                document.getElementById('d_vis').innerText = "";
+                document.getElementById('d_reg').innerText = calcDrop(reg, vis);
+                document.getElementById('d_log').innerText = calcDrop(log, reg);
+                document.getElementById('d_upg').innerText = calcDrop(upg, log);
+                document.getElementById('d_chk').innerText = calcDrop(chk, upg);
+                
+                const totalConv = vis > 0 ? Math.round((suc / vis) * 100) : 0;
+                document.getElementById('d_suc').innerText = `${totalConv}% overall`;
+            }
         }
 
         // Auto-login check
