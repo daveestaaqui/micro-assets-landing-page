@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════
-   SporlyWorks — Cultivating Intelligent Workflows
+   SporlyWorks — Engineering Automation
    Premium · Organic-Tech · Intelligent · Clean
    ═══════════════════════════════════════════════ */
 
@@ -64,7 +64,7 @@ nav {
 }
 nav.scrolled {
     background: rgba(249, 248, 244, 0.85);
-    backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+    backdrop- -webkit-backdrop-
     border-bottom: 1px solid rgba(15,44,29,0.05);
     padding: 16px 0;
 }
@@ -112,7 +112,7 @@ nav.scrolled {
 .hero-logo {
     width: 120px; height: 120px; border-radius: 36px;
     box-shadow: 0 16px 48px rgba(15,44,29,0.08), 0 0 0 1px rgba(15,44,29,0.04);
-    margin: 0 auto 32px; display: block; mix-blend-mode: multiply;
+    margin: 0 auto 32px; display: block; 
     transition: transform 0.6s var(--transition-smooth), box-shadow 0.6s var(--transition-smooth);
 }
 .hero-logo:hover {
@@ -121,7 +121,7 @@ nav.scrolled {
 }
 .hero-badge {
     display: inline-flex; align-items: center; gap: 10px;
-    background: rgba(255,255,255,0.7); backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.7); backdrop-
     border: 1px solid rgba(32,92,64,0.1);
     padding: 10px 24px; border-radius: var(--radius-pill);
     font-size: 14px; font-weight: 500; color: var(--forest);
@@ -160,7 +160,7 @@ nav.scrolled {
     background: rgba(255,255,255,0.5); color: var(--forest-deep); padding: 18px 40px;
     border-radius: var(--radius-pill); font-size: 16px; font-weight: 500;
     text-decoration: none; border: 1px solid rgba(32,92,64,0.15);
-    backdrop-filter: blur(8px); transition: all 0.4s var(--transition-smooth);
+    backdrop- transition: all 0.4s var(--transition-smooth);
 }
 .btn-ghost:hover { border-color: rgba(32,92,64,0.3); background: #ffffff; transform: translateY(-2px); box-shadow: var(--shadow-soft); }
 
@@ -279,7 +279,7 @@ nav.scrolled {
 .trust-inner p { font-size: 18px; color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 60px; }
 
 .promise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-.promise-item { padding: 40px; background: rgba(255,255,255,0.02); border-radius: var(--radius-lg); border: 1px solid rgba(255,255,255,0.05); backdrop-filter: blur(10px); }
+.promise-item { padding: 40px; background: rgba(255,255,255,0.02); border-radius: var(--radius-lg); border: 1px solid rgba(255,255,255,0.05); backdrop- }
 .promise-icon { font-size: 32px; margin-bottom: 16px; }
 .promise-item h4 { font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 600; margin-bottom: 12px; }
 .promise-item p { font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.6; margin: 0; }
@@ -369,3 +369,5 @@ footer { padding: 80px 24px 40px; background: var(--surface); border-top: 1px so
     .mobile-toggle.open span:nth-child(2) { opacity: 0; }
     .mobile-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 }
+
+.nav-logo img { height: 150px !important; width: auto !important; background: transparent !important; }
